@@ -16,6 +16,21 @@
   --destructive-foreground: oklch(1 0 0);
 }
 @import "tw-animate-css";
+
+@theme inline {
+  --color-destructive-foreground: oklch(1 0 0);
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+}
+
+:root {
+  --destructive-foreground: oklch(1 0 0);
+}
+
+.dark {
+  --destructive-foreground: oklch(1 0 0);
+}
+@import "tw-animate-css";
 @import "shadcn/tailwind.css";
 @import "@fontsource-variable/geist";
 

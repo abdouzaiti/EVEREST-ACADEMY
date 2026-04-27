@@ -25,7 +25,17 @@ const translations = {
     greatness: "Grandeur",
     legacy: "L'héritage commence",
     here: "Ici",
-    heroDesc: "Un parcours éducatif sur mesure conçu pour la prochaine génération de leaders mondiaux, combinant des normes académiques rigoureuses avec un développement raffiné du caractère.",
+    heroDesc: "Un parcours éducatif sur mesure conçu pour la prochaine génération de leaders mondiaux.",
+    slogan: "Enseignement & Formation",
+    supportLessons: "Cours de soutien pour tous les niveaux",
+    trainingCourses: "Sessions de formation",
+    examPrep: "Préparation aux examens",
+    languages: "Enseignement des langues étrangères",
+    workshops: "Ateliers éducatifs pour enfants",
+    primaryStage: "Phase Primaire",
+    middleStage: "Phase Moyenne",
+    secondaryStage: "Phase Secondaire",
+    address: "32 rue tahlaiti othmane, Mostaganem zeghloul",
     academicTour: "Visite Académique",
     acceptance: "Taux d'acceptation mondial",
     vision: "Héritage et Vision",
@@ -45,8 +55,8 @@ const translations = {
     selectionDesc: "Les admissions dépendent d'une évaluation d'entrée et d'un entretien familial pour s'assurer que notre environnement correspond aux besoins d'apprentissage et à la trajectoire académique de votre enfant.",
     transportTitle: "Transport Concierge",
     transportDesc: "Nous fournissons des services de transport sécurisés de porte à porte pour tous les étudiants dans les zones résidentielles majeures en utilisant notre flotte privée.",
-    hoursTitle: "Heures académiques d'élite",
-    hoursDesc: "Les heures académiques de base s'étendent jusqu'à 16h00, avec des clubs de mentorat et de recherche spécialisés disponibles jusqu'à 18h00.",
+    hoursTitle: "La plus grande école de Mostaganem",
+    hoursDesc: "Nous sommes fiers d'être le plus grand établissement d'enseignement de Mostaganem, avec 19 salles de classe équipées pour offrir un environnement d'apprentissage optimal.",
     registration2024: "Inscription 2024",
     secureLegacy: "Sécurisez votre Héritage",
     directInquiries: "Demandes directes",
@@ -68,13 +78,19 @@ const translations = {
     limitedIntake: "Admission Limitée",
     intakeDesc: "Tailles de classes soigneusement curatées pour un engagement maximal.",
     provenLegacy: "Héritage Prouvé",
-    legacyDesc: "Une histoire de production de diplômés distingués et capables.",
+    legacyDesc: "Une history de production de diplômés distingués et capables.",
     preschool: "Maternelle",
     primary: "Primaire",
     middle: "Moyen",
     preschoolDesc: "Se concentrer sur le jeu créatif, les liens sociaux et les premières compétences cognitives.",
     primaryDesc: "Renforcer les bases académiques fondamentales en mettant l'accent sur le bilinguisme.",
-    middleDesc: "Former des penseurs critiques et de futurs leaders grâce à l'apprentissage analytique.",
+    middleDesc: "Formation de penseurs critiques et de futurs leaders grâce à l'apprentissage analytique.",
+    whyEverest: "Pourquoi choisir Everest ?",
+    whyEverestDesc: "Découvrez ce qui fait de notre académie la destination de choix pour l'excellence académique et la croissance personnelle.",
+    whereFindUs: "Où pouvez-vous nous trouver ?",
+    whereFindUsDesc: "Visitez-nous au cœur de la ville pour découvrir notre environnement d'apprentissage inspirant.",
+    openInMaps: "Ouvrir dans Google Maps",
+    viewOnMaps: "Voir sur Google Maps",
     fullName: "Nom Complet",
     phoneNumber: "Numéro de Téléphone"
   },
@@ -90,7 +106,17 @@ const translations = {
     greatness: "Greatness",
     legacy: "Legacy Begins",
     here: "Here",
-    heroDesc: "A bespoke educational journey designed for the next generation of global leaders, combining rigorous academic standards with refined character development.",
+    heroDesc: "A bespoke educational journey designed for the next generation of global leaders.",
+    slogan: "Education & Training",
+    supportLessons: "Support lessons for all levels",
+    trainingCourses: "Training courses",
+    examPrep: "Exam preparation",
+    languages: "Foreign language teaching",
+    workshops: "Educational workshops for children",
+    primaryStage: "Primary Stage",
+    middleStage: "Middle Stage",
+    secondaryStage: "Secondary Stage",
+    address: "32 rue tahlaiti othmane, Mostaganem zeghloul",
     academicTour: "Academic Tour",
     acceptance: "Global Acceptance Rate",
     vision: "Heritage & Vision",
@@ -110,8 +136,8 @@ const translations = {
     selectionDesc: "Admissions depend on an entry assessment and a family interview to ensure our environment matches your child's learning needs and academic trajectory.",
     transportTitle: "Concierge Transportation",
     transportDesc: "We provide secure door-to-door transportation services for all students across the major residential areas using our private fleet.",
-    hoursTitle: "Elite Academic Hours",
-    hoursDesc: "Core academic hours run until 16:00, with specialized mentorship and research clubs available until 18:00.",
+    hoursTitle: "Biggest School in Mostaganem",
+    hoursDesc: "We are proud to be the largest educational institution in Mostaganem, featuring 19 classrooms equipped to provide an optimal learning environment.",
     registration2024: "Registration 2024",
     secureLegacy: "Secure Your Legacy",
     directInquiries: "Direct Inquiries",
@@ -140,6 +166,12 @@ const translations = {
     preschoolDesc: "Focusing on creative play, social bonding, and early cognitive skills.",
     primaryDesc: "Strengthening core academic foundations with an emphasis on bilingualism.",
     middleDesc: "Developing critical thinkers and future leaders through analytical learning.",
+    whyEverest: "Why choose Everest?",
+    whyEverestDesc: "Discover what makes our academy the top destination for academic excellence and personal growth.",
+    whereFindUs: "Where can you find us?",
+    whereFindUsDesc: "Visit us in the heart of the city to experience our inspiring learning environment.",
+    openInMaps: "Open in Google Maps",
+    viewOnMaps: "View on Google Maps",
     fullName: "Full Name",
     phoneNumber: "Phone Number"
   },
@@ -155,7 +187,17 @@ const translations = {
     greatness: "العظمة",
     legacy: "الإرث يبدأ",
     here: "هنا",
-    heroDesc: "رحلة تعليمية مصممة خصيصاً للجيل القادم من القادة العالميين، تجمع بين المعايير الأكاديمية الصارمة وتنمية الشخصية الراقية.",
+    heroDesc: "رحلة تعليمية مصممة خصيصاً للجيل القادم من القادة العالميين.",
+    slogan: "للتعليم و التكوين",
+    supportLessons: "دروس الدعم لجميع الأطوار",
+    trainingCourses: "دورات تدريبية",
+    examPrep: "تحضير للإمتحانات",
+    languages: "تعليم اللغات الأجنبية",
+    workshops: "ورشات تعليمية للأطفال",
+    primaryStage: "الطور الابتدائي",
+    middleStage: "الطور المتوسط",
+    secondaryStage: "الطور الثانوي",
+    address: "حي 32 مسكن، طريق تحليتي عثمان، مستغانم زغلول",
     academicTour: "جولة أكاديمية",
     acceptance: "معدل القبول العالمي",
     vision: "التراث والرؤية",
@@ -175,9 +217,15 @@ const translations = {
     selectionDesc: "يعتمد القبول على تقييم الدخول ومقابلة عائلية للتأكد من أن بيئتنا تتوافق مع احتياجات طفلك التعليمية ومساره الأكاديمي.",
     transportTitle: "خدمة النقل الخاصة",
     transportDesc: "نحن نوفر خدمات نقل آمنة من الباب إلى الباب لجميع الطلاب عبر المناطق السكنية الرئيسية باستخدام أسطولنا الخاص.",
-    hoursTitle: "ساعات أكاديمية متميزة",
-    hoursDesc: "تمتد الساعات الأكاديمية الأساسية حتى الساعة 4:00 مساءً، مع توفر نوادي إرشاد وبحث متخصصة حتى الساعة 6:00 مساءً.",
+    hoursTitle: "أكبر مؤسسة في مستغانم",
+    hoursDesc: "نحن فخورون بكوننا أكبر مؤسسة تعليمية في مستغانم، حيث نضم 19 قاعة تدريس مجهزة بأحدث الوسائل لضمان بيئة تعليمية مثالية.",
     registration2024: "التسجيل لعام 2024",
+    whyEverest: "لماذا تختار إيفرست؟",
+    whyEverestDesc: "اكتشف ما يجعل أكاديميتنا الوجهة الأولى للتميز الأكاديمي والنمو الشخصي.",
+    whereFindUs: "أين تجدنا؟",
+    whereFindUsDesc: "تفضل بزيارتنا في قلب المدينة لتجربة بيئتنا التعليمية الملهمة.",
+    openInMaps: "فتح في خرائط جوجل",
+    viewOnMaps: "عرض على الخريطة",
     secureLegacy: "أمن مستقبلك",
     directInquiries: "استفسارات مباشرة",
     emailRegistry: "سجل البريد الإلكتروني",
@@ -300,13 +348,27 @@ export default function App() {
     'https://images.unsplash.com/photo-1516627145497-ae6968895b74?q=80&w=800&auto=format&fit=crop',
   ];
 
+  const servicePoints = [
+    { text: t('supportLessons'), color: 'bg-[#43a2d6]' },
+    { text: t('trainingCourses'), color: 'bg-[#f97316]' },
+    { text: t('examPrep'), color: 'bg-[#5ccee3]' },
+    { text: t('languages'), color: 'bg-[#e53e3e]' },
+    { text: t('workshops'), color: 'bg-[#0f172a]' },
+  ];
+
+  const levelBadgesList = [
+    { text: t('primaryStage'), color: 'bg-[#0f172a]', textColor: 'text-white' },
+    { text: t('middleStage'), color: 'bg-[#f97316]', textColor: 'text-white' },
+    { text: t('secondaryStage'), color: 'bg-[#0f172a]', textColor: 'text-white' },
+  ];
+
   return (
     <div 
-      className={`min-h-screen bg-white text-[#0f172a] font-sans selection:bg-orange-100 selection:text-orange-900 ${isRtl ? 'font-serif' : ''}`}
+      className={`min-h-screen bg-[#fcfcfc] text-[#0f172a] font-sans selection:bg-orange-100 selection:text-orange-900 ${isRtl ? 'font-serif' : ''}`}
       dir={isRtl ? 'rtl' : 'ltr'}
     >
       {/* Top Banner */}
-      <div className="bg-[#0f172a] text-white/80 py-3 px-6 text-[10px] uppercase font-bold tracking-[0.2em] border-b border-white/5">
+      <div className="bg-[#0f172a] text-white/80 py-2 px-6 text-[10px] uppercase font-bold tracking-[0.2em] border-b border-white/5 no-print">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
           <div className={`flex items-center gap-8 ${isRtl ? 'flex-row-reverse' : ''}`}>
             <span className="flex items-center gap-2 hover:text-orange-400 transition-colors cursor-pointer"><Phone className="w-3 h-3 text-orange-500" /> {contactInfo.phones[0]}</span>
@@ -339,226 +401,215 @@ export default function App() {
         </div>
       </div>
 
-      {/* Navigation */}
-      <nav className="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-100">
-        <div className="max-w-7xl mx-auto px-6 sm:px-12">
-          <div className="flex justify-between h-28 items-center">
-            <div className={`flex items-center gap-6 ${isRtl ? 'flex-row-reverse' : ''}`}>
-              <div className={`relative group cursor-pointer flex items-center`}>
-                <div className="relative h-20 w-20 flex items-center justify-center rounded-2xl bg-white shadow-[0_8px_20px_-6px_rgba(0,0,0,0.08)] border border-slate-100/80 transition-all duration-500 group-hover:shadow-2xl group-hover:border-orange-100 group-hover:-translate-y-1">
-                  <img 
-                    src={LOGO_URL} 
-                    alt="EVEREST ACADEMY" 
-                    className="h-16 w-auto object-contain p-2 transition-transform duration-500 group-hover:scale-110" 
-                    referrerPolicy="no-referrer" 
-                  />
-                  {/* Subtle shine effect */}
-                  <div className="absolute inset-0 rounded-2xl bg-gradient-to-tr from-white/0 via-white/5 to-white/20 pointer-events-none" />
-                </div>
-                <div className={`h-12 w-px bg-slate-100/80 mx-8 hidden lg:block`} />
-              </div>
-              <div className="flex flex-col">
-                <span className="text-2xl font-bold tracking-[0.4em] text-[#0f172a] leading-none uppercase">EVEREST</span>
-                <span className="text-[11px] tracking-[0.5em] text-orange-600 uppercase mt-1.5 font-bold">{t('academy')}</span>
-              </div>
-            </div>
-            
-            <div className={`hidden lg:flex gap-8 text-[10px] uppercase tracking-[0.25em] font-semibold text-slate-400 ${isRtl ? 'flex-row-reverse' : ''}`}>
-              <a href="#">
-                <Badge variant="primary" appearance="ghost" size="lg" className="hover:text-orange-600 transition-colors uppercase tracking-[0.25em] font-semibold cursor-pointer">
-                  {t('academy')}
-                </Badge>
-              </a>
-              <a href="#about">
-                <Badge variant="primary" appearance="ghost" size="lg" className="hover:text-orange-600 transition-colors uppercase tracking-[0.25em] font-semibold cursor-pointer">
-                  {t('heritage')}
-                </Badge>
-              </a>
-              <a href="#programs">
-                <Badge variant="primary" appearance="ghost" size="lg" className="hover:text-orange-600 transition-colors uppercase tracking-[0.25em] font-semibold cursor-pointer">
-                  {t('curriculum')}
-                </Badge>
-              </a>
-              <a href="#contact">
-                <Badge variant="primary" appearance="ghost" size="lg" className="hover:text-orange-600 transition-colors uppercase tracking-[0.25em] font-semibold cursor-pointer">
-                  {t('admissions')}
-                </Badge>
-              </a>
-            </div>
 
-            <div className={`flex items-center gap-6 ${isRtl ? 'flex-row-reverse' : ''}`}>
-              <a 
-                href={`tel:${contactInfo.phones[0]}`}
-                className="hidden sm:block"
-              >
-                <Badge variant="secondary" appearance="ghost" size="lg" className="text-[10px] uppercase tracking-widest font-bold text-slate-500 hover:text-[#0f172a] transition-colors cursor-pointer">
-                  {t('inquire')}
-                </Badge>
-              </a>
-              <a 
-                href="#contact"
-              >
-                <Badge 
-                  variant="primary" 
-                  size="lg" 
-                  className="px-8 py-3 h-auto min-h-[44px] rounded-none border-2 border-orange-600 text-orange-600 bg-transparent text-[10px] uppercase tracking-[0.25em] font-bold hover:bg-orange-600 hover:text-white transition-all shadow-lg shadow-orange-100 cursor-pointer"
-                >
-                  {t('register')}
-                </Badge>
-              </a>
-            </div>
-          </div>
-        </div>
-      </nav>
-
-      {/* Hero Section */}
-      <section className="relative overflow-hidden pt-12 pb-32 lg:pt-24 lg:pb-48 bg-slate-50/50">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] border border-[#0f172a]/5 rounded-full pointer-events-none -z-10" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] border border-orange-600/5 rounded-full pointer-events-none -z-10" />
-        
+      {/* Hero Section - Flyer Style */}
+      <section className="relative overflow-hidden pt-12 pb-24 lg:pt-16 bg-[#f8f9fa]">
         <div className="max-w-7xl mx-auto px-6 sm:px-12">
-          <div className="grid lg:grid-cols-12 gap-20 items-center">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            {/* Left Column: Info & Content */}
             <motion.div
-              className="lg:col-span-7"
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1, ease: "easeOut" }}
+              initial={{ opacity: 0, x: isRtl ? 50 : -50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+              className="z-20"
             >
-              {/* Colorful Hanging Welcome Badge */}
-              <div className="relative mb-12 py-4">
-                {/* Visual String Line */}
-                <div className="absolute top-0 left-0 right-0 h-px bg-slate-200/60 -translate-y-2 hidden lg:block" />
-                
-                <div className={`flex items-center gap-3 flex-wrap justify-center lg:justify-start ${isRtl ? 'flex-row-reverse' : ''}`}>
-                  {(lang === 'ar' ? 'AHLAN' : 'WELCOME').split('').map((letter, i) => (
-                    <motion.div
-                      key={i}
-                      initial={{ y: -20, opacity: 0, rotate: -10 }}
-                      animate={{ 
-                        y: 0, 
-                        opacity: 1, 
-                        rotate: [2, -2, 2],
-                      }}
-                      transition={{ 
-                        delay: i * 0.1, 
-                        type: "spring", 
-                        stiffness: 100,
-                        rotate: {
-                          repeat: Infinity,
-                          duration: 3 + Math.random() * 2,
-                          ease: "easeInOut",
-                          repeatType: "reverse"
-                        }
-                      }}
-                      className="relative"
-                    >
-                      {/* String for each letter */}
-                      <div className="absolute -top-4 left-1/2 -translate-x-1/2 w-px h-4 bg-slate-300 hidden lg:block" />
-                      
-                      {/* Letter Card */}
-                      <div 
-                        className={`w-10 h-14 sm:w-12 sm:h-16 rounded-lg flex flex-col items-center justify-center text-white font-black text-xl sm:text-2xl shadow-[0_10px_20px_-5px_rgba(0,0,0,0.2)] border-t-2 border-white/40 border-x border-b border-black/5 ${
-                          ['bg-[#43a2d6]', 'bg-[#5eaf4b]', 'bg-[#e53e3e]', 'bg-[#ecc94b]', 'bg-[#d63384]', 'bg-[#2b6cb0]', 'bg-[#6b46c1]'][i % 7]
-                        }`}
-                      >
-                        {/* Hanging Hole Pin */}
-                        <div className="w-2 h-2 bg-white/30 rounded-full mt-1.5 mb-auto shadow-inner" />
-                        <span className="mb-4">{letter}</span>
-                      </div>
-                    </motion.div>
-                  ))}
+              {/* Flyer Header Branding */}
+              <div className={`flex items-center gap-6 mb-12 ${isRtl ? 'flex-row' : 'flex-row'}`}>
+                <img 
+                  src={LOGO_URL} 
+                  alt="Everest Academy" 
+                  className="w-24 h-24 object-contain"
+                  referrerPolicy="no-referrer"
+                />
+                <div className="flex flex-col">
+                  <h1 className="text-4xl lg:text-5xl font-black text-[#0f172a] tracking-tight leading-none mb-2">
+                    Everest Academy
+                  </h1>
+                  <h2 className="text-2xl lg:text-3xl font-bold text-orange-600 leading-tight">
+                    {t('slogan')}
+                  </h2>
                 </div>
               </div>
 
-              <div className="inline-block px-4 py-1.5 bg-orange-50 border border-orange-200 text-orange-600 text-[10px] uppercase tracking-[0.4em] mb-10 font-bold">
-                {t('excellence')}
+              {/* Level Badges Row */}
+              <div className={`flex flex-wrap gap-3 mb-10 ${isRtl ? 'justify-start' : 'justify-start'}`}>
+                {levelBadgesList.map((badge, idx) => (
+                  <Badge 
+                    key={idx}
+                    className={`${badge.color} ${badge.textColor} px-6 py-2 rounded-full text-sm font-bold border-none shadow-sm hover:scale-105 transition-transform uppercase tracking-wider`}
+                  >
+                    {badge.text}
+                  </Badge>
+                ))}
               </div>
-              <h1 className={`text-center lg:text-start text-6xl lg:text-[100px] font-serif leading-[0.9] text-[#0f172a] mb-10 tracking-tight`}>
-                {t('aspire')} <span className="italic text-orange-600">{t('greatness')}</span>,<br />
-                {t('legacy')} <span className="italic text-slate-400">{t('here')}</span>.
-              </h1>
-              <p className={`text-center lg:text-start text-xl text-slate-500 mb-14 max-w-xl leading-relaxed font-light mx-auto lg:mx-0 ${isRtl ? 'text-lg md:text-2xl' : ''}`}>
-                {t('heroDesc')}
-              </p>
-              <div className={`flex flex-wrap items-center justify-center lg:justify-start gap-10 ${isRtl ? 'flex-row-reverse' : ''}`}>
-                <button className="px-12 py-5 bg-[#0f172a] text-white font-bold text-xs uppercase tracking-[0.2em] shadow-2xl shadow-slate-300 hover:bg-slate-800 transition-all">
-                  {t('inquire')}
+
+              {/* Services List with Color Squares */}
+              <div className="space-y-6 mb-12">
+                {servicePoints.map((point, idx) => (
+                  <motion.div 
+                    key={idx} 
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ delay: 0.2 + idx * 0.1 }}
+                    className={`flex items-center gap-4 ${isRtl ? 'flex-row' : 'flex-row'}`}
+                  >
+                    <div className={`w-4 h-4 ${point.color} rounded-sm shrink-0 shadow-sm`} />
+                    <span className="text-xl md:text-2xl font-bold text-[#0f172a] tracking-tight">
+                      {point.text}
+                    </span>
+                  </motion.div>
+                ))}
+              </div>
+
+              <div className={`flex gap-6 ${isRtl ? 'justify-start' : 'justify-start'}`}>
+                <button className="px-10 py-4 bg-[#0f172a] text-white font-bold text-xs uppercase tracking-[0.2em] rounded-xl hover:bg-slate-800 transition-all shadow-xl">
+                  {t('register')}
                 </button>
-                <div className={`flex items-center gap-4 px-6 py-4 bg-white rounded-full shadow-md border border-slate-100 ${isRtl ? 'flex-row-reverse' : ''}`}>
-                  <div className={`w-10 h-10 rounded-full border-2 border-yellow-400 flex items-center justify-center ${isRtl ? '-rotate-12' : 'rotate-12'}`}>
-                    <span className="text-[8px] font-black leading-tight text-center text-slate-700">Ouvert<br />7j/7</span>
-                  </div>
-                  <span className="text-[10px] uppercase tracking-[0.2em] font-bold text-slate-500">{t('accommodating')}</span>
-                </div>
               </div>
             </motion.div>
 
+            {/* Right Column: Imagery */}
             <motion.div
-              className="lg:col-span-5 relative"
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 1.2, delay: 0.2 }}
+              transition={{ duration: 1 }}
+              className="relative lg:h-[700px] flex items-center justify-center"
             >
-              <div className="relative rounded-2xl overflow-hidden shadow-[0_40px_80px_-20px_rgba(15,23,42,0.15)] border-8 border-white">
+              <div className="absolute inset-0 bg-orange-600/5 blur-[120px] rounded-full" />
+              
+              {/* Happy Student Image Wrapper */}
+              <div className="relative z-10 w-full max-w-lg mx-auto">
                 <img 
-                  src="https://images.unsplash.com/photo-1544531585-9847b68c8c86?q=80&w=1200&auto=format&fit=crop" 
-                  alt="Student Excellence" 
-                  className="w-full aspect-[4/5] object-cover"
+                  src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=1200&auto=format&fit=crop" 
+                  alt="Student Success" 
+                  className="w-full h-auto object-cover rounded-3xl shadow-[0_50px_100px_-20px_rgba(0,0,0,0.2)] border-8 border-white"
                   referrerPolicy="no-referrer"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#0f172a]/20 to-transparent" />
-              </div>
-              
-              <div className={`absolute -bottom-8 ${isRtl ? '-right-8' : '-left-8'} bg-white border border-slate-100 p-10 rounded-xl shadow-[0_30px_60px_-10px_rgba(0,0,0,0.1)] z-20`}>
-                <div className="text-4xl font-serif text-orange-600 mb-2">98%</div>
-                <div className="text-[9px] font-bold uppercase tracking-[0.2em] text-slate-400">{t('acceptance')}</div>
+                
+                {/* Triangular Accents like the flyer */}
+                <div className="absolute -bottom-10 -left-10 w-40 h-40 bg-[#43a2d6] opacity-20 rotate-45 -z-10" />
+                <div className="absolute top-10 -right-10 w-32 h-32 border-4 border-orange-600/20 rounded-full -z-10" />
               </div>
             </motion.div>
           </div>
         </div>
       </section>
 
-      {/* Featured Points */}
-      <section className="py-32 bg-white">
-        <div className="max-w-7xl mx-auto px-6 sm:px-12">
-          <div className={`grid md:grid-cols-4 gap-16 ${isRtl ? 'rtl' : ''}`}>
-            {[
-              { icon: <ShieldCheck className="text-orange-600" />, title: t('secureCampus'), desc: t('secureDesc') },
-              { icon: <GraduationCap className="text-orange-600" />, title: t('elitePedagogy'), desc: t('pedagogyDesc') },
-              { icon: <Users className="text-orange-600" />, title: t('limitedIntake'), desc: t('intakeDesc') },
-              { icon: <Trophy className="text-orange-600" />, title: t('provenLegacy'), desc: t('legacyDesc') },
-            ].map((item, i) => (
-              <motion.div 
-                key={i}
-                className="flex flex-col gap-6 group"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1 }}
-              >
-                <div className="w-14 h-14 border border-slate-100 bg-slate-50 flex items-center justify-center group-hover:border-orange-600 transition-colors duration-500 rounded-xl">
-                  {item.icon}
-                </div>
-                <h3 className="text-sm uppercase tracking-[0.2em] font-bold text-[#0f172a]">{item.title}</h3>
-                <p className="text-[11px] text-slate-400 leading-relaxed tracking-wider font-medium uppercase">{item.desc}</p>
-              </motion.div>
-            ))}
+      {/* Video Gallery */}
+      <section className="py-20 bg-white relative overflow-hidden">
+        <div className="max-w-5xl mx-auto px-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-start">
+            {/* Video 1: Why Choose Everest */}
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="flex flex-col gap-6"
+            >
+              <div className="space-y-3">
+                <div className="w-12 h-1 bg-orange-600 rounded-full" />
+                <h3 className="text-xl font-bold text-[#0f172a] uppercase tracking-wider">
+                  {t('whyEverest')}
+                </h3>
+                <p className="text-sm text-slate-500 max-w-md leading-relaxed">
+                  {t('whyEverestDesc')}
+                </p>
+              </div>
+              <div className="relative rounded-[24px] shadow-2xl border-4 border-white bg-white overflow-hidden group">
+                <video 
+                  src="/video1.mp4" 
+                  controls
+                  playsInline 
+                  className="w-full h-auto block"
+                />
+                <div className="absolute inset-0 bg-[#0f172a]/0 group-hover:bg-[#0f172a]/5 transition-colors pointer-events-none" />
+              </div>
+            </motion.div>
+
+            {/* Video 2: Where to find us */}
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2 }}
+              className="flex flex-col gap-6"
+            >
+              <div className="space-y-3">
+                <div className="w-12 h-1 bg-[#43a2d6] rounded-full" />
+                <h3 className="text-xl font-bold text-[#0f172a] uppercase tracking-wider">
+                  {t('whereFindUs')}
+                </h3>
+                <p className="text-sm text-slate-500 max-w-md leading-relaxed">
+                  {t('whereFindUsDesc')}
+                </p>
+              </div>
+              
+              <div className="relative rounded-[24px] shadow-2xl border-4 border-white bg-white overflow-hidden">
+                <video 
+                  src="/video2.mp4" 
+                  controls
+                  playsInline 
+                  className="w-full h-auto block"
+                />
+              </div>
+            </motion.div>
           </div>
+
+          {/* Map at the middle */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.4 }}
+            className="mt-16 max-w-3xl mx-auto flex flex-col items-center gap-6"
+          >
+            <div className="w-full h-80 rounded-[24px] overflow-hidden border-4 border-white shadow-2xl relative group">
+              <iframe 
+                src="https://maps.google.com/maps?q=35.921987,0.090474&t=&z=16&ie=UTF8&iwloc=&output=embed"
+                width="100%" 
+                height="100%" 
+                style={{ border: 0 }} 
+                allowFullScreen={true} 
+                loading="lazy" 
+                referrerPolicy="no-referrer-when-downgrade"
+                title="Everest Academy Location"
+              />
+              <a 
+                href="https://maps.app.goo.gl/Wa99Jn93TQaXLkpp8" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="absolute inset-0 bg-[#0f172a]/0 group-hover:bg-[#0f172a]/10 transition-all flex items-center justify-center opacity-0 group-hover:opacity-100"
+              >
+                <div className="bg-white px-6 py-2 rounded-full shadow-lg font-bold text-orange-600 flex items-center gap-2 transform translate-y-4 group-hover:translate-y-0 transition-transform">
+                  <span>{t('openInMaps')}</span>
+                  <MapPin size={18} />
+                </div>
+              </a>
+            </div>
+            
+            <a 
+              href="https://maps.app.goo.gl/Wa99Jn93TQaXLkpp8" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="text-orange-600 font-bold hover:underline flex items-center gap-2"
+            >
+              <MapPin size={20} />
+              <span>{t('viewOnMaps')}</span>
+            </a>
+          </motion.div>
         </div>
+
+        {/* Decorative Floating Elements */}
+        <div className="absolute top-1/2 left-0 w-64 h-64 bg-[#43a2d6] rounded-full blur-[120px] opacity-10 -translate-x-1/2 -z-10" />
+        <div className="absolute bottom-0 right-0 w-80 h-80 bg-orange-600 rounded-full blur-[140px] opacity-10 translate-x-1/3 translate-y-1/3 -z-10" />
       </section>
 
       {/* About Section */}
       <section id="about" className="py-40 bg-slate-50/30">
         <div className="max-w-7xl mx-auto px-6 sm:px-12">
           <div className="grid lg:grid-cols-2 gap-32 items-center">
-            <div className="relative group">
-              <img 
-                src={SIGN_URL} 
-                alt="EVEREST ACADEMY" 
-                className="rounded-lg shadow-[0_30px_60px_-10px_rgba(0,0,0,0.1)] w-full border-8 border-white transition-all duration-1000"
-                referrerPolicy="no-referrer"
-              />
-              <div className="absolute -inset-10 bg-orange-600/5 blur-[100px] -z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-1000" />
+            <div className="hidden lg:block lg:relative">
+              {/* Image was removed as per user request */}
             </div>
             <div>
               <SectionHeader 
@@ -569,14 +620,10 @@ export default function App() {
               <p className={`text-lg text-slate-500 mb-12 leading-relaxed font-light ${isRtl ? 'text-xl' : ''}`}>
                 {t('visionDesc')}
               </p>
-              <div className={`grid grid-cols-2 gap-16 mb-16 ${isRtl ? 'rtl' : ''}`}>
-                <div className="space-y-3">
-                  <div className="text-4xl font-serif text-orange-600">15+</div>
-                  <div className="text-[9px] font-bold uppercase tracking-[0.3em] text-slate-400">{t('yearsHeritage')}</div>
-                </div>
-                <div className="space-y-3">
-                  <div className="text-4xl font-serif text-[#0f172a]">Global</div>
-                  <div className="text-[9px] font-bold uppercase tracking-[0.3em] text-slate-400">{t('alumni')}</div>
+              <div className={`mb-16 ${isRtl ? 'rtl' : ''}`}>
+                <div className="bg-orange-50 border-l-4 border-orange-600 p-8 rounded-r-2xl">
+                  <h4 className="text-xl font-bold text-[#0f172a] mb-2">{t('hoursTitle')}</h4>
+                  <p className="text-slate-600 leading-relaxed text-sm">{t('hoursDesc')}</p>
                 </div>
               </div>
               <button className={`flex items-center space-x-4 text-[10px] uppercase tracking-[0.3em] font-bold group ${isRtl ? 'space-x-reverse' : ''}`}>
@@ -746,15 +793,51 @@ export default function App() {
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="py-12 px-6 sm:px-12 bg-white border-t border-slate-100 flex flex-col md:flex-row justify-between items-center gap-8">
-        <div className="text-[10px] text-slate-400 uppercase tracking-[0.3em] text-center md:text-left">
-          &copy; {new Date().getFullYear()} EVEREST ACADEMY • {t('office')}
+      {/* Footer Contact Bar - Flyer Style */}
+      <footer className="relative bg-[#0f172a] text-white pt-16 pb-8 overflow-hidden">
+        <div className="max-w-7xl mx-auto px-6 sm:px-12 flex flex-col md:flex-row justify-between items-center gap-12 z-10 relative">
+          
+          {/* Logo & Small Description */}
+          <div className="flex flex-col items-center md:items-start gap-4">
+            <div className="flex items-center gap-4">
+              <img src={LOGO_URL} className="w-12 h-12 brightness-0 invert" alt="Logo" referrerPolicy="no-referrer" />
+              <div className="flex flex-col">
+                <span className="text-xl font-bold tracking-widest">EVEREST</span>
+                <span className="text-[9px] text-orange-400 tracking-[0.4em] font-bold">{t('academy')}</span>
+              </div>
+            </div>
+            <p className="text-[10px] text-slate-400 max-w-xs text-center md:text-left uppercase tracking-widest leading-loose">
+              {t('heroDesc')}
+            </p>
+          </div>
+
+          {/* Detailed Contact List matching the Bottom of the Image */}
+          <div className="flex flex-col items-center md:items-start gap-6">
+            <div className="flex items-center gap-4 text-orange-400 font-bold text-lg md:text-2xl tracking-tighter">
+              <Phone className="w-6 h-6" />
+              <span>{contactInfo.phones.join('  •  ')}</span>
+            </div>
+            <div className="flex items-center gap-4 text-white/80 font-medium text-sm md:text-lg italic">
+              <MapPin className="w-6 h-6 text-orange-400 shrink-0" />
+              <span className="text-center md:text-left">{t('address')}</span>
+            </div>
+          </div>
+
+          {/* Social / Branding */}
+          <div className="flex flex-col items-center md:items-end gap-6 border-t md:border-t-0 md:border-l border-white/10 pt-8 md:pt-0 md:pl-12">
+            <div className={`flex gap-6 ${isRtl ? 'flex-row-reverse' : ''}`}>
+              <Facebook className="w-6 h-6 hover:text-orange-400 cursor-pointer transition-colors" />
+              <Instagram className="w-6 h-6 hover:text-orange-400 cursor-pointer transition-colors" />
+            </div>
+            <div className="text-[9px] text-slate-500 uppercase tracking-[0.4em]">
+              &copy; {new Date().getFullYear()} Everest Academy
+            </div>
+          </div>
         </div>
-        <div className={`flex items-center gap-12 ${isRtl ? 'flex-row-reverse' : ''}`}>
-          <span className="text-[10px] text-orange-600 font-bold uppercase tracking-[0.5em]">{t('excellence')}</span>
-          <span className="text-[10px] text-[#0f172a] uppercase tracking-[0.5em] font-bold">{t('integrity')}</span>
-          <span className="text-[10px] text-slate-400 uppercase tracking-[0.5em] font-bold">{t('legacy')}</span>
+
+        {/* Decorative Background for Footer */}
+        <div className="absolute top-0 right-0 w-full h-full opacity-10 pointer-events-none">
+          <div className="absolute top-0 right-0 w-96 h-96 bg-orange-600 rounded-full blur-[150px] -translate-y-1/2 translate-x-1/2" />
         </div>
       </footer>
     </div>
