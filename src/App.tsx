@@ -7,7 +7,13 @@ import {
 import { useState, useMemo } from 'react';
 
 // Using the provided images
-const LOGO_URL = '/logo.png';
+const cleanBase = import.meta.env.BASE_URL.endsWith('/') 
+  ? import.meta.env.BASE_URL 
+  : import.meta.env.BASE_URL + '/';
+
+const LOGO_URL = cleanBase + 'logo.png';
+const VIDEO1_URL = cleanBase + 'video1.mp4';
+const VIDEO2_URL = cleanBase + 'video2.mp4';
 
 type Language = 'fr' | 'ar' | 'en';
 
@@ -532,7 +538,7 @@ export default function App() {
                   playsInline 
                   className="w-full h-auto block"
                 >
-                  <source src="/video1.mp4" type="video/mp4" />
+                  <source src={VIDEO1_URL} type="video/mp4" />
                 </video>
                 <div className="absolute inset-0 bg-[#0f172a]/0 group-hover:bg-[#0f172a]/5 transition-colors pointer-events-none" />
               </div>
@@ -562,7 +568,7 @@ export default function App() {
                   playsInline 
                   className="w-full h-auto block"
                 >
-                  <source src="/video2.mp4" type="video/mp4" />
+                  <source src={VIDEO2_URL} type="video/mp4" />
                 </video>
               </div>
             </motion.div>
