@@ -1,8 +1,8 @@
 import { motion, AnimatePresence } from 'motion/react';
 import { 
-  Phone, Mail, Clock, MapPin, ChevronRight, GraduationCap, Trophy, Users, 
+  Phone, Mail, MapPin, ChevronRight, GraduationCap, Trophy, Users, 
   BookOpen, Star, Facebook, Instagram, CheckCircle2, ChevronDown, 
-  ArrowRight, ShieldCheck, Zap, Heart, Languages
+  ArrowRight, Zap, Heart, Languages
 } from 'lucide-react';
 import { useState, useMemo } from 'react';
 
@@ -10,6 +10,7 @@ import { useState, useMemo } from 'react';
 const LOGO_URL = '/logo.png';
 const VIDEO1_URL = '/video1.mp4';
 const VIDEO2_URL = '/video2.mp4';
+const HERO_IMAGE_URL = '/regenerated_image_1777386499521.png';
 
 type Language = 'fr' | 'ar' | 'en';
 
@@ -478,30 +479,11 @@ export default function App() {
               
               {/* Happy Student Image Wrapper */}
               <div className="relative z-10 w-full max-w-lg mx-auto">
-                <motion.div 
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.8 }}
-                  className={`flex items-center gap-3 mb-6 bg-white/80 backdrop-blur-sm p-4 rounded-2xl border border-white shadow-xl w-fit ${isRtl ? 'mr-auto' : 'ml-auto'}`}
-                >
-                  <div className="w-10 h-10 bg-orange-100 rounded-xl flex items-center justify-center">
-                    <Clock className="w-5 h-5 text-orange-600" />
-                  </div>
-                  <div>
-                    <div className="text-[10px] uppercase tracking-widest text-slate-400 font-bold mb-0.5">{t('academyHours')}</div>
-                    <div className="text-sm font-bold text-[#0f172a]">{contactInfo.hours} • {t('open7')}</div>
-                  </div>
-                </motion.div>
                 <img 
-                  src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=1200&auto=format&fit=crop" 
+                  src={HERO_IMAGE_URL} 
                   alt="Student Success" 
-                  className="w-full h-auto object-cover rounded-3xl shadow-[0_50px_100px_-20px_rgba(0,0,0,0.2)] border-8 border-white"
-                  referrerPolicy="no-referrer"
+                  className="w-full h-auto object-cover rounded-3xl shadow-[0_50px_100px_-20px_rgba(0,0,0,0.2)] border-8 border-orange-600"
                 />
-                
-                {/* Triangular Accents like the flyer */}
-                <div className="absolute -bottom-10 -left-10 w-40 h-40 bg-[#43a2d6] opacity-20 rotate-45 -z-10" />
-                <div className="absolute top-10 -right-10 w-32 h-32 border-4 border-orange-600/20 rounded-full -z-10" />
               </div>
             </motion.div>
           </div>
