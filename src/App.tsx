@@ -7,10 +7,10 @@ import {
 import { useState, useMemo } from 'react';
 
 // Using the provided images
-const LOGO_URL = '/logo.png?v=1';
-const VIDEO1_URL = '/video1.mp4?v=1';
-const VIDEO2_URL = '/video2.mp4?v=1';
-const HERO_IMAGE_URL = '/regenerated_image_1777386499521.png?v=1';
+const LOGO_URL = '/logo.png';
+const VIDEO1_URL = '/video1.mp4';
+const VIDEO2_URL = '/video2.mp4';
+const HERO_IMAGE_URL = '/pic1.png';
 const FALLBACK_IMAGE = 'https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=1200&auto=format&fit=crop';
 
 type Language = 'fr' | 'ar' | 'en';
@@ -434,7 +434,6 @@ export default function App() {
                   src={LOGO_URL} 
                   alt="Everest Academy" 
                   className="w-24 h-24 object-contain"
-                  onError={(e) => { e.currentTarget.src = 'https://ui-avatars.com/api/?name=Everest+Academy&background=43a2d6&color=fff'; }}
                 />
                 <div className="flex flex-col">
                   <h1 className="text-4xl lg:text-5xl font-black text-[#0f172a] tracking-tight leading-none mb-2">
@@ -538,18 +537,9 @@ export default function App() {
                   playsInline 
                   preload="auto"
                   className="w-full h-auto block min-h-[200px] bg-slate-100"
-                  onError={(e: any) => {
-                    console.error("Video1 failed to load");
-                    e.currentTarget.style.display = 'none';
-                    const fallback = e.currentTarget.parentElement.querySelector('.video-fallback');
-                    if (fallback) fallback.classList.remove('hidden');
-                  }}
                 >
                   Your browser does not support the video tag.
                 </video>
-                <div className="video-fallback hidden absolute inset-0 flex items-center justify-center bg-slate-200">
-                  <span className="text-slate-400 font-bold uppercase tracking-widest text-xs">Video Heritage</span>
-                </div>
                 <div className="absolute inset-0 bg-[#0f172a]/0 group-hover:bg-[#0f172a]/5 transition-colors pointer-events-none" />
               </div>
             </motion.div>
@@ -580,18 +570,9 @@ export default function App() {
                   playsInline 
                   preload="auto"
                   className="w-full h-auto block min-h-[200px] bg-slate-100"
-                  onError={(e: any) => {
-                    console.error("Video2 failed to load");
-                    e.currentTarget.style.display = 'none';
-                    const fallback = e.currentTarget.parentElement.querySelector('.video-fallback');
-                    if (fallback) fallback.classList.remove('hidden');
-                  }}
                 >
                   Your browser does not support the video tag.
                 </video>
-                <div className="video-fallback hidden absolute inset-0 flex items-center justify-center bg-slate-200">
-                  <span className="text-slate-400 font-bold uppercase tracking-widest text-xs">Video Experience</span>
-                </div>
               </div>
             </motion.div>
           </div>
@@ -850,7 +831,6 @@ export default function App() {
                 src={LOGO_URL} 
                 className="w-12 h-12 brightness-0 invert" 
                 alt="Logo" 
-                onError={(e) => { e.currentTarget.src = 'https://ui-avatars.com/api/?name=Everest+Academy&background=43a2d6&color=fff'; e.currentTarget.classList.remove('brightness-0', 'invert'); }}
               />
               <div className="flex flex-col">
                 <span className="text-xl font-bold tracking-widest">EVEREST</span>
