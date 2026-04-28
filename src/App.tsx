@@ -5,10 +5,12 @@ import {
   ArrowRight, ShieldCheck, Zap, Heart, Languages
 } from 'lucide-react';
 import { useState, useMemo } from 'react';
+import logo from './assets/logo.png';
+import video1 from './assets/video1.mp4';
+import video2 from './assets/video2.mp4';
 
 // Using the provided images
-const LOGO_URL = '/logo.png';
-const SIGN_URL = 'input_file_0.png';
+const LOGO_URL = logo;
 
 type Language = 'fr' | 'ar' | 'en';
 
@@ -396,7 +398,6 @@ export default function App() {
               </button>
             </div>
             <span className="text-orange-500 border border-orange-500/30 px-2 py-0.5 rounded text-[9px]">Status: Admissions Open</span>
-            <span className="flex items-center gap-2 text-white/60"><Clock className="w-3 h-3 text-orange-500" /> {contactInfo.hours}</span>
           </div>
         </div>
       </div>
@@ -479,6 +480,20 @@ export default function App() {
               
               {/* Happy Student Image Wrapper */}
               <div className="relative z-10 w-full max-w-lg mx-auto">
+                <motion.div 
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.8 }}
+                  className={`flex items-center gap-3 mb-6 bg-white/80 backdrop-blur-sm p-4 rounded-2xl border border-white shadow-xl w-fit ${isRtl ? 'mr-auto' : 'ml-auto'}`}
+                >
+                  <div className="w-10 h-10 bg-orange-100 rounded-xl flex items-center justify-center">
+                    <Clock className="w-5 h-5 text-orange-600" />
+                  </div>
+                  <div>
+                    <div className="text-[10px] uppercase tracking-widest text-slate-400 font-bold mb-0.5">{t('academyHours')}</div>
+                    <div className="text-sm font-bold text-[#0f172a]">{contactInfo.hours} • {t('open7')}</div>
+                  </div>
+                </motion.div>
                 <img 
                   src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=1200&auto=format&fit=crop" 
                   alt="Student Success" 
@@ -517,9 +532,10 @@ export default function App() {
               </div>
               <div className="relative rounded-[24px] shadow-2xl border-4 border-white bg-white overflow-hidden group">
                 <video 
-                  src="/video1.mp4" 
+                  src={video1} 
                   controls
                   playsInline 
+                  type="video/mp4"
                   className="w-full h-auto block"
                 />
                 <div className="absolute inset-0 bg-[#0f172a]/0 group-hover:bg-[#0f172a]/5 transition-colors pointer-events-none" />
@@ -546,9 +562,10 @@ export default function App() {
               
               <div className="relative rounded-[24px] shadow-2xl border-4 border-white bg-white overflow-hidden">
                 <video 
-                  src="/video2.mp4" 
+                  src={video2} 
                   controls
                   playsInline 
+                  type="video/mp4"
                   className="w-full h-auto block"
                 />
               </div>
