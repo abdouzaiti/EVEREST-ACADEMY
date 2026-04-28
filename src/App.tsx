@@ -7,10 +7,10 @@ import {
 import { useState, useMemo } from 'react';
 
 // Using the provided images
-const LOGO_URL = '/logo.png';
-const VIDEO1_URL = '/video1.mp4';
-const VIDEO2_URL = '/video2.mp4';
-const HERO_IMAGE_URL = '/pic1.png';
+const LOGO_URL = '/logo.png?v=' + Date.now();
+const VIDEO1_URL = '/video1.mp4?v=' + Date.now();
+const VIDEO2_URL = '/video2.mp4?v=' + Date.now();
+const HERO_IMAGE_URL = '/pic1.png?v=' + Date.now();
 const FALLBACK_IMAGE = 'https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=1200&auto=format&fit=crop';
 
 type Language = 'fr' | 'ar' | 'en';
