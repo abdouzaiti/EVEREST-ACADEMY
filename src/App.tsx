@@ -417,7 +417,6 @@ export default function App() {
                   src={LOGO_URL} 
                   alt="Everest Academy" 
                   className="w-24 h-24 object-contain"
-                  referrerPolicy="no-referrer"
                 />
                 <div className="flex flex-col">
                   <h1 className="text-4xl lg:text-5xl font-black text-[#0f172a] tracking-tight leading-none mb-2">
@@ -529,12 +528,12 @@ export default function App() {
               </div>
               <div className="relative rounded-[24px] shadow-2xl border-4 border-white bg-white overflow-hidden group">
                 <video 
-                  src="/video1.mp4" 
                   controls
                   playsInline 
-                  type="video/mp4"
                   className="w-full h-auto block"
-                />
+                >
+                  <source src="/video1.mp4" type="video/mp4" />
+                </video>
                 <div className="absolute inset-0 bg-[#0f172a]/0 group-hover:bg-[#0f172a]/5 transition-colors pointer-events-none" />
               </div>
             </motion.div>
@@ -559,12 +558,12 @@ export default function App() {
               
               <div className="relative rounded-[24px] shadow-2xl border-4 border-white bg-white overflow-hidden">
                 <video 
-                  src="/video2.mp4" 
                   controls
                   playsInline 
-                  type="video/mp4"
                   className="w-full h-auto block"
-                />
+                >
+                  <source src="/video2.mp4" type="video/mp4" />
+                </video>
               </div>
             </motion.div>
           </div>
@@ -814,7 +813,7 @@ export default function App() {
           {/* Logo & Small Description */}
           <div className="flex flex-col items-center md:items-start gap-4">
             <div className="flex items-center gap-4">
-              <img src={LOGO_URL} className="w-12 h-12 brightness-0 invert" alt="Logo" referrerPolicy="no-referrer" />
+              <img src={LOGO_URL} className="w-12 h-12 brightness-0 invert" alt="Logo" />
               <div className="flex flex-col">
                 <span className="text-xl font-bold tracking-widest">EVEREST</span>
                 <span className="text-[9px] text-orange-400 tracking-[0.4em] font-bold">{t('academy')}</span>
