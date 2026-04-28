@@ -34,9 +34,9 @@ const translations = {
     examPrep: "Préparation aux examens",
     languages: "Enseignement des langues étrangères",
     workshops: "Ateliers éducatifs pour enfants",
-    primaryStage: "Phase Primaire",
-    middleStage: "Phase Moyenne",
-    secondaryStage: "Phase Secondaire",
+    primaryStage: "Maternelle",
+    middleStage: "Moyen",
+    secondaryStage: "Lycée",
     address: "32 rue tahlaiti othmane, Mostaganem zeghloul",
     academicTour: "Visite Académique",
     acceptance: "Taux d'acceptation mondial",
@@ -87,6 +87,8 @@ const translations = {
     preschoolDesc: "Se concentrer sur le jeu créatif, les liens sociaux et les premières compétences cognitives.",
     primaryDesc: "Renforcer les bases académiques fondamentales en mettant l'accent sur le bilinguisme.",
     middleDesc: "Formation de penseurs critiques et de futurs leaders grâce à l'apprentissage analytique.",
+    secondary: "Lycée",
+    secondaryDesc: "Préparation rigoureuse aux examens finaux et orientation vers l'enseignement supérieur.",
     whyEverest: "Pourquoi choisir Everest ?",
     whyEverestDesc: "Découvrez ce qui fait de notre académie la destination de choix pour l'excellence académique et la croissance personnelle.",
     whereFindUs: "Où pouvez-vous nous trouver ?",
@@ -115,9 +117,9 @@ const translations = {
     examPrep: "Exam preparation",
     languages: "Foreign language teaching",
     workshops: "Educational workshops for children",
-    primaryStage: "Primary Stage",
-    middleStage: "Middle Stage",
-    secondaryStage: "Secondary Stage",
+    primaryStage: "Preschool",
+    middleStage: "Middle School",
+    secondaryStage: "High School",
     address: "32 rue tahlaiti othmane, Mostaganem zeghloul",
     academicTour: "Academic Tour",
     acceptance: "Global Acceptance Rate",
@@ -168,6 +170,8 @@ const translations = {
     preschoolDesc: "Focusing on creative play, social bonding, and early cognitive skills.",
     primaryDesc: "Strengthening core academic foundations with an emphasis on bilingualism.",
     middleDesc: "Developing critical thinkers and future leaders through analytical learning.",
+    secondary: "High School",
+    secondaryDesc: "Rigorous preparation for final exams and orientation towards higher education.",
     whyEverest: "Why choose Everest?",
     whyEverestDesc: "Discover what makes our academy the top destination for academic excellence and personal growth.",
     whereFindUs: "Where can you find us?",
@@ -196,9 +200,9 @@ const translations = {
     examPrep: "تحضير للإمتحانات",
     languages: "تعليم اللغات الأجنبية",
     workshops: "ورشات تعليمية للأطفال",
-    primaryStage: "الطور الابتدائي",
-    middleStage: "الطور المتوسط",
-    secondaryStage: "الطور الثانوي",
+    primaryStage: "تحضيري",
+    middleStage: "متوسط",
+    secondaryStage: "ثانوي",
     address: "حي 32 مسكن، طريق تحليتي عثمان، مستغانم زغلول",
     academicTour: "جولة أكاديمية",
     acceptance: "معدل القبول العالمي",
@@ -255,6 +259,8 @@ const translations = {
     preschoolDesc: "التركيز على اللعب الإبداعي، والترابط الاجتماعي، والمهارات المعرفية المبكرة.",
     primaryDesc: "تعزيز الأسس الأكاديمية الأساسية مع التركيز على ثنائية اللغة.",
     middleDesc: "تطوير المفكرين الناقدين وقادة المستقبل من خلال التعلم التحليلي.",
+    secondary: "ثانوي",
+    secondaryDesc: "تحضير مكثف للامتحانات النهائية والتوجيه نحو التعليم العالي.",
     fullName: "الاسم الكامل",
     phoneNumber: "رقم الهاتف"
   }
@@ -339,15 +345,21 @@ export default function App() {
       icon: <GraduationCap className="w-6 h-6" />,
       age: '12-15'
     },
+    { 
+      title: t('secondary'), 
+      desc: t('secondaryDesc'), 
+      icon: <Trophy className="w-6 h-6" />,
+      age: '16-18'
+    },
   ];
 
   const galleryImages = [
-    'https://images.unsplash.com/photo-1544717297-fa32e8f1b40b?q=80&w=800&auto=format&fit=crop',
-    'https://images.unsplash.com/photo-1577891721396-22741c8c0fba?q=80&w=800&auto=format&fit=crop',
-    'https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=800&auto=format&fit=crop',
-    'https://images.unsplash.com/photo-1588072432836-e10032774350?q=80&w=800&auto=format&fit=crop',
-    'https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?q=80&w=800&auto=format&fit=crop',
-    'https://images.unsplash.com/photo-1516627145497-ae6968895b74?q=80&w=800&auto=format&fit=crop',
+    'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?q=80&w=800&auto=format&fit=crop', // Students learning
+    'https://images.unsplash.com/photo-1497633762265-9d179a990aa6?q=80&w=800&auto=format&fit=crop', // Books/Education
+    'https://images.unsplash.com/photo-1571260899304-425eee4c7efc?q=80&w=800&auto=format&fit=crop', // University/School exterior
+    'https://images.unsplash.com/photo-1524178232457-3aa2a19ba1df?q=80&w=800&auto=format&fit=crop', // Modern Classroom
+    'https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=800&auto=format&fit=crop', // Collaboration
+    'https://images.unsplash.com/photo-1564981797816-1043664bf78d?q=80&w=800&auto=format&fit=crop', // Campus architecture
   ];
 
   const servicePoints = [
@@ -360,8 +372,9 @@ export default function App() {
 
   const levelBadgesList = [
     { text: t('primaryStage'), color: 'bg-[#0f172a]', textColor: 'text-white' },
-    { text: t('middleStage'), color: 'bg-[#f97316]', textColor: 'text-white' },
-    { text: t('secondaryStage'), color: 'bg-[#0f172a]', textColor: 'text-white' },
+    { text: t('primary'), color: 'bg-[#f97316]', textColor: 'text-white' },
+    { text: t('middleStage'), color: 'bg-[#0f172a]', textColor: 'text-white' },
+    { text: t('secondaryStage'), color: 'bg-[#f97316]', textColor: 'text-white' },
   ];
 
   return (
@@ -484,6 +497,10 @@ export default function App() {
                   alt="Student Success" 
                   className="w-full h-auto object-cover rounded-3xl shadow-[0_50px_100px_-20px_rgba(0,0,0,0.2)] border-8 border-orange-600"
                 />
+                
+                {/* Triangular Accents like the flyer */}
+                <div className="absolute -bottom-10 -left-10 w-40 h-40 bg-[#43a2d6] opacity-20 rotate-45 -z-10" />
+                <div className="absolute top-10 -right-10 w-32 h-32 border-4 border-orange-600/20 rounded-full -z-10" />
               </div>
             </motion.div>
           </div>
@@ -642,7 +659,7 @@ export default function App() {
             title={t('studyPrograms')}
             light={false}
           />
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {programs.map((p, i) => (
               <motion.div 
                 key={i}
