@@ -5,12 +5,9 @@ import {
   ArrowRight, ShieldCheck, Zap, Heart, Languages
 } from 'lucide-react';
 import { useState, useMemo } from 'react';
-import logo from './assets/logo.png';
-import video1 from './assets/video1.mp4';
-import video2 from './assets/video2.mp4';
 
 // Using the provided images
-const LOGO_URL = logo;
+const LOGO_URL = '/logo.png';
 
 type Language = 'fr' | 'ar' | 'en';
 
@@ -532,7 +529,7 @@ export default function App() {
               </div>
               <div className="relative rounded-[24px] shadow-2xl border-4 border-white bg-white overflow-hidden group">
                 <video 
-                  src={video1} 
+                  src="/video1.mp4" 
                   controls
                   playsInline 
                   type="video/mp4"
@@ -562,7 +559,7 @@ export default function App() {
               
               <div className="relative rounded-[24px] shadow-2xl border-4 border-white bg-white overflow-hidden">
                 <video 
-                  src={video2} 
+                  src="/video2.mp4" 
                   controls
                   playsInline 
                   type="video/mp4"
