@@ -6,14 +6,10 @@ import {
 } from 'lucide-react';
 import { useState, useMemo } from 'react';
 
-import logo from './assets/logo.png';
-import video1 from './assets/video1.mp4';
-import video2 from './assets/video2.mp4';
-
 // Using the provided images
-const LOGO_URL = logo;
-const VIDEO1_URL = video1;
-const VIDEO2_URL = video2;
+const LOGO_URL = '/logo.png';
+const VIDEO1_URL = '/video1.mp4';
+const VIDEO2_URL = '/video2.mp4';
 
 type Language = 'fr' | 'ar' | 'en';
 
@@ -536,6 +532,7 @@ export default function App() {
                 <video 
                   controls
                   playsInline 
+                  preload="auto"
                   className="w-full h-auto block"
                 >
                   <source src={VIDEO1_URL} type="video/mp4" />
@@ -566,6 +563,7 @@ export default function App() {
                 <video 
                   controls
                   playsInline 
+                  preload="auto"
                   className="w-full h-auto block"
                 >
                   <source src={VIDEO2_URL} type="video/mp4" />
