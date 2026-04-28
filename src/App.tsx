@@ -6,14 +6,14 @@ import {
 } from 'lucide-react';
 import { useState, useMemo } from 'react';
 
-// Using the provided images
-const cleanBase = import.meta.env.BASE_URL.endsWith('/') 
-  ? import.meta.env.BASE_URL 
-  : import.meta.env.BASE_URL + '/';
+import logo from './assets/logo.png';
+import video1 from './assets/video1.mp4';
+import video2 from './assets/video2.mp4';
 
-const LOGO_URL = cleanBase + 'logo.png';
-const VIDEO1_URL = cleanBase + 'video1.mp4';
-const VIDEO2_URL = cleanBase + 'video2.mp4';
+// Using the provided images
+const LOGO_URL = logo;
+const VIDEO1_URL = video1;
+const VIDEO2_URL = video2;
 
 type Language = 'fr' | 'ar' | 'en';
 
