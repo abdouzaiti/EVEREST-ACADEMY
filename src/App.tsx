@@ -496,13 +496,13 @@ export default function App() {
                 <img 
                   src={HERO_IMAGE_URL} 
                   alt="Student Success" 
-                  className="w-full h-auto object-cover rounded-3xl shadow-[0_50px_100px_-20px_rgba(0,0,0,0.2)] border-8 border-orange-600"
+                  className="w-full h-auto object-cover rounded-3xl shadow-[0_50px_100px_-20px_rgba(0,0,0,0.3)] border-4 border-orange-600 ring-4 ring-orange-600/10"
                   onError={(e) => { e.currentTarget.src = FALLBACK_IMAGE; }}
                 />
                 
-                {/* Triangular Accents like the flyer */}
-                <div className="absolute -bottom-10 -left-10 w-40 h-40 bg-[#43a2d6] opacity-20 rotate-45 -z-10" />
-                <div className="absolute top-10 -right-10 w-32 h-32 border-4 border-orange-600/20 rounded-full -z-10" />
+                {/* Refined Accents */}
+                <div className="absolute -bottom-6 -left-6 w-32 h-32 bg-[#43a2d6] opacity-10 rotate-45 -z-10 blur-xl" />
+                <div className="absolute top-6 -right-6 w-24 h-24 border-2 border-orange-600/10 rounded-full -z-10" />
               </div>
             </motion.div>
           </div>
@@ -627,31 +627,20 @@ export default function App() {
       </section>
 
       {/* About Section */}
-      <section id="about" className="py-40 bg-slate-50/30">
-        <div className="max-w-7xl mx-auto px-6 sm:px-12">
-          <div className="grid lg:grid-cols-2 gap-32 items-center">
-            <div className="hidden lg:block lg:relative">
-              {/* Image was removed as per user request */}
-            </div>
-            <div>
-              <SectionHeader 
-                subtitle={t('vision')} 
-                title={t('visionTitle')}
-                light={false}
-              />
-              <p className={`text-lg text-slate-500 mb-12 leading-relaxed font-light ${isRtl ? 'text-xl' : ''}`}>
-                {t('visionDesc')}
-              </p>
-              <div className={`mb-16 ${isRtl ? 'rtl' : ''}`}>
-                <div className="bg-orange-50 border-l-4 border-orange-600 p-8 rounded-r-2xl">
-                  <h4 className="text-xl font-bold text-[#0f172a] mb-2">{t('hoursTitle')}</h4>
-                  <p className="text-slate-600 leading-relaxed text-sm">{t('hoursDesc')}</p>
-                </div>
-              </div>
-              <button className={`flex items-center space-x-4 text-[10px] uppercase tracking-[0.3em] font-bold group ${isRtl ? 'space-x-reverse' : ''}`}>
-                <span className="text-orange-600">{t('philosophy')}</span>
-                <ArrowRight className={`w-4 h-4 group-hover:translate-x-2 transition-transform text-[#0f172a] ${isRtl ? 'rotate-180 group-hover:-translate-x-2' : ''}`} />
-              </button>
+      <section id="about" className="py-20 bg-slate-50/30">
+        <div className="max-w-3xl mx-auto px-6 sm:px-12 text-center">
+          <SectionHeader 
+            subtitle={t('vision')} 
+            title={t('visionTitle')}
+            light={false}
+          />
+          <p className={`text-lg text-slate-500 mb-12 leading-relaxed font-light ${isRtl ? 'text-xl' : ''}`}>
+            {t('visionDesc')}
+          </p>
+          <div className={`mb-16 ${isRtl ? 'rtl' : ''}`}>
+            <div className={`bg-orange-50 border-l-4 border-orange-600 p-8 rounded-r-2xl mx-auto max-w-lg ${isRtl ? 'border-l-0 border-r-4 rounded-r-none rounded-l-2xl' : ''}`}>
+              <h4 className="text-xl font-bold text-[#0f172a] mb-2">{t('hoursTitle')}</h4>
+              <p className="text-slate-600 leading-relaxed text-sm">{t('hoursDesc')}</p>
             </div>
           </div>
         </div>
@@ -669,25 +658,30 @@ export default function App() {
             {programs.map((p, i) => (
               <motion.div 
                 key={i}
-                className="group relative bg-[#fafafa] p-12 border border-slate-100 hover:border-orange-600/40 transition-all duration-700 rounded-3xl"
+                className="card-container group"
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1 }}
               >
-                <div className="text-xs uppercase tracking-[0.4em] text-orange-600 mb-8 font-bold opacity-60">{t('level')} {i + 1}</div>
-                <h3 className="text-2xl font-serif mb-6 tracking-wide text-[#0f172a] group-hover:text-orange-600 transition-colors">{p.title}</h3>
-                <p className="text-slate-400 text-sm leading-relaxed mb-10 font-light italic">"{p.desc}"</p>
-                
-                <div className="flex flex-col gap-5 border-t border-slate-100 pt-8 mb-10">
-                  {['Curricular Depth', 'Creative Insight'].map((item, j) => (
-                    <div key={j} className={`flex items-center gap-3 text-[10px] items-center text-[#0f172a] tracking-widest font-bold uppercase ${isRtl ? 'flex-row-reverse' : ''}`}>
-                      <div className="w-1 h-1 bg-orange-600 rounded-full" /> {item}
+                <div className="card-blob" />
+                <div className="card-bg p-8 sm:p-12 flex flex-col justify-between h-full">
+                  <div>
+                    <div className="text-xs uppercase tracking-[0.4em] text-orange-600 mb-8 font-bold opacity-60">{t('level')} {i + 1}</div>
+                    <h3 className="text-2xl font-serif mb-6 tracking-wide text-[#0f172a] group-hover:text-orange-600 transition-colors">{p.title}</h3>
+                    <p className="text-slate-400 text-sm leading-relaxed mb-10 font-light italic">"{p.desc}"</p>
+                    
+                    <div className="flex flex-col gap-5 border-t border-slate-100/50 pt-8 mb-10">
+                      {['Curricular Depth', 'Creative Insight'].map((item, j) => (
+                        <div key={j} className={`flex items-center gap-3 text-[10px] items-center text-[#0f172a] tracking-widest font-bold uppercase ${isRtl ? 'flex-row-reverse' : ''}`}>
+                          <div className="w-1 h-1 bg-orange-600 rounded-full" /> {item}
+                        </div>
+                      ))}
                     </div>
-                  ))}
+                  </div>
+                  
+                  <div className="text-[9px] font-bold uppercase tracking-[0.3em] text-orange-600">{p.age}</div>
                 </div>
-                
-                <div className="text-[9px] font-bold uppercase tracking-[0.3em] text-orange-600">{p.age}</div>
               </motion.div>
             ))}
           </div>
