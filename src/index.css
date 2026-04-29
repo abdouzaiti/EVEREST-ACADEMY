@@ -164,3 +164,64 @@
     @apply font-sans;
   }
 }
+
+/* From Uiverse.io by dylanharriscameron */ 
+.card-container {
+  position: relative;
+  width: 100%;
+  min-height: 480px;
+  border-radius: 24px;
+  z-index: 10;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: stretch;
+  box-shadow: 20px 20px 60px rgba(0,0,0,0.1), -10px -10px 40px rgba(255,255,255,0.5);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.card-bg {
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  right: 4px;
+  bottom: 4px;
+  z-index: 2;
+  background: rgba(255, 255, 255, 0.5); 
+  backdrop-filter: blur(30px);
+  border-radius: 20px;
+  overflow: hidden;
+  outline: 1px solid rgba(0, 0, 0, 0.1); 
+  display: flex;
+  flex-direction: column;
+}
+
+.card-blob {
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  left: 50%;
+  width: 170%;
+  height: 170%;
+  border-radius: 50%;
+  background: linear-gradient(
+    45deg,
+    #003380 0%,
+    #0047AB 40%,
+    #FF8C00 60%,
+    #CC7000 100%
+  );
+  opacity: 0.8;
+  filter: blur(70px);
+  animation: blob-bounce 6s infinite linear;
+  transform-origin: center;
+}
+
+@keyframes blob-bounce {
+  0% { transform: translate(-50%, -50%) rotate(0deg); }
+  25% { transform: translate(-30%, -60%) rotate(90deg); }
+  50% { transform: translate(-50%, -40%) rotate(180deg); }
+  75% { transform: translate(-70%, -60%) rotate(270deg); }
+  100% { transform: translate(-50%, -50%) rotate(360deg); }
+}
