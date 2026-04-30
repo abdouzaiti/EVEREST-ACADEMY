@@ -491,19 +491,8 @@ export default function App() {
             >
               <div className="absolute inset-0 bg-orange-600/5 blur-[120px] rounded-full" />
               
-              {/* Happy Student Image Wrapper */}
-              <div className="relative z-10 w-full max-w-lg mx-auto">
-                <img 
-                  src={HERO_IMAGE_URL} 
-                  alt="Student Success" 
-                  className="w-full h-auto object-cover rounded-3xl shadow-[0_50px_100px_-20px_rgba(0,0,0,0.3)] border-4 border-orange-600 ring-4 ring-orange-600/10"
-                  onError={(e) => { e.currentTarget.src = FALLBACK_IMAGE; }}
-                />
-                
-                {/* Refined Accents */}
-                <div className="absolute -bottom-6 -left-6 w-32 h-32 bg-[#43a2d6] opacity-10 rotate-45 -z-10 blur-xl" />
-                <div className="absolute top-6 -right-6 w-24 h-24 border-2 border-orange-600/10 rounded-full -z-10" />
-              </div>
+              {/* Happy Student Image removed as per user request */}
+              <div className="relative z-10 w-full max-w-lg mx-auto" />
             </motion.div>
           </div>
         </div>
