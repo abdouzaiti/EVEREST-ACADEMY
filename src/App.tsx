@@ -840,8 +840,12 @@ export default function App() {
           {/* Social / Branding */}
           <div className="flex flex-col items-center md:items-end gap-6 border-t md:border-t-0 md:border-l border-white/10 pt-8 md:pt-0 md:pl-12">
             <div className={`flex gap-6 ${isRtl ? 'flex-row-reverse' : ''}`}>
-              <Facebook className="w-6 h-6 hover:text-orange-400 cursor-pointer transition-colors" />
-              <Instagram className="w-6 h-6 hover:text-orange-400 cursor-pointer transition-colors" />
+              <a href="https://web.facebook.com/profile.php?id=61576762983246&locale=fr_FR" target="_blank" rel="noopener noreferrer">
+                <Facebook className="w-6 h-6 hover:text-orange-400 cursor-pointer transition-colors" />
+              </a>
+              <a href="https://www.instagram.com/everest_academy.dz/" target="_blank" rel="noopener noreferrer">
+                <Instagram className="w-6 h-6 hover:text-orange-400 cursor-pointer transition-colors" />
+              </a>
             </div>
             <div className="text-[9px] text-slate-500 uppercase tracking-[0.4em]">
               &copy; {new Date().getFullYear()} Everest Academy
