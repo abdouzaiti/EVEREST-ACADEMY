@@ -4,7 +4,11 @@ import {
   BookOpen, Star, Facebook, Instagram, CheckCircle2, ChevronDown, 
   ArrowRight, Zap, Heart, Languages, Play, Search, Youtube, Twitter, Linkedin
 } from 'lucide-react';
-import { useState, useMemo, cloneElement, ReactNode } from 'react';
+import { useState, useMemo, cloneElement, ReactNode, Fragment } from 'react';
+import HERO_NEW from './assets/images/regenerated_image_1779207110842.png';
+import CLUB_LOGO_NEW from './assets/images/regenerated_image_1779207245162.png';
+import CLUB_IMAGINARIUM_NEW from './assets/images/regenerated_image_1779207827411.png';
+import CLUB_RUN_NEW from './assets/images/regenerated_image_1779208385684.jpg';
 
 // Using the provided images
 const LOGO_URL = '/logo.png';
@@ -411,21 +415,12 @@ export default function App() {
           >
             <div className="rounded-3xl overflow-hidden shadow-[0_50px_100px_-20px_rgba(12,35,74,0.3)] border-4 border-white">
               <img 
-                src="https://images.unsplash.com/photo-1541339907198-e08759dfc3f0?q=80&w=1200&auto=format&fit=crop" 
+                src={HERO_NEW} 
                 alt="Academy building" 
                 className="w-full h-auto object-cover"
               />
             </div>
-            {/* Elements like in the image */}
-            <div className="absolute -bottom-6 -right-6 bg-white p-6 rounded-2xl shadow-xl border border-slate-100 flex items-center gap-4 hidden md:flex">
-              <div className="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center">
-                <GraduationCap className="text-academy-orange w-6 h-6" />
-              </div>
-              <div>
-                <div className="text-xl font-bold text-academy-navy">+1200</div>
-                <div className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">{t('statsStudents')}</div>
-              </div>
-            </div>
+
           </motion.div>
         </div>
       </section>
@@ -537,13 +532,13 @@ export default function App() {
               { 
                 name: "MOSTA RUN CLUB", 
                 tag: "Sport • Santé • Dépassement de soi", 
-                img: "https://images.unsplash.com/photo-1476480862126-209bfaa8edc8?q=80&w=600&auto=format&fit=crop",
-                logo: "https://web.facebook.com/images/fb_icon_325x325.png" // Using a dummy logo placeholder
+                img: CLUB_RUN_NEW,
+                logo: CLUB_LOGO_NEW
               },
               { 
                 name: "EVEREST IMAGINARIUM", 
                 tag: "Pôle culturel • Créativité • Expression", 
-                img: "https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?q=80&w=600&auto=format&fit=crop",
+                img: CLUB_IMAGINARIUM_NEW,
                 logo: LOGO_URL
               }
             ].map((club, i) => (
@@ -556,8 +551,14 @@ export default function App() {
                 transition={{ delay: i * 0.2 }}
               >
                 <div className="p-6 flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-full bg-academy-navy flex items-center justify-center p-2">
-                    <img src={club.logo} className="w-full h-full object-contain brightness-0 invert" alt={club.name} />
+                  <div 
+                    className="w-16 h-16 rounded-full bg-white border border-slate-100 flex items-center justify-center p-2 shrink-0 overflow-hidden"
+                  >
+                    <img 
+                      src={club.logo} 
+                      className="w-[50px] h-[50px] object-contain" 
+                      alt={club.name} 
+                    />
                   </div>
                   <div>
                     <h3 className="text-xs font-black text-academy-navy">{club.name}</h3>
@@ -570,10 +571,6 @@ export default function App() {
               </motion.div>
             ))}
             
-            {/* The circular floating image like in the design */}
-            <div className="absolute -right-12 top-1/2 -translate-y-1/2 w-64 h-64 rounded-full border-[15px] border-white shadow-2xl overflow-hidden hidden xl:block z-10">
-              <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=600&auto=format&fit=crop" className="w-full h-full object-cover" alt="Students" />
-            </div>
           </div>
         </div>
       </section>
@@ -723,23 +720,31 @@ export default function App() {
           </div>
 
           <div className="flex flex-wrap justify-center gap-12 items-center">
-            <div className="flex items-center gap-4">
-              <div className="w-12 h-12 rounded-full border border-academy-orange flex items-center justify-center text-academy-orange shrink-0">
+            <a 
+              href="tel:0796665045" 
+              className="flex items-center gap-4 transition-all hover:opacity-80 active:scale-95 group cursor-pointer"
+            >
+              <div className="w-12 h-12 rounded-full border border-academy-orange flex items-center justify-center text-academy-orange shrink-0 group-hover:bg-academy-orange group-hover:text-white transition-all">
                  <Phone className="w-5 h-5" />
               </div>
               <div className="text-white">
                 <div className="text-xl font-black tracking-tighter">05 59 39 12 11</div>
                 <div className="text-xl font-black tracking-tighter">07 96 66 50 45</div>
               </div>
-            </div>
-            <div className="flex items-center gap-4">
-              <div className="w-12 h-12 rounded-full border border-academy-orange flex items-center justify-center text-academy-orange shrink-0">
+            </a>
+            <a 
+              href="https://maps.app.goo.gl/sY5SWCL2whD4DfvY9" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="flex items-center gap-4 transition-all hover:opacity-80 active:scale-95 group cursor-pointer"
+            >
+              <div className="w-12 h-12 rounded-full border border-academy-orange flex items-center justify-center text-academy-orange shrink-0 group-hover:bg-academy-orange group-hover:text-white transition-all">
                  <MapPin className="w-5 h-5" />
               </div>
-              <div className="text-white">
+              <div className="text-white text-left">
                 <div className="text-sm font-bold leading-tight">Mostaganem, <br/> Zeghloul</div>
               </div>
-            </div>
+            </a>
             <div className="flex items-center gap-4">
               <div className="bg-white p-2 rounded-xl shrink-0">
                  <div className="w-16 h-16 bg-[#000] rounded flex items-center justify-center">
@@ -756,6 +761,37 @@ export default function App() {
         </div>
         <div className="absolute right-0 bottom-0 pointer-events-none opacity-20">
            <svg width="400" height="200" viewBox="0 0 400 200" fill="none"><path d="M0 200C100 200 150 100 400 0H0V200Z" fill="url(#paint0_linear)"/><defs><linearGradient id="paint0_linear" x1="200" y1="0" x2="200" y2="200" gradientUnits="userSpaceOnUse"><stop stopColor="white" stopOpacity="0.2"/><stop offset="1" stopColor="white" stopOpacity="0"/></linearGradient></defs></svg>
+        </div>
+      </section>
+
+      {/* Brand Values Banner */}
+      <section className="py-20 bg-white overflow-hidden">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="flex items-center gap-4 md:gap-12">
+            <div className="h-[2px] bg-academy-orange flex-grow rounded-full shadow-[0_0_10px_rgba(245,130,32,0.1)]"></div>
+            
+            <motion.div 
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              className="flex flex-wrap justify-center items-center gap-2 md:gap-6 shrink-0"
+            >
+              {["APPRENDRE", "PROGRESSER", "S'ÉPANOUIR", "RÉUSSIR"].map((word, idx, arr) => (
+                <Fragment key={word}>
+                  <span className={`text-sm md:text-2xl font-black tracking-[0.2em] transition-colors ${word === "S'ÉPANOUIR" ? "text-academy-orange" : "text-academy-navy"}`}>
+                    {word}
+                  </span>
+                  {idx < arr.length - 1 && (
+                    <div className="flex items-center justify-center">
+                      <div className="w-1.5 h-1.5 rounded-full bg-academy-orange shadow-[0_0_8px_rgba(245,130,32,0.4)]"></div>
+                    </div>
+                  )}
+                </Fragment>
+              ))}
+            </motion.div>
+
+            <div className="h-[2px] bg-academy-orange flex-grow rounded-full shadow-[0_0_10px_rgba(245,130,32,0.1)]"></div>
+          </div>
         </div>
       </section>
 
@@ -802,10 +838,13 @@ export default function App() {
                   <Linkedin size={18} />
                 </a>
              </div>
-             <div className="mt-8 flex items-center gap-2 justify-center md:justify-start">
-                <div className="w-5 h-5 text-academy-orange shrink-0"><Phone size={16}/></div>
-                <span className="text-[12px] font-bold text-slate-500">Everest Academy.dz</span>
-             </div>
+             <a 
+               href="tel:0796665045" 
+               className="mt-8 flex items-center gap-2 justify-center md:justify-start hover:opacity-80 transition-opacity group cursor-pointer"
+             >
+                <div className="w-5 h-5 text-academy-orange shrink-0 group-hover:scale-110 transition-transform"><Phone size={16}/></div>
+                <span className="text-[12px] font-bold text-slate-500 group-hover:text-academy-orange transition-colors">07 96 66 50 45</span>
+             </a>
           </div>
 
           <div>
