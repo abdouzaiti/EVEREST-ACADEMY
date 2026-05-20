@@ -4,7 +4,7 @@ import {
   BookOpen, Star, Facebook, Instagram, CheckCircle2, ChevronDown, 
   ArrowRight, Zap, Heart, Languages, Play, Search, Youtube, Twitter, Linkedin
 } from 'lucide-react';
-import { useState, useMemo, cloneElement, ReactNode, Fragment } from 'react';
+import { useState, useMemo, cloneElement, ReactNode, Fragment, useRef } from 'react';
 import HERO_NEW from './assets/images/regenerated_image_1779207110842.png';
 import CLUB_LOGO_NEW from './assets/images/regenerated_image_1779207245162.png';
 import CLUB_IMAGINARIUM_NEW from './assets/images/regenerated_image_1779207827411.png';
@@ -12,8 +12,7 @@ import CLUB_RUN_NEW from './assets/images/regenerated_image_1779208385684.jpg';
 
 // Using the provided images
 const LOGO_URL = '/logo.png';
-const VIDEO1_URL = '/video1.mp4';
-const VIDEO2_URL = '/video2.mp4';
+const INTRO_VIDEO_URL = '/intro.mp4';
 const HERO_IMAGE_URL = '/pic1.png';
 const FALLBACK_IMAGE = 'https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=1200&auto=format&fit=crop';
 
@@ -223,6 +222,8 @@ const AccordionItem = ({ title, content }: { title: string, content: string }) =
 
 export default function App() {
   const [lang, setLang] = useState<Language>('fr');
+  const [showIntro, setShowIntro] = useState(true);
+  const [videoEnded, setVideoEnded] = useState(false);
   const isRtl = lang === 'ar';
 
   const t = useMemo(() => {
@@ -283,6 +284,34 @@ export default function App() {
     { text: t('middleStage'), color: 'bg-[#0f172a]', textColor: 'text-white' },
     { text: t('secondaryStage'), color: 'bg-[#f97316]', textColor: 'text-white' },
   ];
+
+  if (showIntro) {
+    return (
+      <div className="fixed inset-0 bg-black z-[9999] flex flex-col items-center justify-center">
+        <video 
+          src={INTRO_VIDEO_URL} 
+          className="absolute inset-0 w-full h-full object-cover" 
+          autoPlay
+          playsInline
+          onEnded={() => setVideoEnded(true)}
+        />
+        <div className="relative z-10 w-full h-full pb-32 flex flex-col items-center justify-end pointer-events-none">
+           {videoEnded && (
+             <motion.button 
+               initial={{ opacity: 0, y: 30 }}
+               animate={{ opacity: 1, y: 0 }}
+               transition={{ duration: 0.7 }}
+               onClick={() => setShowIntro(false)}
+               className="pointer-events-auto px-10 py-5 bg-academy-orange text-white text-lg font-bold uppercase tracking-wider rounded-full hover:bg-orange-600 transition-all hover:scale-105 active:scale-95 shadow-[0_10px_30px_rgba(245,130,32,0.3)] hover:shadow-[0_15px_40px_rgba(245,130,32,0.5)] flex items-center gap-3 group"
+             >
+               Enter
+               <ArrowRight className="w-6 h-6 group-hover:translate-x-1 transition-transform" />
+             </motion.button>
+           )}
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div 
@@ -621,13 +650,15 @@ export default function App() {
             </div>
 
             <div className="flex flex-col gap-12">
-              <div className="relative rounded-3xl overflow-hidden shadow-2xl group">
-                <img src="https://images.unsplash.com/photo-1524178232457-3aa2a19ba1df?q=80&w=800&auto=format&fit=crop" className="w-full aspect-video object-cover" alt="Classroom" />
-                <div className="absolute inset-0 bg-academy-navy/20 flex items-center justify-center group-hover:bg-academy-navy/40 transition-all cursor-pointer">
-                  <div className="w-20 h-20 bg-white rounded-full flex items-center justify-center shadow-2xl scale-90 group-hover:scale-100 transition-transform">
-                    <Play className="text-academy-navy fill-academy-navy w-8 h-8 ml-1" />
-                  </div>
-                </div>
+              <div className="relative rounded-3xl overflow-hidden shadow-2xl">
+                <video 
+                  src={INTRO_VIDEO_URL} 
+                  className="w-full aspect-video object-cover bg-academy-navy" 
+                  controls 
+                  poster="https://images.unsplash.com/photo-1524178232457-3aa2a19ba1df?q=80&w=800&auto=format&fit=crop"
+                >
+                  Votre navigateur ne prend pas en charge la balise vidéo.
+                </video>
               </div>
 
               {/* Testimonial Card */}
