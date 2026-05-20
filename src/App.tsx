@@ -333,13 +333,13 @@ export default function App() {
 
   return (
     <div 
-      className={`min-h-screen bg-[#fcfcfc] text-[#0f172a] font-sans selection:bg-orange-100 selection:text-orange-900 ${isRtl ? 'font-serif' : ''}`}
+      className={`min-h-screen overflow-x-hidden bg-[#fcfcfc] text-[#0f172a] font-sans selection:bg-orange-100 selection:text-orange-900 ${isRtl ? 'font-serif' : ''}`}
       dir={isRtl ? 'rtl' : 'ltr'}
     >
       {/* Top Banner */}
       <div className="bg-[#0f172a] text-white/80 py-2 px-6 text-[10px] uppercase font-bold tracking-[0.2em] border-b border-white/5 no-print">
-        <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
-          <div className={`flex items-center gap-8 ${isRtl ? 'flex-row-reverse' : ''}`}>
+        <div className="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2 sm:gap-4">
+          <div className={`flex items-center gap-4 sm:gap-8 ${isRtl ? 'flex-row-reverse' : ''}`}>
             <span className="flex items-center gap-2 hover:text-orange-400 transition-colors cursor-pointer"><Phone className="w-3 h-3 text-orange-500" /> {contactInfo.phones[0]}</span>
             <span className="hidden sm:flex items-center gap-2 hover:text-orange-400 transition-colors cursor-pointer"><Mail className="w-3 h-3 text-orange-500" /> {contactInfo.email}</span>
           </div>
@@ -432,7 +432,7 @@ export default function App() {
               <div className="w-10 h-[2px] bg-academy-orange" />
               <span className="text-xs font-bold text-academy-orange tracking-widest uppercase">{t('heroSubtitle')}</span>
             </div>
-            <h1 className="text-5xl lg:text-7xl font-black text-academy-navy leading-[1.1] mb-8 tracking-tight">
+            <h1 className="text-4xl sm:text-5xl lg:text-7xl font-black text-academy-navy leading-[1.1] mb-8 tracking-tight">
               {t('heroTitle').split('&').map((part, i) => (
                 <span key={i}>
                   {i === 1 && <span className="text-academy-orange">& </span>}
@@ -474,20 +474,20 @@ export default function App() {
 
       {/* Main Pillars Section (Dark Banner with small icons) */}
       <section className="bg-academy-navy py-12 px-6">
-        <div className="max-w-7xl mx-auto grid grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {[
             { icon: <GraduationCap />, title: t('coursSoutien'), sub: t('coursSoutienSub') },
             { icon: <Languages />, title: t('coursLangues'), sub: t('coursLanguesSub') },
             { icon: <Trophy />, title: t('formationsPro'), sub: t('formationsProSub') },
             { icon: <Users />, title: t('lifeAtSchool'), sub: t('lifeAtSchoolSub') },
           ].map((item, idx) => (
-            <div key={idx} className="flex items-center gap-4 text-white/90">
-              <div className="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center shrink-0">
+            <div key={idx} className="flex items-center sm:items-start lg:items-center gap-4 text-white/90">
+              <div className="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center shrink-0 mt-1 lg:mt-0">
                 {cloneElement(item.icon as any, { className: "w-5 h-5 text-white/60" })}
               </div>
               <div>
-                <h3 className="text-sm font-bold tracking-tight">{item.title}</h3>
-                <p className="text-[10px] text-white/40 uppercase tracking-widest">{item.sub}</p>
+                <h3 className="text-sm font-bold tracking-tight mb-1">{item.title}</h3>
+                <p className="text-[10px] text-white/40 uppercase tracking-widest leading-snug">{item.sub}</p>
               </div>
             </div>
           ))}
@@ -499,7 +499,7 @@ export default function App() {
         <div className="max-w-7xl mx-auto px-6">
           <SectionHeader subtitle={t('mainPoles')} title={t('completeFormation')} />
           
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
               { 
                 title: t('coursSoutien'), 
@@ -541,11 +541,11 @@ export default function App() {
                 <h3 className="text-lg font-black text-academy-navy mb-1">{p.title}</h3>
                 <p className="text-[10px] font-bold text-slate-400 mb-8 uppercase tracking-widest">{p.sub}</p>
                 
-                <ul className={`space-y-3 mb-8 ${p.isGrid ? 'grid grid-cols-2 gap-x-4 space-y-0' : ''}`}>
+                <ul className="space-y-3 mb-8">
                   {p.features.map((f, j) => (
-                    <li key={j} className="flex items-center gap-2 text-[12px] text-slate-600 font-medium">
-                      <CheckCircle2 className="w-4 h-4 text-academy-orange shrink-0" />
-                      <span>{f}</span>
+                    <li key={j} className="flex items-start gap-2 text-[12px] text-slate-600 font-medium">
+                      <CheckCircle2 className="w-4 h-4 text-academy-orange shrink-0 mt-0.5" />
+                      <span className="leading-tight">{f}</span>
                     </li>
                   ))}
                 </ul>
@@ -574,7 +574,7 @@ export default function App() {
             </button>
           </div>
 
-          <div className="relative grid grid-cols-2 gap-6">
+          <div className="relative grid grid-cols-1 sm:grid-cols-2 gap-6">
             {[
               { 
                 name: "MOSTA RUN CLUB", 
@@ -624,7 +624,7 @@ export default function App() {
 
       {/* Stats Bar */}
       <section className="bg-academy-navy py-12 px-6">
-        <div className="max-w-7xl mx-auto flex flex-wrap justify-center md:justify-between gap-12 text-white">
+        <div className="max-w-7xl mx-auto grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-8 text-white justify-items-center sm:justify-items-start">
           {[
             { label: t('statsStudents'), val: "+1200", icon: <Users /> },
             { label: t('statsTeachers'), val: "+30", icon: <Users /> },
@@ -632,7 +632,7 @@ export default function App() {
             { label: t('statsFormations'), val: "+15", icon: <GraduationCap /> },
             { label: t('statsCoaching'), val: "100%", icon: <CheckCircle2 /> },
           ].map((s, i) => (
-            <div key={i} className="flex items-center gap-4">
+            <div key={i} className="flex flex-col items-center sm:items-start text-center sm:text-left gap-4">
               <div className="text-academy-orange">
                 {cloneElement(s.icon as any, { className: "w-8 h-8" })}
               </div>
@@ -646,18 +646,18 @@ export default function App() {
       </section>
 
       {/* Why Everest / Video / Testimonial */}
-      <section id="life" className="py-32 bg-[#fcfcfc]">
+      <section id="life" className="py-20 lg:py-32 bg-[#fcfcfc]">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="grid lg:grid-cols-2 gap-20 items-start">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-start">
             <div>
-              <div className="flex flex-col gap-2 mb-12">
+              <div className="flex flex-col gap-2 mb-10 lg:mb-12">
                 <span className="text-[10px] font-black text-academy-orange tracking-widest uppercase">{t('whyEverestSubtitle')}</span>
-                <h2 className="text-4xl font-black text-academy-navy tracking-tight">{t('whyEverestTitle')}</h2>
+                <h2 className="text-3xl lg:text-4xl font-black text-academy-navy tracking-tight">{t('whyEverestTitle')}</h2>
               </div>
               <ul className="space-y-4 mb-12">
                 {["Encadrement de qualité", "Pédagogie innovante", "Suivi personnalisés", "Ouverture internationale", "Infrastructure moderne"].map((f, i) => (
-                  <li key={i} className="flex items-center gap-4 text-sm font-bold text-slate-700">
-                    <CheckCircle2 className="w-5 h-5 text-academy-orange shrink-0" />
+                  <li key={i} className="flex items-start gap-4 text-sm font-bold text-slate-700">
+                    <CheckCircle2 className="w-5 h-5 text-academy-orange shrink-0 mt-0.5" />
                     <span>{f}</span>
                   </li>
                 ))}
@@ -684,19 +684,19 @@ export default function App() {
       </section>
 
       {/* Actualités & Événements */}
-      <section id="news" className="py-32 bg-white">
+      <section id="news" className="py-20 lg:py-32 bg-white">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="flex flex-col md:flex-row justify-between items-end gap-8 mb-16">
+          <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-6 md:gap-8 mb-12 lg:mb-16">
             <div>
               <span className="text-[10px] font-black text-academy-navy tracking-widest uppercase mb-2 block">{t('testimonialTitle')}</span>
-              <h2 className="text-4xl font-black text-academy-navy tracking-tight">{t('testimonialSubtitle')}</h2>
+              <h2 className="text-3xl lg:text-4xl font-black text-academy-navy tracking-tight">{t('testimonialSubtitle')}</h2>
             </div>
             <button className="px-6 py-3 border-2 border-slate-200 text-academy-navy text-[12px] font-bold rounded-lg hover:border-academy-navy transition-all uppercase tracking-widest">
               {t('voirToutesActualites')}
             </button>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
               { title: "Journée portes ouvertes Rejoignez-nous !", date: "20 Mai 2024", type: "Actualité", img: "https://images.unsplash.com/photo-1523580494863-6f3031224c94?q=80&w=600&auto=format&fit=crop" },
               { title: "Atelier Intelligence Artificielle", date: "15 Mai 2024", type: "Événement", img: "https://images.unsplash.com/photo-1591453089816-37bb975b4f4c?q=80&w=600&auto=format&fit=crop" },
@@ -732,8 +732,8 @@ export default function App() {
       </section>
 
       {/* Ready Banner */}
-      <section className="bg-academy-navy py-12 px-6 container mx-auto rounded-3xl overflow-hidden relative mb-20">
-        <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-12 relative z-10">
+      <section className="bg-academy-navy py-12 px-6 lg:px-12 max-w-7xl mx-4 lg:mx-auto rounded-3xl overflow-hidden relative mb-20">
+        <div className="flex flex-col lg:flex-row items-center justify-between gap-12 relative z-10">
           <div className="flex flex-col md:flex-row items-center gap-8">
             <div className="w-20 h-20 rounded-full border-2 border-white/20 flex items-center justify-center shrink-0">
                <GraduationCap className="w-10 h-10 text-white/40" />
