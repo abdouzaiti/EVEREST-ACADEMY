@@ -223,8 +223,26 @@ const AccordionItem = ({ title, content }: { title: string, content: string }) =
 export default function App() {
   const [lang, setLang] = useState<Language>('fr');
   const [showIntro, setShowIntro] = useState(true);
+  const [isMuted, setIsMuted] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
   const isRtl = lang === 'ar';
+
+  useEffect(() => {
+    if (showIntro && videoRef.current) {
+      videoRef.current.muted = false;
+      const playPromise = videoRef.current.play();
+      if (playPromise !== undefined) {
+        playPromise.catch(() => {
+          // Autoplay with sound blocked. Fallback to muted autoplay.
+          if (videoRef.current) {
+            videoRef.current.muted = true;
+            setIsMuted(true);
+            videoRef.current.play().catch(console.error);
+          }
+        });
+      }
+    }
+  }, [showIntro]);
 
   const t = useMemo(() => {
     return (key: keyof typeof translations['fr']) => translations[lang][key] || key;
@@ -287,16 +305,27 @@ export default function App() {
 
   if (showIntro) {
     return (
-      <div className="fixed inset-0 bg-white z-[9999] flex flex-col items-center justify-center">
+      <div 
+        className="fixed inset-0 bg-white z-[9999] flex flex-col items-center justify-center cursor-pointer"
+        onClick={() => {
+          if (videoRef.current) {
+            videoRef.current.muted = false;
+            setIsMuted(false);
+          }
+        }}
+      >
         <video 
           ref={videoRef}
           src={INTRO_VIDEO_URL} 
           className="absolute inset-0 w-full h-full object-contain" 
-          autoPlay
-          muted
           playsInline
           onEnded={() => setShowIntro(false)}
         />
+        {isMuted && (
+           <div className="absolute top-10 left-1/2 -translate-x-1/2 bg-black/50 text-white/80 px-6 py-2 rounded-full text-sm font-medium tracking-wide pointer-events-none animate-pulse">
+             Cliquez n'importe où pour activer le son
+           </div>
+        )}
       </div>
     );
   }
