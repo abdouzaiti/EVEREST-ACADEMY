@@ -223,23 +223,8 @@ const AccordionItem = ({ title, content }: { title: string, content: string }) =
 export default function App() {
   const [lang, setLang] = useState<Language>('fr');
   const [showIntro, setShowIntro] = useState(true);
-  const [videoEnded, setVideoEnded] = useState(false);
-  const [autoplayBlocked, setAutoplayBlocked] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
   const isRtl = lang === 'ar';
-
-  useEffect(() => {
-    if (showIntro && videoRef.current) {
-      const playPromise = videoRef.current.play();
-      if (playPromise !== undefined) {
-        playPromise.catch(() => {
-          // Autoplay with sound is blocked by the browser. We need user interaction.
-          setAutoplayBlocked(true);
-          console.warn("Autoplay was prevented by the browser. Awaiting user interaction.");
-        });
-      }
-    }
-  }, [showIntro]);
 
   const t = useMemo(() => {
     return (key: keyof typeof translations['fr']) => translations[lang][key] || key;
@@ -303,43 +288,14 @@ export default function App() {
   if (showIntro) {
     return (
       <div className="fixed inset-0 bg-white z-[9999] flex flex-col items-center justify-center">
-        {autoplayBlocked && (
-          <div className="absolute inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm">
-            <button 
-              onClick={() => {
-                setAutoplayBlocked(false);
-                if (videoRef.current) {
-                  videoRef.current.play().catch(console.error);
-                }
-              }}
-              className="w-24 h-24 bg-academy-orange/90 rounded-full flex items-center justify-center hover:scale-110 transition-transform cursor-pointer shadow-[0_0_30px_rgba(245,130,32,0.5)]"
-            >
-              <Play className="w-10 h-10 text-white fill-white ml-2" />
-            </button>
-          </div>
-        )}
         <video 
           ref={videoRef}
           src={INTRO_VIDEO_URL} 
           className="absolute inset-0 w-full h-full object-contain" 
           autoPlay
           playsInline
-          onEnded={() => setVideoEnded(true)}
+          onEnded={() => setShowIntro(false)}
         />
-        <div className="relative z-10 w-full h-full pb-32 flex flex-col items-center justify-end pointer-events-none">
-           {videoEnded && (
-             <motion.button 
-               initial={{ opacity: 0, y: 30 }}
-               animate={{ opacity: 1, y: 0 }}
-               transition={{ duration: 0.7 }}
-               onClick={() => setShowIntro(false)}
-               className="pointer-events-auto px-10 py-5 bg-academy-orange text-white text-lg font-bold uppercase tracking-wider rounded-full hover:bg-orange-600 transition-all hover:scale-105 active:scale-95 shadow-[0_10px_30px_rgba(245,130,32,0.3)] hover:shadow-[0_15px_40px_rgba(245,130,32,0.5)] flex items-center gap-3 group"
-             >
-               Enter
-               <ArrowRight className="w-6 h-6 group-hover:translate-x-1 transition-transform" />
-             </motion.button>
-           )}
-        </div>
       </div>
     );
   }
@@ -690,30 +646,6 @@ export default function App() {
                 >
                   Votre navigateur ne prend pas en charge la balise vidéo.
                 </video>
-              </div>
-
-              {/* Testimonial Card */}
-              <div className="bg-white p-10 rounded-3xl shadow-sm border border-slate-100 relative">
-                <div className="text-academy-navy/10 absolute top-8 left-8">
-                  <svg width="40" height="30" viewBox="0 0 40 30" fill="currentColor"><path d="M0 30V15C0 6.71573 6.71573 0 15 0H16V8H15C11.134 8 8 11.134 8 15V18H16V30H0ZM24 30V15C24 6.71573 30.7157 0 39 0H40V8H39C35.134 8 32 11.134 32 15V18H40V30H24Z"/></svg>
-                </div>
-                <div className="relative z-10">
-                  <p className="text-lg italic text-slate-700 mb-8 leading-relaxed font-medium">
-                    "Everest Academy m'a permis de développer mes compétences et de croire en mon potentiel. Une école qui change vraiment la vie !"
-                  </p>
-                  <div className="flex items-center gap-4">
-                    <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=100&auto=format&fit=crop" className="w-12 h-12 rounded-full object-cover" alt="Sara M." />
-                    <div>
-                      <div className="text-sm font-black text-academy-navy">Sara M.</div>
-                      <div className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Étudiante</div>
-                    </div>
-                  </div>
-                </div>
-                <div className="flex justify-center gap-2 mt-8">
-                  <div className="w-2 h-2 rounded-full bg-academy-navy/10" />
-                  <div className="w-2 h-2 rounded-full bg-academy-orange" />
-                  <div className="w-2 h-2 rounded-full bg-academy-navy/10" />
-                </div>
               </div>
             </div>
           </div>
