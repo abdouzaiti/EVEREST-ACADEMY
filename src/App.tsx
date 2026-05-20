@@ -4,7 +4,7 @@ import {
   BookOpen, Star, Facebook, Instagram, CheckCircle2, ChevronDown, 
   ArrowRight, Zap, Heart, Languages, Play, Search, Youtube, Twitter, Linkedin
 } from 'lucide-react';
-import { useState, useMemo, cloneElement, ReactNode, Fragment, useRef } from 'react';
+import { useState, useMemo, cloneElement, ReactNode, Fragment, useRef, useEffect } from 'react';
 import HERO_NEW from './assets/images/regenerated_image_1779207110842.png';
 import CLUB_LOGO_NEW from './assets/images/regenerated_image_1779207245162.png';
 import CLUB_IMAGINARIUM_NEW from './assets/images/regenerated_image_1779207827411.png';
@@ -224,7 +224,22 @@ export default function App() {
   const [lang, setLang] = useState<Language>('fr');
   const [showIntro, setShowIntro] = useState(true);
   const [videoEnded, setVideoEnded] = useState(false);
+  const [autoplayBlocked, setAutoplayBlocked] = useState(false);
+  const videoRef = useRef<HTMLVideoElement>(null);
   const isRtl = lang === 'ar';
+
+  useEffect(() => {
+    if (showIntro && videoRef.current) {
+      const playPromise = videoRef.current.play();
+      if (playPromise !== undefined) {
+        playPromise.catch(() => {
+          // Autoplay with sound is blocked by the browser. We need user interaction.
+          setAutoplayBlocked(true);
+          console.warn("Autoplay was prevented by the browser. Awaiting user interaction.");
+        });
+      }
+    }
+  }, [showIntro]);
 
   const t = useMemo(() => {
     return (key: keyof typeof translations['fr']) => translations[lang][key] || key;
@@ -288,7 +303,23 @@ export default function App() {
   if (showIntro) {
     return (
       <div className="fixed inset-0 bg-white z-[9999] flex flex-col items-center justify-center">
+        {autoplayBlocked && (
+          <div className="absolute inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm">
+            <button 
+              onClick={() => {
+                setAutoplayBlocked(false);
+                if (videoRef.current) {
+                  videoRef.current.play().catch(console.error);
+                }
+              }}
+              className="w-24 h-24 bg-academy-orange/90 rounded-full flex items-center justify-center hover:scale-110 transition-transform cursor-pointer shadow-[0_0_30px_rgba(245,130,32,0.5)]"
+            >
+              <Play className="w-10 h-10 text-white fill-white ml-2" />
+            </button>
+          </div>
+        )}
         <video 
+          ref={videoRef}
           src={INTRO_VIDEO_URL} 
           className="absolute inset-0 w-full h-full object-contain" 
           autoPlay
