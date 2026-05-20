@@ -223,6 +223,7 @@ const AccordionItem = ({ title, content }: { title: string, content: string }) =
 export default function App() {
   const [lang, setLang] = useState<Language>('fr');
   const [showIntro, setShowIntro] = useState(true);
+  const [isMuted, setIsMuted] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
   const isRtl = lang === 'ar';
 
@@ -232,7 +233,12 @@ export default function App() {
       const playPromise = videoRef.current.play();
       if (playPromise !== undefined) {
         playPromise.catch((e) => {
-          console.error("Browser blocked unmuted autoplay. The user must click the screen to start the video.", e);
+          // Si le navigateur bloque l'autoplay avec son, on passe en muet
+          if (videoRef.current) {
+            videoRef.current.muted = true;
+            setIsMuted(true);
+            videoRef.current.play().catch(console.error);
+          }
         });
       }
     }
@@ -304,6 +310,7 @@ export default function App() {
         onClick={() => {
           if (videoRef.current) {
             videoRef.current.muted = false;
+            setIsMuted(false);
             videoRef.current.play().catch(console.error);
           }
         }}
@@ -315,6 +322,11 @@ export default function App() {
           playsInline
           onEnded={() => setShowIntro(false)}
         />
+        {isMuted && (
+           <div className="absolute top-10 left-1/2 -translate-x-1/2 bg-black/50 text-white/80 px-6 py-2 rounded-full text-sm font-medium tracking-wide pointer-events-none animate-pulse">
+             Cliquez n'importe où pour activer le son
+           </div>
+        )}
       </div>
     );
   }
