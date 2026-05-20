@@ -648,7 +648,7 @@ export default function App() {
       {/* Why Everest / Video / Testimonial */}
       <section id="life" className="py-20 lg:py-32 bg-[#fcfcfc]">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-start">
+          <div className="max-w-3xl mx-auto">
             <div>
               <div className="flex flex-col gap-2 mb-10 lg:mb-12">
                 <span className="text-[10px] font-black text-academy-orange tracking-widest uppercase">{t('whyEverestSubtitle')}</span>
@@ -667,18 +667,6 @@ export default function App() {
               </button>
             </div>
 
-            <div className="flex flex-col gap-12">
-              <div className="relative rounded-3xl overflow-hidden shadow-2xl">
-                <video 
-                  src={INTRO_VIDEO_URL} 
-                  className="w-full aspect-video object-cover bg-academy-navy" 
-                  controls 
-                  poster="https://images.unsplash.com/photo-1524178232457-3aa2a19ba1df?q=80&w=800&auto=format&fit=crop"
-                >
-                  Votre navigateur ne prend pas en charge la balise vidéo.
-                </video>
-              </div>
-            </div>
           </div>
         </div>
       </section>
