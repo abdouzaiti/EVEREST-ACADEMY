@@ -287,10 +287,10 @@ export default function App() {
 
   if (showIntro) {
     return (
-      <div className="fixed inset-0 bg-black z-[9999] flex flex-col items-center justify-center">
+      <div className="fixed inset-0 bg-white z-[9999] flex flex-col items-center justify-center">
         <video 
           src={INTRO_VIDEO_URL} 
-          className="absolute inset-0 w-full h-full object-cover" 
+          className="absolute inset-0 w-full h-full object-contain" 
           autoPlay
           playsInline
           onEnded={() => setVideoEnded(true)}
