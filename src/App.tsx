@@ -778,32 +778,33 @@ export default function App() {
       </section>
 
       {/* Brand Values Banner */}
-      <section className="py-20 bg-white overflow-hidden">
+      <section className="py-12 md:py-20 bg-white overflow-hidden">
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex items-center gap-4 md:gap-12">
-            <div className="h-[2px] bg-academy-orange flex-grow rounded-full shadow-[0_0_10px_rgba(245,130,32,0.1)]"></div>
+            <div className="hidden md:block h-[2px] bg-academy-orange flex-grow rounded-full shadow-[0_0_10px_rgba(245,130,32,0.1)]"></div>
             
             <motion.div 
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
-              className="flex flex-wrap justify-center items-center gap-2 md:gap-6 shrink-0"
+              className="flex flex-col md:flex-row justify-center items-center gap-4 md:gap-6 shrink-0 w-full md:w-auto"
             >
               {["APPRENDRE", "PROGRESSER", "S'ÉPANOUIR", "RÉUSSIR"].map((word, idx, arr) => (
                 <Fragment key={word}>
-                  <span className={`text-sm md:text-2xl font-black tracking-[0.2em] transition-colors ${word === "S'ÉPANOUIR" ? "text-academy-orange" : "text-academy-navy"}`}>
+                  <span className={`text-xl md:text-2xl font-black tracking-[0.2em] transition-colors ${word === "S'ÉPANOUIR" ? "text-academy-orange" : "text-academy-navy"}`}>
                     {word}
                   </span>
                   {idx < arr.length - 1 && (
                     <div className="flex items-center justify-center">
-                      <div className="w-1.5 h-1.5 rounded-full bg-academy-orange shadow-[0_0_8px_rgba(245,130,32,0.4)]"></div>
+                      <div className="hidden md:block w-1.5 h-1.5 rounded-full bg-academy-orange shadow-[0_0_8px_rgba(245,130,32,0.4)]"></div>
+                      <div className="md:hidden w-1 h-6 bg-slate-100 rounded-full"></div>
                     </div>
                   )}
                 </Fragment>
               ))}
             </motion.div>
 
-            <div className="h-[2px] bg-academy-orange flex-grow rounded-full shadow-[0_0_10px_rgba(245,130,32,0.1)]"></div>
+            <div className="hidden md:block h-[2px] bg-academy-orange flex-grow rounded-full shadow-[0_0_10px_rgba(245,130,32,0.1)]"></div>
           </div>
         </div>
       </section>
