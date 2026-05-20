@@ -293,6 +293,7 @@ export default function App() {
           src={INTRO_VIDEO_URL} 
           className="absolute inset-0 w-full h-full object-contain" 
           autoPlay
+          muted
           playsInline
           onEnded={() => setShowIntro(false)}
         />
