@@ -219,19 +219,43 @@ const dummyTestimonials = [
     quote: "Une expérience exceptionnelle qui m'a permis d'atteindre mes objectifs académiques et personnels au niveau supérieur.",
     name: "Yassine B.",
     designation: "Étudiant en Langues",
-    src: "https://images.unsplash.com/photo-1544717305-2782549b5136?q=80&w=800&auto=format&fit=crop"
+    src: "/ac1.jpg"
   },
   {
     quote: "Les professeurs sont excellents et l'ambiance est vraiment stimulante pour réussir sa formation rapidement et efficacement.",
     name: "Amina K.",
     designation: "Formation Agent de voyage",
-    src: "https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=800&auto=format&fit=crop"
+    src: "/ac2.jpg"
   },
   {
     quote: "J'ai énormément progressé grâce au suivi personnalisé et à la pédagogie innovante offerte par toute l'équipe de l'académie.",
     name: "Karim M.",
     designation: "Cours de Soutien",
-    src: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=800&auto=format&fit=crop"
+    src: "/ac3.jpg"
+  },
+  {
+    quote: "Une pédagogie adaptée et des enseignants toujours à l'écoute. Je recommande vivement pour tous les niveaux.",
+    name: "Sarah L.",
+    designation: "Cours de langues",
+    src: "/ac4.jpg"
+  },
+  {
+    quote: "L'académie m'a fourni tous les outils nécessaires pour démarrer ma carrière dans les meilleures conditions.",
+    name: "Mohamed R.",
+    designation: "Formation Professionnelle",
+    src: "/ac5.jpg"
+  },
+  {
+    quote: "Le cadre et l'encadrement sont idéals pour se concentrer sur ses études et développer ses compétences.",
+    name: "Lina T.",
+    designation: "Soutien Scolaire",
+    src: "/ac6.jpg"
+  },
+  {
+    quote: "Grâce aux cours intensifs, j'ai pu valider mon année avec mention. Un grand merci à toute l'équipe.",
+    name: "Ilyes D.",
+    designation: "Étudiant universitaire",
+    src: "/ac7.jpg"
   }
 ];
 
