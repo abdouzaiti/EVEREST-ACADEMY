@@ -380,30 +380,7 @@ export default function App() {
         <div className="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2 sm:gap-4">
           <div className={`flex items-center gap-4 sm:gap-8 ${isRtl ? 'flex-row-reverse' : ''}`}>
             <span className="flex items-center gap-2 hover:text-orange-400 transition-colors cursor-pointer"><Phone className="w-3 h-3 text-orange-500" /> {contactInfo.phones[0]}</span>
-            <span className="hidden sm:flex items-center gap-2 hover:text-orange-400 transition-colors cursor-pointer"><Mail className="w-3 h-3 text-orange-500" /> {contactInfo.email}</span>
-          </div>
-          <div className={`flex items-center gap-6 ${isRtl ? 'flex-row-reverse' : ''}`}>
-            <div className="flex bg-white/10 rounded-lg p-0.5 border border-white/10">
-              <button 
-                onClick={() => setLang('fr')}
-                className={`px-3 py-1 rounded text-[9px] transition-all ${lang === 'fr' ? 'bg-orange-600 text-white shadow-lg' : 'text-white/50 hover:text-white'}`}
-              >
-                FR
-              </button>
-              <button 
-                onClick={() => setLang('en')}
-                className={`px-3 py-1 rounded text-[9px] transition-all ${lang === 'en' ? 'bg-orange-600 text-white shadow-lg' : 'text-white/50 hover:text-white'}`}
-              >
-                EN
-              </button>
-              <button 
-                onClick={() => setLang('ar')}
-                className={`px-3 py-1 rounded text-[9px] transition-all font-bold ${lang === 'ar' ? 'bg-orange-600 text-white shadow-lg' : 'text-white/50 hover:text-white'}`}
-              >
-                AR
-              </button>
-            </div>
-            <span className="text-orange-500 border border-orange-500/30 px-2 py-0.5 rounded text-[9px]">Status: Admissions Open</span>
+            <span className="flex items-center gap-2 hover:text-orange-400 transition-colors cursor-pointer"><Mail className="w-3 h-3 text-orange-500" /> {contactInfo.email}</span>
           </div>
         </div>
       </div>
@@ -445,7 +422,7 @@ export default function App() {
               {t('inscription')}
             </button>
             <div className="flex bg-slate-100 rounded-lg p-1 border border-slate-200">
-              {['fr', 'ar'].map((l) => (
+              {['fr', 'ar', 'en'].map((l) => (
                 <button 
                   key={l}
                   onClick={() => setLang(l as Language)}
