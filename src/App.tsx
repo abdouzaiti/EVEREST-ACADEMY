@@ -68,7 +68,15 @@ const translations = {
     address: "32 rue tahlaiti othmane, Mostaganem zeghloul",
     open7: "Ouvert 7j/7",
     fullName: "Nom Complet",
-    phoneNumber: "Numéro de Téléphone"
+    phoneNumber: "Numéro de Téléphone",
+    coursSoutienFeatures: ["Toutes les matières", "Suivi personnalisé", "Méthodes efficaces", "Préparation aux examens"],
+    coursLanguesFeatures: ["Français", "Anglais", "Allemand", "Russe", "Turc", "Espagnol"],
+    formationsProFeatures: ["Agent de voyage", "Ressources humaines", "Comptabilité & Fiscalité", "Marketing", "Intelligence artificielle"],
+    lifeAtSchoolFeatures: ["Accompagnement", "Événements & ateliers", "Projets collaboratifs", "Réseau & opportunités"],
+    whyEverestFeatures: ["Encadrement de qualité", "Pédagogie innovante", "Suivi personnalisés", "Ouverture internationale", "Infrastructure moderne"],
+    brandValues: ["APPRENDRE", "PROGRESSER", "S'ÉPANOUIR", "RÉUSSIR"],
+    runClubTag: "Sport • Santé • Dépassement de soi",
+    imaginariumTag: "Pôle culturel • Créativité • Expression"
   },
   en: {
     academy: "Academy",
@@ -119,7 +127,15 @@ const translations = {
     address: "32 rue tahlaiti othmane, Mostaganem zeghloul",
     open7: "Open 7j/7",
     fullName: "Full Name",
-    phoneNumber: "Phone Number"
+    phoneNumber: "Phone Number",
+    coursSoutienFeatures: ["All subjects", "Personalized support", "Effective methods", "Exam preparation"],
+    coursLanguesFeatures: ["French", "English", "German", "Russian", "Turkish", "Spanish"],
+    formationsProFeatures: ["Travel agent", "Human resources", "Accounting & Tax", "Marketing", "Artificial intelligence"],
+    lifeAtSchoolFeatures: ["Support", "Events & workshops", "Collaborative projects", "Network & opportunities"],
+    whyEverestFeatures: ["Quality supervision", "Innovative pedagogy", "Personalized follow-up", "International opening", "Modern infrastructure"],
+    brandValues: ["LEARN", "PROGRESS", "FLOURISH", "SUCCEED"],
+    runClubTag: "Sport • Health • Self-transcendence",
+    imaginariumTag: "Cultural Hub • Creativity • Expression"
   },
   ar: {
     academy: "الأكاديمية",
@@ -170,7 +186,15 @@ const translations = {
     address: "حي 32 مسكن، طريق تحليتي عثمان، مستغانم زغلول",
     open7: "مفتوح 7/7",
     fullName: "الاسم الكامل",
-    phoneNumber: "رقم الهاتف"
+    phoneNumber: "رقم الهاتف",
+    coursSoutienFeatures: ["جميع المواد", "متابعة شخصية", "طرق فعالة", "التحضير للامتحانات"],
+    coursLanguesFeatures: ["الفرنسية", "الإنجليزية", "الألمانية", "الروسية", "التركية", "الإسبانية"],
+    formationsProFeatures: ["وكيل سفر", "الموارد البشرية", "المحاسبة والضرائب", "التسويق", "الذكاء الاصطناعي"],
+    lifeAtSchoolFeatures: ["مرافقة", "فعاليات وورش عمل", "مشاريع تعاونية", "شبكة علاقات وفرص"],
+    whyEverestFeatures: ["تأطير عالي الجودة", "بيداغوجيا مبتكرة", "متابعة شخصية", "انفتاح دولي", "بنية تحتية حديثة"],
+    brandValues: ["تعلّم", "تقدّم", "ازدهر", "انجح"],
+    runClubTag: "رياضة • صحة • تجاوز الذات",
+    imaginariumTag: "قطب ثقافي • إبداع • تعبير"
   }
 };
 
@@ -214,50 +238,146 @@ const AccordionItem = ({ title, content }: { title: string, content: string }) =
 
 import { CircularTestimonials } from './components/CircularTestimonials';
 
-const dummyTestimonials = [
-  {
-    quote: "بيئة تعليمية ممتعة ومحفزة للأعمار بين 4 و17 سنة. يركز البرنامج على تطوير مهارات المستقبل من خلال ورشات التكنولوجيا والبرمجة، تنمية التفكير والمنطق، تحسين اللغات (الإنجليزية، الفرنسية، والإسبانية)، بالإضافة إلى أنشطة القراءة والكتابة.",
-    name: "SUMMER CAMP 2026",
-    designation: "",
-    src: "/ac1.jpg"
-  },
-  {
-    quote: "مساحة إبداعية مخصصة لتنمية مواهب الأطفال واكتشاف شغفهم. يتضمن البرنامج ورشات متنوعة وممتعة تشمل المسرح، السينما، الرسم، النحت وصناعة المجسمات، الروبوتيك والبرمجة، الطبخ الصحي، والأشغال اليدوية، لخطوات ثابتة نحو مستقبل أفضل.",
-    name: "برنامج هوايتي للأطفال",
-    designation: "اكتشف... جرّب... أبدع!",
-    src: "/ac2.jpg"
-  },
-  {
-    quote: 'برنامج صيفي ترفيهي وتعليمي متكامل للأطفال والشباب تحت شعار "نتعلم.. نمرح.. ننمو معاً". يقدم تجربة غنية تشمل ورشات الروبوتيك والبرمجة، الأنشطة الرياضية (كالسباحة والتنس)، دعم اللغات والقرآن الكريم، بالإضافة إلى برنامج الهوايات والفنون، في بيئة آمنة تضمن المتعة والفائدة.',
-    name: "مَخيم صَيفي استثنائي",
-    designation: "SUMMER CAMP 2026",
-    src: "/ac3.jpg"
-  },
-  {
-    quote: "برنامج رياضي حيوي وممتع مخصص للأعمار من 4 إلى 17 سنة ضمن المخيم الصيفي. يهدف البرنامج إلى اكتشاف طاقات الأطفال وبناء صداقات جديدة من خلال نشاطات رياضية متنوعة تشمل السباحة، كرة القدم، التنس، ومجموعة من الرياضات المسلية في بيئة آمنة ومحفزة.",
-    name: "الأنشطة الرياضية الصيفية",
-    designation: "نشاط . صداقة . متعة",
-    src: "/ac4.jpg"
-  },
-  {
-    quote: "دورات مخصصة لتعليم اللغة الألمانية وتطوير مهارات التواصل بطريقة بسيطة، سريعة، وفعالة. يضمن البرنامج مستويين متوافقين مع وتيرة تقدمك: المستوى الأول للمبتدئين (A1 · A2) والمستوى الثاني المتوسط (B1 · B2) بمدة 3 أشهر لكل منهما، مع الاستفادة من شهر مجاني خاص بالمحادثة. تركز الدورة على المحادثات التطبيقية، الاستماع، والمتابعة الشخصية مع مرونة في أوقات الدراسة وطرق الدفع.",
-    name: "دورات اللغة الألمانية",
-    designation: "تَعلم بثقة.. وتَحدث مع العالم!",
-    src: "/ac5.jpg"
-  },
-  {
-    quote: "دورة مكثفة مخصصة لتطوير مهارات التواصل باللغة الفرنسية خلال 3 أشهر فقط. تم تصميم البرنامج لمساعدتك على التحدث بثقة وسلاسة في مختلف مواقف الحياة اليومية والمهنية، من خلال التركيز على التعبير الشفهي، إثراء الرصيد اللغوي، والمحادثات التطبيقية. تضمن الدورة متابعة شخصية وفعالة مع مرونة في أوقات الدراسة (صباحاً/مساءً) لنتائج ملموسة منذ الأسابيع الأولى.",
-    name: "دورات اللغة الفرنسية",
-    designation: "تَحدث الفرنسية.. لِيستمع إليك العالم!",
-    src: "/ac6.jpg"
-  },
-  {
-    quote: "دورات متكاملة لتعلم اللغتين الألمانية والإسبانية وتطوير مهارات التواصل بأسلوب سريع وفعال. يرتكز البرنامج على مستويين لكل لغة: المستوى الأول للمبتدئين (A1 · A2) والمستوى الثاني المتوسط (B1 · B2) ممتدة على مدار 3 أشهر، مع الاستفادة من شهر مجاني خاص بالمحادثة. تشمل الدورة ورشات تطبيقية، تدريبات استماع، ومحاكاة لمواقف واقعية لضمان التطور السريع.",
-    name: "دورات اللغتين الألمانية والإسبانية",
-    designation: "برنامج واحد.. لغتان مختلفتان!",
-    src: "/ac7.jpg"
+const getTestimonials = (lang: Language) => {
+  if (lang === 'fr') {
+    return [
+      {
+        quote: "Un environnement d'apprentissage amusant et stimulant pour les 4 à 17 ans. Le programme se concentre sur le développement des compétences de demain avec des ateliers de technologie et codage, développement de la logique, perfectionnement des langues (Anglais, Français, Espagnol), et activités de lecture et écriture.",
+        name: "SUMMER CAMP 2026",
+        designation: "",
+        src: "/ac1.jpg"
+      },
+      {
+        quote: "Un espace créatif dédié au développement des talents des enfants et à la découverte de leurs passions. Le programme propose des ateliers variés et amusants incluant le théâtre, le cinéma, le dessin, la sculpture, la robotique, la cuisine saine, et les travaux manuels, pour avancer vers un bel avenir.",
+        name: "Programme Mes Loisirs",
+        designation: "Découvrez... Expérimentez... Créez !",
+        src: "/ac2.jpg"
+      },
+      {
+        quote: "Un programme complet de divertissement et d'apprentissage pour les jeunes sous le thème \"Apprendre, s'amuser, grandir ensemble\". Offre une expérience riche avec des ateliers de robotique, codage, activités sportives (natation, tennis), soutien en langues et Coran, et arts, dans un environnement sécurisé.",
+        name: "Camp d'été exceptionnel",
+        designation: "SUMMER CAMP 2026",
+        src: "/ac3.jpg"
+      },
+      {
+        quote: "Un programme sportif dynamique et amusant pour les 4 à 17 ans dans le cadre du camp d'été. Vise à révéler l'énergie des enfants et créer de nouvelles amitiés à travers diverses activités sportives (natation, football, tennis) dans un environnement sûr et stimulant.",
+        name: "Activités Sportives d'Été",
+        designation: "Activité . Amitié . Plaisir",
+        src: "/ac4.jpg"
+      },
+      {
+        quote: "Cours dédiés à l'apprentissage de la langue allemande pour développer les compétences en communication de manière simple et rapide. Deux niveaux: Débutant (A1-A2) et Intermédiaire (B1-B2) de 3 mois chacun, avec un mois gratuit de conversation. Accent sur la pratique, l'écoute, et un accompagnement personnalisé.",
+        name: "Cours de Langue Allemande",
+        designation: "Apprenez avec confiance... parlez au monde !",
+        src: "/ac5.jpg"
+      },
+      {
+        quote: "Un cours intensif pour développer les compétences en communication en français en 3 mois seulement. Conçu pour vous aider à parler couramment dans diverses situations. L'accent est mis sur l'expression orale, l'enrichissement du vocabulaire, avec des suivis personnalisés et des horaires flexibles.",
+        name: "Cours de Langue Française",
+        designation: "Parlons français... que le monde vous écoute !",
+        src: "/ac6.jpg"
+      },
+      {
+        quote: "Cours intégrés pour apprendre l'allemand et l'espagnol, et développer les compétences de communication rapidement. Deux niveaux pour chaque langue (A1-A2 et B1-B2) sur 3 mois, avec un mois gratuit de conversation. Le cours inclut des ateliers pratiques, écoute, et simulations de scénarios réels.",
+        name: "Cours Allemand et Espagnol",
+        designation: "Un programme... deux langues !",
+        src: "/ac7.jpg"
+      }
+    ];
   }
-];
+
+  if (lang === 'en') {
+    return [
+      {
+        quote: "A fun and stimulating learning environment for ages 4 to 17. The program focuses on developing future skills through tech and coding workshops, logic development, language improvement (English, French, Spanish), alongside reading and writing activities.",
+        name: "SUMMER CAMP 2026",
+        designation: "",
+        src: "/ac1.jpg"
+      },
+      {
+        quote: "A creative space dedicated to developing children's talents and discovering their passions. The program features diverse and fun workshops including theater, cinema, drawing, sculpture, robotics, healthy cooking, and crafts, for steady steps towards a better future.",
+        name: "My Hobbies Program",
+        designation: "Discover... Experiment... Create!",
+        src: "/ac2.jpg"
+      },
+      {
+        quote: "A comprehensive recreational and educational summer program for kids and youth under the motto \"Learn.. Have fun.. Grow together\". Offers a rich experience with robotics, coding, sports (swimming, tennis), languages, Quran support, and arts, in a safe environment.",
+        name: "Exceptional Summer Camp",
+        designation: "SUMMER CAMP 2026",
+        src: "/ac3.jpg"
+      },
+      {
+        quote: "A vibrant and fun sports program for ages 4 to 17 as part of the summer camp. Aims to discover kids' energy and build new friendships through various sports activities including swimming, football, tennis, in a safe and stimulating environment.",
+        name: "Summer Sports Activities",
+        designation: "Activity . Friendship . Fun",
+        src: "/ac4.jpg"
+      },
+      {
+        quote: "Dedicated courses to learn German and develop communication skills simply, fast, and effectively. Two levels: Beginner (A1-A2) and Intermediate (B1-B2) lasting 3 months each, with a free conversation month. Focus on practical conversations, listening, and personalized support.",
+        name: "German Language Courses",
+        designation: "Learn with confidence... speak to the world!",
+        src: "/ac5.jpg"
+      },
+      {
+        quote: "An intensive course to develop French communication skills in just 3 months. Designed to help you speak fluently in various daily and professional situations. Focuses on oral expression, vocabulary enrichment, with personalized tracking and flexible study times.",
+        name: "French Language Courses",
+        designation: "Speak French... let the world hear you!",
+        src: "/ac6.jpg"
+      },
+      {
+        quote: "Integrated courses to learn German and Spanish, developing communication skills quickly and effectively. Two levels per language (A1-A2 and B1-B2) over 3 months, with a free conversation month. Includes practical workshops, listening practice, and real-life scenario simulations.",
+        name: "German and Spanish Courses",
+        designation: "One program... two different languages!",
+        src: "/ac7.jpg"
+      }
+    ];
+  }
+
+  return [
+    {
+      quote: "بيئة تعليمية ممتعة ومحفزة للأعمار بين 4 و17 سنة. يركز البرنامج على تطوير مهارات المستقبل من خلال ورشات التكنولوجيا والبرمجة، تنمية التفكير والمنطق، تحسين اللغات (الإنجليزية، الفرنسية، والإسبانية)، بالإضافة إلى أنشطة القراءة والكتابة.",
+      name: "SUMMER CAMP 2026",
+      designation: "",
+      src: "/ac1.jpg"
+    },
+    {
+      quote: "مساحة إبداعية مخصصة لتنمية مواهب الأطفال واكتشاف شغفهم. يتضمن البرنامج ورشات متنوعة وممتعة تشمل المسرح، السينما، الرسم، النحت وصناعة المجسمات، الروبوتيك والبرمجة، الطبخ الصحي، والأشغال اليدوية، لخطوات ثابتة نحو مستقبل أفضل.",
+      name: "برنامج هوايتي للأطفال",
+      designation: "اكتشف... جرّب... أبدع!",
+      src: "/ac2.jpg"
+    },
+    {
+      quote: 'برنامج صيفي ترفيهي وتعليمي متكامل للأطفال والشباب تحت شعار "نتعلم.. نمرح.. ننمو معاً". يقدم تجربة غنية تشمل ورشات الروبوتيك والبرمجة، الأنشطة الرياضية (كالسباحة والتنس)، دعم اللغات والقرآن الكريم، بالإضافة إلى برنامج الهوايات والفنون، في بيئة آمنة تضمن المتعة والفائدة.',
+      name: "مَخيم صَيفي استثنائي",
+      designation: "SUMMER CAMP 2026",
+      src: "/ac3.jpg"
+    },
+    {
+      quote: "برنامج رياضي حيوي وممتع مخصص للأعمار من 4 إلى 17 سنة ضمن المخيم الصيفي. يهدف البرنامج إلى اكتشاف طاقات الأطفال وبناء صداقات جديدة من خلال نشاطات رياضية متنوعة تشمل السباحة، كرة القدم، التنس، ومجموعة من الرياضات المسلية في بيئة آمنة ومحفزة.",
+      name: "الأنشطة الرياضية الصيفية",
+      designation: "نشاط . صداقة . متعة",
+      src: "/ac4.jpg"
+    },
+    {
+      quote: "دورات مخصصة لتعليم اللغة الألمانية وتطوير مهارات التواصل بطريقة بسيطة، سريعة، وفعالة. يضمن البرنامج مستويين متوافقين مع وتيرة تقدمك: المستوى الأول للمبتدئين (A1 · A2) والمستوى الثاني المتوسط (B1 · B2) بمدة 3 أشهر لكل منهما، مع الاستفادة من شهر مجاني خاص بالمحادثة. تركز الدورة على المحادثات التطبيقية، الاستماع، والمتابعة الشخصية مع مرونة في أوقات الدراسة وطرق الدفع.",
+      name: "دورات اللغة الألمانية",
+      designation: "تَعلم بثقة.. وتَحدث مع العالم!",
+      src: "/ac5.jpg"
+    },
+    {
+      quote: "دورة مكثفة مخصصة لتطوير مهارات التواصل باللغة الفرنسية خلال 3 أشهر فقط. تم تصميم البرنامج لمساعدتك على التحدث بثقة وسلاسة في مختلف مواقف الحياة اليومية والمهنية، من خلال التركيز على التعبير الشفهي، إثراء الرصيد اللغوي، والمحادثات التطبيقية. تضمن الدورة متابعة شخصية وفعالة مع مرونة في أوقات الدراسة (صباحاً/مساءً) لنتائج ملموسة منذ الأسابيع الأولى.",
+      name: "دورات اللغة الفرنسية",
+      designation: "تَحدث الفرنسية.. لِيستمع إليك العالم!",
+      src: "/ac6.jpg"
+    },
+    {
+      quote: "دورات متكاملة لتعلم اللغتين الألمانية والإسبانية وتطوير مهارات التواصل بأسلوب سريع وفعال. يرتكز البرنامج على مستويين لكل لغة: المستوى الأول للمبتدئين (A1 · A2) والمستوى الثاني المتوسط (B1 · B2) ممتدة على مدار 3 أشهر، مع الاستفادة من شهر مجاني خاص بالمحادثة. تشمل الدورة ورشات تطبيقية، تدريبات استماع، ومحاكاة لمواقف واقعية لضمان التطور السريع.",
+      name: "دورات اللغتين الألمانية والإسبانية",
+      designation: "برنامج واحد.. لغتان مختلفتان!",
+      src: "/ac7.jpg"
+    }
+  ];
+};
 
 export default function App() {
   const [lang, setLang] = useState<Language>('fr');
@@ -379,7 +499,6 @@ export default function App() {
       <div className="bg-[#0f172a] text-white/80 py-2 px-6 text-[10px] uppercase font-bold tracking-[0.2em] border-b border-white/5 no-print">
         <div className="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2 sm:gap-4">
           <div className={`flex items-center gap-4 sm:gap-8 ${isRtl ? 'flex-row-reverse' : ''}`}>
-            <span className="flex items-center gap-2 hover:text-orange-400 transition-colors cursor-pointer"><Phone className="w-3 h-3 text-orange-500" /> {contactInfo.phones[0]}</span>
             <span className="flex items-center gap-2 hover:text-orange-400 transition-colors cursor-pointer"><Mail className="w-3 h-3 text-orange-500" /> {contactInfo.email}</span>
           </div>
         </div>
@@ -478,7 +597,7 @@ export default function App() {
             className="relative lg:-mr-12"
           >
             <CircularTestimonials 
-              testimonials={dummyTestimonials} 
+              testimonials={getTestimonials(lang)} 
               colors={{
                 name: "#0f172a",
                 designation: "#f58220",
@@ -530,26 +649,26 @@ export default function App() {
                 title: t('coursSoutien'), 
                 sub: t('coursSoutienSub'), 
                 icon: <BookOpen />, 
-                features: ["Toutes les matières", "Suivi personnalisé", "Méthodes efficaces", "Préparation aux examens"] 
+                features: t('coursSoutienFeatures') as string[]
               },
               { 
                 title: t('coursLangues'), 
                 sub: t('coursLanguesSub'), 
                 icon: <Languages />, 
-                features: ["Français", "Anglais", "Allemand", "Russe", "Turc", "Espagnol"],
+                features: t('coursLanguesFeatures') as string[],
                 isGrid: true
               },
               { 
                 title: t('formationsPro'), 
                 sub: t('formationsProSub'), 
                 icon: <GraduationCap />, 
-                features: ["Agent de voyage", "Ressources humaines", "Comptabilité & Fiscalité", "Marketing", "Intelligence artificielle"] 
+                features: t('formationsProFeatures') as string[]
               },
               { 
                 title: t('lifeAtSchool'), 
                 sub: t('lifeAtSchoolSub'), 
                 icon: <Users />, 
-                features: ["Accompagnement", "Événements & ateliers", "Projets collaboratifs", "Réseau & opportunités"] 
+                features: t('lifeAtSchoolFeatures') as string[]
               },
             ].map((p, i) => (
               <motion.div 
@@ -610,13 +729,13 @@ export default function App() {
             {[
               { 
                 name: "MOSTA RUN CLUB", 
-                tag: "Sport • Santé • Dépassement de soi", 
+                tag: t('runClubTag'), 
                 img: CLUB_RUN_NEW,
                 logo: CLUB_LOGO_NEW
               },
               { 
                 name: "EVEREST IMAGINARIUM", 
-                tag: "Pôle culturel • Créativité • Expression", 
+                tag: t('imaginariumTag'), 
                 img: CLUB_IMAGINARIUM_NEW,
                 logo: LOGO_URL
               }
@@ -686,7 +805,7 @@ export default function App() {
               <h2 className="text-3xl lg:text-4xl font-black text-academy-navy tracking-tight">{t('whyEverestTitle')}</h2>
             </div>
             <ul className="grid sm:grid-cols-2 gap-x-8 gap-y-4 mb-4 text-left">
-              {["Encadrement de qualité", "Pédagogie innovante", "Suivi personnalisés", "Ouverture internationale", "Infrastructure moderne"].map((f, i) => (
+              {(t('whyEverestFeatures') as string[]).map((f, i) => (
                 <li key={i} className="flex items-center gap-4 text-sm font-bold text-slate-700">
                   <CheckCircle2 className="w-5 h-5 text-academy-orange shrink-0" />
                   <span>{f}</span>
@@ -768,9 +887,9 @@ export default function App() {
               viewport={{ once: true }}
               className="flex flex-col md:flex-row justify-center items-center gap-4 md:gap-6 shrink-0 w-full md:w-auto"
             >
-              {["APPRENDRE", "PROGRESSER", "S'ÉPANOUIR", "RÉUSSIR"].map((word, idx, arr) => (
+              {(t('brandValues') as string[]).map((word, idx, arr) => (
                 <Fragment key={word}>
-                  <span className={`text-xl md:text-2xl font-black tracking-[0.2em] transition-colors ${word === "S'ÉPANOUIR" ? "text-academy-orange" : "text-academy-navy"}`}>
+                  <span className={`text-xl md:text-2xl font-black tracking-[0.2em] transition-colors ${idx === 2 ? "text-academy-orange" : "text-academy-navy"}`}>
                     {word}
                   </span>
                   {idx < arr.length - 1 && (
@@ -800,7 +919,7 @@ export default function App() {
               </div>
             </div>
             <p className="text-[11px] text-slate-400 font-bold uppercase tracking-widest leading-loose">
-              PLUS QU'UNE ÉCOLE, <br/> UN CENTRE DE FORMATION & DE CULTURE
+              {t('heroSubtitle')} <br/> {t('heroTitle')}
             </p>
           </div>
 
