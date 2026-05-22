@@ -285,18 +285,23 @@ export const CircularTestimonials = ({
         .image-container {
           position: relative;
           width: 100%;
-          height: 24rem;
+          height: 16rem;
           perspective: 1000px;
+        }
+        @media (min-width: 768px) {
+          .image-container {
+            height: 24rem;
+          }
         }
         .testimonial-image {
           position: absolute;
           left: 0;
           right: 0;
           margin: 0 auto;
-          max-width: 80%;
+          max-width: 100%;
           height: 100%;
           width: auto;
-          object-fit: cover;
+          object-fit: contain;
           border-radius: 1.5rem;
           box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
         }
