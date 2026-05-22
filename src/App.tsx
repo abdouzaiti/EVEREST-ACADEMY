@@ -696,53 +696,6 @@ export default function App() {
         </div>
       </section>
 
-      {/* Actualités & Événements */}
-      <section id="news" className="py-20 lg:py-32 bg-white">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-6 md:gap-8 mb-12 lg:mb-16">
-            <div>
-              <span className="text-[10px] font-black text-academy-navy tracking-widest uppercase mb-2 block">{t('testimonialTitle')}</span>
-              <h2 className="text-3xl lg:text-4xl font-black text-academy-navy tracking-tight">{t('testimonialSubtitle')}</h2>
-            </div>
-            <button className="px-6 py-3 border-2 border-slate-200 text-academy-navy text-[12px] font-bold rounded-lg hover:border-academy-navy transition-all uppercase tracking-widest">
-              {t('voirToutesActualites')}
-            </button>
-          </div>
-
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
-            {[
-              { title: "Journée portes ouvertes Rejoignez-nous !", date: "20 Mai 2024", type: "Actualité", img: "https://images.unsplash.com/photo-1523580494863-6f3031224c94?q=80&w=600&auto=format&fit=crop" },
-              { title: "Atelier Intelligence Artificielle", date: "15 Mai 2024", type: "Événement", img: "https://images.unsplash.com/photo-1591453089816-37bb975b4f4c?q=80&w=600&auto=format&fit=crop" },
-              { title: "Sortie Mosta Run Club à la montagne", date: "10 Mai 2024", type: "Club", img: "https://images.unsplash.com/photo-1476480862126-209bfaa8edc8?q=80&w=600&auto=format&fit=crop" },
-              { title: "Nouvelle formation Agent de voyage", date: "05 Mai 2024", type: "Formation", img: "https://images.unsplash.com/photo-1436491865332-7a61a109c0f3?q=80&w=600&auto=format&fit=crop" }
-            ].map((news, i) => (
-              <motion.div 
-                key={i}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1 }}
-                className="bg-white rounded-3xl overflow-hidden shadow-sm border border-slate-100 hover:shadow-xl transition-all group cursor-pointer"
-              >
-                <div className="h-48 overflow-hidden relative">
-                  <img src={news.img} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" alt={news.title} />
-                  <div className="absolute top-4 left-4">
-                    <span className="bg-academy-orange text-white text-[8px] font-black uppercase px-3 py-1 rounded-full shadow-lg">{news.type}</span>
-                  </div>
-                </div>
-                <div className="p-6">
-                  <div className="text-[9px] font-bold text-slate-400 uppercase tracking-widest mb-3">{news.date}</div>
-                  <h3 className="text-sm font-black text-academy-navy mb-4 group-hover:text-academy-orange transition-colors line-clamp-2 h-10">{news.title}</h3>
-                  <div className="flex items-center gap-2 text-[10px] font-black text-academy-navy/60 uppercase tracking-widest group-hover:text-academy-orange transition-colors">
-                    <span>LIRE PLUS</span>
-                    <ArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
-                  </div>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* Ready Banner */}
       <section className="bg-academy-navy py-12 px-6 lg:px-12 max-w-7xl mx-4 lg:mx-auto rounded-3xl overflow-hidden relative mb-20">
