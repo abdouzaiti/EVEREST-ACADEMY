@@ -216,45 +216,45 @@ import { CircularTestimonials } from './components/CircularTestimonials';
 
 const dummyTestimonials = [
   {
-    quote: "Une expérience exceptionnelle qui m'a permis d'atteindre mes objectifs académiques et personnels au niveau supérieur.",
-    name: "Yassine B.",
-    designation: "Étudiant en Langues",
+    quote: "بيئة تعليمية ممتعة ومحفزة للأعمار بين 4 و17 سنة. يركز البرنامج على تطوير مهارات المستقبل من خلال ورشات التكنولوجيا والبرمجة، تنمية التفكير والمنطق، تحسين اللغات (الإنجليزية، الفرنسية، والإسبانية)، بالإضافة إلى أنشطة القراءة والكتابة.",
+    name: "SUMMER CAMP 2026",
+    designation: "",
     src: "/ac1.jpg"
   },
   {
-    quote: "Les professeurs sont excellents et l'ambiance est vraiment stimulante pour réussir sa formation rapidement et efficacement.",
-    name: "Amina K.",
-    designation: "Formation Agent de voyage",
+    quote: "مساحة إبداعية مخصصة لتنمية مواهب الأطفال واكتشاف شغفهم. يتضمن البرنامج ورشات متنوعة وممتعة تشمل المسرح، السينما، الرسم، النحت وصناعة المجسمات، الروبوتيك والبرمجة، الطبخ الصحي، والأشغال اليدوية، لخطوات ثابتة نحو مستقبل أفضل.",
+    name: "برنامج هوايتي للأطفال",
+    designation: "اكتشف... جرّب... أبدع!",
     src: "/ac2.jpg"
   },
   {
-    quote: "J'ai énormément progressé grâce au suivi personnalisé et à la pédagogie innovante offerte par toute l'équipe de l'académie.",
-    name: "Karim M.",
-    designation: "Cours de Soutien",
+    quote: 'برنامج صيفي ترفيهي وتعليمي متكامل للأطفال والشباب تحت شعار "نتعلم.. نمرح.. ننمو معاً". يقدم تجربة غنية تشمل ورشات الروبوتيك والبرمجة، الأنشطة الرياضية (كالسباحة والتنس)، دعم اللغات والقرآن الكريم، بالإضافة إلى برنامج الهوايات والفنون، في بيئة آمنة تضمن المتعة والفائدة.',
+    name: "مَخيم صَيفي استثنائي",
+    designation: "SUMMER CAMP 2026",
     src: "/ac3.jpg"
   },
   {
-    quote: "Une pédagogie adaptée et des enseignants toujours à l'écoute. Je recommande vivement pour tous les niveaux.",
-    name: "Sarah L.",
-    designation: "Cours de langues",
+    quote: "برنامج رياضي حيوي وممتع مخصص للأعمار من 4 إلى 17 سنة ضمن المخيم الصيفي. يهدف البرنامج إلى اكتشاف طاقات الأطفال وبناء صداقات جديدة من خلال نشاطات رياضية متنوعة تشمل السباحة، كرة القدم، التنس، ومجموعة من الرياضات المسلية في بيئة آمنة ومحفزة.",
+    name: "الأنشطة الرياضية الصيفية",
+    designation: "نشاط . صداقة . متعة",
     src: "/ac4.jpg"
   },
   {
-    quote: "L'académie m'a fourni tous les outils nécessaires pour démarrer ma carrière dans les meilleures conditions.",
-    name: "Mohamed R.",
-    designation: "Formation Professionnelle",
+    quote: "دورات مخصصة لتعليم اللغة الألمانية وتطوير مهارات التواصل بطريقة بسيطة، سريعة، وفعالة. يضمن البرنامج مستويين متوافقين مع وتيرة تقدمك: المستوى الأول للمبتدئين (A1 · A2) والمستوى الثاني المتوسط (B1 · B2) بمدة 3 أشهر لكل منهما، مع الاستفادة من شهر مجاني خاص بالمحادثة. تركز الدورة على المحادثات التطبيقية، الاستماع، والمتابعة الشخصية مع مرونة في أوقات الدراسة وطرق الدفع.",
+    name: "دورات اللغة الألمانية",
+    designation: "تَعلم بثقة.. وتَحدث مع العالم!",
     src: "/ac5.jpg"
   },
   {
-    quote: "Le cadre et l'encadrement sont idéals pour se concentrer sur ses études et développer ses compétences.",
-    name: "Lina T.",
-    designation: "Soutien Scolaire",
+    quote: "دورة مكثفة مخصصة لتطوير مهارات التواصل باللغة الفرنسية خلال 3 أشهر فقط. تم تصميم البرنامج لمساعدتك على التحدث بثقة وسلاسة في مختلف مواقف الحياة اليومية والمهنية، من خلال التركيز على التعبير الشفهي، إثراء الرصيد اللغوي، والمحادثات التطبيقية. تضمن الدورة متابعة شخصية وفعالة مع مرونة في أوقات الدراسة (صباحاً/مساءً) لنتائج ملموسة منذ الأسابيع الأولى.",
+    name: "دورات اللغة الفرنسية",
+    designation: "تَحدث الفرنسية.. لِيستمع إليك العالم!",
     src: "/ac6.jpg"
   },
   {
-    quote: "Grâce aux cours intensifs, j'ai pu valider mon année avec mention. Un grand merci à toute l'équipe.",
-    name: "Ilyes D.",
-    designation: "Étudiant universitaire",
+    quote: "دورات متكاملة لتعلم اللغتين الألمانية والإسبانية وتطوير مهارات التواصل بأسلوب سريع وفعال. يرتكز البرنامج على مستويين لكل لغة: المستوى الأول للمبتدئين (A1 · A2) والمستوى الثاني المتوسط (B1 · B2) ممتدة على مدار 3 أشهر، مع الاستفادة من شهر مجاني خاص بالمحادثة. تشمل الدورة ورشات تطبيقية، تدريبات استماع، ومحاكاة لمواقف واقعية لضمان التطور السريع.",
+    name: "دورات اللغتين الألمانية والإسبانية",
+    designation: "برنامج واحد.. لغتان مختلفتان!",
     src: "/ac7.jpg"
   }
 ];
