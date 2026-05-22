@@ -255,7 +255,9 @@ export const CircularTestimonials = ({
               onMouseLeave={() => setHoverPrev(false)}
               aria-label="Previous testimonial"
             >
-              <FaArrowLeft size={28} color={colorArrowFg} />
+              <span className="rtl:rotate-180 transition-transform flex items-center justify-center">
+                <FaArrowLeft size={28} color={colorArrowFg} />
+              </span>
             </button>
             <button
               className="arrow-button next-button"
@@ -267,7 +269,9 @@ export const CircularTestimonials = ({
               onMouseLeave={() => setHoverNext(false)}
               aria-label="Next testimonial"
             >
-              <FaArrowRight size={28} color={colorArrowFg} />
+              <span className="rtl:rotate-180 transition-transform flex items-center justify-center">
+                <FaArrowRight size={28} color={colorArrowFg} />
+              </span>
             </button>
           </div>
         </div>
@@ -343,7 +347,7 @@ export const CircularTestimonials = ({
         }
         @media (min-width: 768px) {
           .testimonial-content {
-            text-align: left;
+            text-align: start;
           }
           .arrow-buttons {
              justify-content: flex-start;

@@ -838,7 +838,7 @@ export default function App() {
               <div className="w-12 h-12 rounded-full border border-academy-orange flex items-center justify-center text-academy-orange shrink-0 group-hover:bg-academy-orange group-hover:text-white transition-all">
                  <Phone className="w-5 h-5" />
               </div>
-              <div className="text-white">
+              <div className="text-white text-left" dir="ltr">
                 <div className="text-xl font-black tracking-tighter">05 59 39 12 11</div>
                 <div className="text-xl font-black tracking-tighter">07 96 66 50 45</div>
               </div>
@@ -856,60 +856,13 @@ export default function App() {
                 <div className="text-sm font-bold leading-tight">Mostaganem, <br/> Zeghloul</div>
               </div>
             </a>
-            <div className="flex items-center gap-4">
-              <div className="bg-white p-2 rounded-xl shrink-0">
-                 <div className="w-16 h-16 bg-[#000] rounded flex items-center justify-center">
-                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://www.instagram.com/everest_academy.dz/" className="w-full h-full object-contain" alt="QR Code" />
-                 </div>
-              </div>
-              <div className="text-white text-[10px] font-bold uppercase tracking-widest leading-relaxed">
-                {t('scanFollow').split(' ').map((word, i) => (
-                  <span key={i} className="block">{word}</span>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="absolute right-0 bottom-0 pointer-events-none opacity-20">
-           <svg width="400" height="200" viewBox="0 0 400 200" fill="none"><path d="M0 200C100 200 150 100 400 0H0V200Z" fill="url(#paint0_linear)"/><defs><linearGradient id="paint0_linear" x1="200" y1="0" x2="200" y2="200" gradientUnits="userSpaceOnUse"><stop stopColor="white" stopOpacity="0.2"/><stop offset="1" stopColor="white" stopOpacity="0"/></linearGradient></defs></svg>
-        </div>
-      </section>
-
-      {/* Brand Values Banner */}
-      <section className="py-12 md:py-20 bg-white overflow-hidden">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="flex items-center gap-4 md:gap-12">
-            <div className="hidden md:block h-[2px] bg-academy-orange flex-grow rounded-full shadow-[0_0_10px_rgba(245,130,32,0.1)]"></div>
-            
-            <motion.div 
-              initial={{ opacity: 0, scale: 0.95 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              className="flex flex-col md:flex-row justify-center items-center gap-4 md:gap-6 shrink-0 w-full md:w-auto"
-            >
-              {(t('brandValues') as string[]).map((word, idx, arr) => (
-                <Fragment key={word}>
-                  <span className={`text-xl md:text-2xl font-black tracking-[0.2em] transition-colors ${idx === 2 ? "text-academy-orange" : "text-academy-navy"}`}>
-                    {word}
-                  </span>
-                  {idx < arr.length - 1 && (
-                    <div className="flex items-center justify-center">
-                      <div className="hidden md:block w-1.5 h-1.5 rounded-full bg-academy-orange shadow-[0_0_8px_rgba(245,130,32,0.4)]"></div>
-                      <div className="md:hidden w-1 h-6 bg-slate-100 rounded-full"></div>
-                    </div>
-                  )}
-                </Fragment>
-              ))}
-            </motion.div>
-
-            <div className="hidden md:block h-[2px] bg-academy-orange flex-grow rounded-full shadow-[0_0_10px_rgba(245,130,32,0.1)]"></div>
           </div>
         </div>
       </section>
 
       {/* Footer */}
       <footer className="bg-slate-50 border-t border-slate-100 pt-20 pb-10">
-        <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 lg:grid-cols-4 gap-16 mb-20 text-center md:text-left">
+        <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 lg:grid-cols-3 gap-16 mb-20 text-center md:text-left">
           <div className="flex flex-col gap-6">
             <div className="flex items-center gap-3 justify-center md:justify-start">
               <img src={LOGO_URL} alt="Everest Academy" className="w-12 h-12 object-contain" />
@@ -943,31 +896,14 @@ export default function App() {
                 <a href="https://www.instagram.com/everest_academy.dz/" target="_blank" className="w-10 h-10 rounded-full bg-white shadow-sm border border-slate-100 flex items-center justify-center text-academy-navy hover:bg-academy-orange hover:text-white transition-all">
                   <Instagram size={18} />
                 </a>
-                <a href="#" target="_blank" className="w-10 h-10 rounded-full bg-white shadow-sm border border-slate-100 flex items-center justify-center text-academy-navy hover:bg-academy-orange hover:text-white transition-all">
-                  <Youtube size={18} />
-                </a>
-                <a href="#" target="_blank" className="w-10 h-10 rounded-full bg-white shadow-sm border border-slate-100 flex items-center justify-center text-academy-navy hover:bg-academy-orange hover:text-white transition-all">
-                  <Linkedin size={18} />
-                </a>
              </div>
              <a 
                href="tel:0796665045" 
                className="mt-8 flex items-center gap-2 justify-center md:justify-start hover:opacity-80 transition-opacity group cursor-pointer"
              >
                 <div className="w-5 h-5 text-academy-orange shrink-0 group-hover:scale-110 transition-transform"><Phone size={16}/></div>
-                <span className="text-[12px] font-bold text-slate-500 group-hover:text-academy-orange transition-colors">07 96 66 50 45</span>
+                <span className="text-[12px] font-bold text-slate-500 group-hover:text-academy-orange transition-colors inline-block" dir="ltr">07 96 66 50 45</span>
              </a>
-          </div>
-
-          <div>
-             <h3 className="text-xs font-black text-academy-navy uppercase tracking-widest mb-8">{t('newsletter')}</h3>
-             <p className="text-[12px] text-slate-500 mb-6">{t('newsletterDesc')}</p>
-             <div className="flex">
-                <input type="email" placeholder={t('yourEmail')} className="bg-white border border-slate-200 px-4 py-3 rounded-l-lg text-[12px] font-medium w-full focus:outline-none focus:border-academy-orange transition-colors" />
-                <button className="bg-academy-orange text-white px-4 py-3 rounded-r-lg hover:bg-orange-600 transition-colors">
-                  <ArrowRight size={18} />
-                </button>
-             </div>
           </div>
         </div>
         
