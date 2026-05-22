@@ -176,16 +176,8 @@ const translations = {
 
 import { Badge } from '@/components/ui/badge-2';
 
-const SectionHeader = ({ title, subtitle, light = false }: { title: string, subtitle: string, light?: boolean }) => (
+const SectionHeader = ({ title, light = false }: { title: string, light?: boolean }) => (
   <div className="text-center max-w-3xl mx-auto mb-16 px-6">
-    <motion.div
-      initial={{ opacity: 0, y: 10 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      className={`text-[10px] font-bold uppercase tracking-[0.4em] mb-4 ${light ? 'text-orange-400' : 'text-orange-600'}`}
-    >
-      {subtitle}
-    </motion.div>
     <h2 className={`text-4xl md:text-6xl font-serif mb-6 tracking-tight ${light ? 'text-white' : 'text-[#0f172a]'}`}>
       {title}
     </h2>
@@ -219,6 +211,29 @@ const AccordionItem = ({ title, content }: { title: string, content: string }) =
     </div>
   );
 };
+
+import { CircularTestimonials } from './components/CircularTestimonials';
+
+const dummyTestimonials = [
+  {
+    quote: "Une expérience exceptionnelle qui m'a permis d'atteindre mes objectifs académiques et personnels au niveau supérieur.",
+    name: "Yassine B.",
+    designation: "Étudiant en Langues",
+    src: "https://images.unsplash.com/photo-1544717305-2782549b5136?q=80&w=800&auto=format&fit=crop"
+  },
+  {
+    quote: "Les professeurs sont excellents et l'ambiance est vraiment stimulante pour réussir sa formation rapidement et efficacement.",
+    name: "Amina K.",
+    designation: "Formation Agent de voyage",
+    src: "https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=800&auto=format&fit=crop"
+  },
+  {
+    quote: "J'ai énormément progressé grâce au suivi personnalisé et à la pédagogie innovante offerte par toute l'équipe de l'académie.",
+    name: "Karim M.",
+    designation: "Cours de Soutien",
+    src: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=800&auto=format&fit=crop"
+  }
+];
 
 export default function App() {
   const [lang, setLang] = useState<Language>('fr');
@@ -421,12 +436,13 @@ export default function App() {
       </nav>
 
       {/* Hero Section */}
-      <section className="relative pt-20 pb-32 overflow-hidden bg-white">
+      <section className="relative pt-8 md:pt-12 pb-12 overflow-hidden bg-white">
         <div className="max-w-7xl mx-auto px-6 sm:px-12 grid lg:grid-cols-2 gap-16 items-center">
           <motion.div
             initial={{ opacity: 0, x: isRtl ? 50 : -50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
+            className="lg:-mt-32"
           >
             <div className="flex items-center gap-2 mb-6">
               <div className="w-10 h-[2px] bg-academy-orange" />
@@ -458,16 +474,24 @@ export default function App() {
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1 }}
-            className="relative"
+            className="relative lg:-mr-12"
           >
-            <div className="rounded-3xl overflow-hidden shadow-[0_50px_100px_-20px_rgba(12,35,74,0.3)] border-4 border-white">
-              <img 
-                src={HERO_NEW} 
-                alt="Academy building" 
-                className="w-full h-auto object-cover"
-              />
-            </div>
-
+            <CircularTestimonials 
+              testimonials={dummyTestimonials} 
+              colors={{
+                name: "#0f172a",
+                designation: "#f58220",
+                testimony: "#64748b",
+                arrowBackground: "#ffffff",
+                arrowForeground: "#0f172a",
+                arrowHoverBackground: "#f58220",
+              }}
+              fontSizes={{
+                name: "1.25rem",
+                designation: "0.875rem",
+                quote: "1rem",
+              }}
+            />
           </motion.div>
         </div>
       </section>
@@ -495,9 +519,9 @@ export default function App() {
       </section>
 
       {/* Main Pillars Detailed Cards */}
-      <section id="programs" className="py-32 bg-[#fcfcfc]">
+      <section id="programs" className="pb-20 lg:pb-24 pt-8 bg-[#fcfcfc]">
         <div className="max-w-7xl mx-auto px-6">
-          <SectionHeader subtitle={t('mainPoles')} title={t('completeFormation')} />
+          <SectionHeader title={t('completeFormation')} />
           
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
@@ -533,24 +557,34 @@ export default function App() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1 }}
-                className="bg-white rounded-3xl p-8 shadow-sm border border-slate-100 hover:shadow-xl hover:-translate-y-2 transition-all group flex flex-col h-full"
+                className="relative bg-white rounded-3xl p-8 shadow-sm border border-slate-100 hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 group flex flex-col h-full overflow-hidden"
               >
-                <div className="w-16 h-16 rounded-full bg-academy-orange flex items-center justify-center mb-8 shadow-lg shadow-orange-100 group-hover:scale-110 transition-transform">
-                  {cloneElement(p.icon as any, { className: "w-8 h-8 text-white" })}
+                <div className="absolute inset-0 bg-gradient-to-br from-transparent to-academy-orange/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
+                <div className="absolute top-0 left-0 w-32 h-32 bg-academy-orange/10 rounded-full blur-3xl transform -translate-x-16 -translate-y-16 group-hover:translate-x-0 group-hover:-translate-y-0 transition-transform duration-700 pointer-events-none" />
+                <div className="absolute inset-0 rounded-3xl border border-transparent group-hover:border-academy-orange/30 scale-[0.98] group-hover:scale-100 transition-all duration-500 pointer-events-none" />
+
+                <div className="w-16 h-16 rounded-full bg-academy-orange flex items-center justify-center mb-8 shadow-lg shadow-orange-100 group-hover:scale-110 transition-transform relative z-10">
+                  {cloneElement(p.icon as any, { className: "w-8 h-8 text-white relative z-10 group-hover:-rotate-12 transition-transform duration-500" })}
                 </div>
-                <h3 className="text-lg font-black text-academy-navy mb-1">{p.title}</h3>
-                <p className="text-[10px] font-bold text-slate-400 mb-8 uppercase tracking-widest">{p.sub}</p>
-                
-                <ul className="space-y-3 mb-8">
-                  {p.features.map((f, j) => (
-                    <li key={j} className="flex items-start gap-2 text-[12px] text-slate-600 font-medium">
-                      <CheckCircle2 className="w-4 h-4 text-academy-orange shrink-0 mt-0.5" />
-                      <span className="leading-tight">{f}</span>
-                    </li>
-                  ))}
-                </ul>
-                <div className="mt-auto pt-4">
-                  <div className="h-[2px] w-full bg-slate-50 group-hover:bg-academy-orange/20 transition-colors" />
+                <div className="flex flex-col flex-grow relative z-10">
+                  <h3 className="text-lg font-black text-academy-navy mb-1 group-hover:text-academy-orange transition-colors">{p.title}</h3>
+                  <p className="text-[10px] font-bold text-slate-400 mb-8 uppercase tracking-widest">{p.sub}</p>
+                  
+                  <ul className={`space-y-3 mb-8 flex-grow ${p.isGrid ? 'grid grid-cols-2 gap-x-2 space-y-0 gap-y-3' : ''}`}>
+                    {p.features.map((f, j) => (
+                      <li key={j} className="flex items-start gap-3 text-[12px] text-slate-600 font-medium">
+                        <div className="w-5 h-5 rounded-full bg-orange-50 flex items-center justify-center shrink-0 mt-0.5 group-hover:bg-academy-orange group-hover:shadow-md transition-all duration-300">
+                          <CheckCircle2 className="w-3 h-3 text-academy-orange group-hover:text-white transition-colors duration-300" />
+                        </div>
+                        <span className="leading-snug">{f}</span>
+                      </li>
+                    ))}
+                  </ul>
+                  
+                  <div className="mt-auto pt-6 border-t border-slate-50 flex items-center justify-between">
+                    <span className="text-[11px] font-bold text-academy-navy uppercase tracking-widest group-hover:text-academy-orange transition-colors">En savoir plus</span>
+                    <ArrowRight className="w-4 h-4 text-slate-300 group-hover:text-academy-orange group-hover:translate-x-2 transition-all" />
+                  </div>
                 </div>
               </motion.div>
             ))}
@@ -559,7 +593,7 @@ export default function App() {
       </section>
 
       {/* Clubs Section */}
-      <section id="clubs" className="py-32 bg-white overflow-hidden">
+      <section id="clubs" className="py-12 lg:py-20 bg-white overflow-hidden">
         <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
           <div>
             <div className="flex items-center gap-2 mb-6">
@@ -569,9 +603,6 @@ export default function App() {
             <h2 className="text-4xl lg:text-5xl font-black text-academy-navy leading-tight mb-8 tracking-tight">
               {t('clubsDesc')}
             </h2>
-            <button className="px-8 py-4 border-2 border-slate-200 text-academy-navy font-black text-[12px] rounded-lg hover:border-academy-navy transition-all uppercase tracking-widest">
-              {t('voirTousClubs')}
-            </button>
           </div>
 
           <div className="relative grid grid-cols-1 sm:grid-cols-2 gap-6">
@@ -646,27 +677,21 @@ export default function App() {
       </section>
 
       {/* Why Everest / Video / Testimonial */}
-      <section id="life" className="py-20 lg:py-32 bg-[#fcfcfc]">
+      <section id="life" className="py-12 lg:py-16 bg-[#fcfcfc]">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="max-w-3xl mx-auto">
-            <div>
-              <div className="flex flex-col gap-2 mb-10 lg:mb-12">
-                <span className="text-[10px] font-black text-academy-orange tracking-widest uppercase">{t('whyEverestSubtitle')}</span>
-                <h2 className="text-3xl lg:text-4xl font-black text-academy-navy tracking-tight">{t('whyEverestTitle')}</h2>
-              </div>
-              <ul className="space-y-4 mb-12">
-                {["Encadrement de qualité", "Pédagogie innovante", "Suivi personnalisés", "Ouverture internationale", "Infrastructure moderne"].map((f, i) => (
-                  <li key={i} className="flex items-start gap-4 text-sm font-bold text-slate-700">
-                    <CheckCircle2 className="w-5 h-5 text-academy-orange shrink-0 mt-0.5" />
-                    <span>{f}</span>
-                  </li>
-                ))}
-              </ul>
-              <button className="px-10 py-4 border-2 border-slate-200 text-academy-navy font-black text-[12px] rounded-lg hover:border-academy-navy transition-all uppercase tracking-widest mb-12 lg:mb-0">
-                {t('decouvrirPlus')}
-              </button>
+          <div className="max-w-3xl mx-auto text-center flex flex-col items-center">
+            <div className="flex flex-col gap-2 mb-10 lg:mb-12">
+              <span className="text-[10px] font-black text-academy-orange tracking-widest uppercase">{t('whyEverestSubtitle')}</span>
+              <h2 className="text-3xl lg:text-4xl font-black text-academy-navy tracking-tight">{t('whyEverestTitle')}</h2>
             </div>
-
+            <ul className="grid sm:grid-cols-2 gap-x-8 gap-y-4 mb-4 text-left">
+              {["Encadrement de qualité", "Pédagogie innovante", "Suivi personnalisés", "Ouverture internationale", "Infrastructure moderne"].map((f, i) => (
+                <li key={i} className="flex items-center gap-4 text-sm font-bold text-slate-700">
+                  <CheckCircle2 className="w-5 h-5 text-academy-orange shrink-0" />
+                  <span>{f}</span>
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
       </section>
@@ -875,10 +900,6 @@ export default function App() {
         
         <div className="max-w-7xl mx-auto px-6 pt-10 border-t border-slate-200 flex flex-col md:flex-row justify-between items-center gap-6">
            <div className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">&copy; {new Date().getFullYear()} Everest Academy. Tous droits réservés.</div>
-           <div className="flex gap-8">
-              <a href="#" className="text-[10px] font-bold text-slate-400 uppercase tracking-widest hover:text-academy-navy transition-colors">Mentions légales</a>
-              <a href="#" className="text-[10px] font-bold text-slate-400 uppercase tracking-widest hover:text-academy-navy transition-colors">Confidentialité</a>
-           </div>
         </div>
       </footer>
     </div>
