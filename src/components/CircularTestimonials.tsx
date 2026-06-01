@@ -123,6 +123,69 @@ export const CircularTestimonials = ({
     if (autoplayIntervalRef.current) clearInterval(autoplayIntervalRef.current);
   }, [testimonialsLength]);
 
+  // Swipe & Drag handlers for touch & mouse
+  const touchStartX = useRef<number | null>(null);
+  const touchEndX = useRef<number | null>(null);
+  const isDragging = useRef(false);
+  const dragThreshold = 40;
+
+  const handleTouchStart = (e: React.TouchEvent) => {
+    touchStartX.current = e.touches[0].clientX;
+    touchEndX.current = e.touches[0].clientX;
+  };
+
+  const handleTouchMove = (e: React.TouchEvent) => {
+    touchEndX.current = e.touches[0].clientX;
+  };
+
+  const handleTouchEnd = () => {
+    if (touchStartX.current === null || touchEndX.current === null) return;
+    const diffX = touchStartX.current - touchEndX.current;
+    if (Math.abs(diffX) > dragThreshold) {
+      if (diffX > 0) {
+        handleNext();
+      } else {
+        handlePrev();
+      }
+    }
+    touchStartX.current = null;
+    touchEndX.current = null;
+  };
+
+  const handleMouseDown = (e: React.MouseEvent) => {
+    touchStartX.current = e.clientX;
+    touchEndX.current = e.clientX;
+    isDragging.current = true;
+  };
+
+  const handleMouseMove = (e: React.MouseEvent) => {
+    if (!isDragging.current) return;
+    touchEndX.current = e.clientX;
+  };
+
+  const handleMouseUp = () => {
+    if (!isDragging.current) return;
+    isDragging.current = false;
+    
+    if (touchStartX.current === null || touchEndX.current === null) return;
+    const diffX = touchStartX.current - touchEndX.current;
+    if (Math.abs(diffX) > dragThreshold) {
+      if (diffX > 0) {
+        handleNext();
+      } else {
+        handlePrev();
+      }
+    }
+    touchStartX.current = null;
+    touchEndX.current = null;
+  };
+
+  const handleMouseLeave = () => {
+    if (isDragging.current) {
+      handleMouseUp();
+    }
+  };
+
   // Compute transforms for each image (always show 3: left, center, right)
   function getImageStyle(index: number): React.CSSProperties {
     const gap = calculateGap(containerWidth);
@@ -179,15 +242,27 @@ export const CircularTestimonials = ({
     <div className="testimonial-container">
       <div className="testimonial-grid">
         {/* Images */}
-        <div className="image-container" ref={imageContainerRef}>
+        <div 
+          className="image-container select-none cursor-grab active:cursor-grabbing" 
+          ref={imageContainerRef}
+          onTouchStart={handleTouchStart}
+          onTouchMove={handleTouchMove}
+          onTouchEnd={handleTouchEnd}
+          onMouseDown={handleMouseDown}
+          onMouseMove={handleMouseMove}
+          onMouseUp={handleMouseUp}
+          onMouseLeave={handleMouseLeave}
+        >
           {testimonials.map((testimonial, index) => (
             <img
               key={testimonial.src}
               src={testimonial.src}
               alt={testimonial.name}
-              className="testimonial-image"
+              className="testimonial-image select-none pointer-events-none"
               data-index={index}
               style={getImageStyle(index)}
+              draggable="false"
+              onDragStart={(e) => e.preventDefault()}
             />
           ))}
         </div>
@@ -250,13 +325,14 @@ export const CircularTestimonials = ({
               onClick={handlePrev}
               style={{
                 backgroundColor: hoverPrev ? colorArrowHoverBg : colorArrowBg,
+                color: hoverPrev ? "#fff" : colorArrowFg,
               }}
               onMouseEnter={() => setHoverPrev(true)}
               onMouseLeave={() => setHoverPrev(false)}
               aria-label="Previous testimonial"
             >
               <span className="rtl:rotate-180 transition-transform flex items-center justify-center">
-                <FaArrowLeft size={28} color={colorArrowFg} />
+                <FaArrowLeft size={16} color={hoverPrev ? "#fff" : colorArrowFg} />
               </span>
             </button>
             <button
@@ -264,13 +340,14 @@ export const CircularTestimonials = ({
               onClick={handleNext}
               style={{
                 backgroundColor: hoverNext ? colorArrowHoverBg : colorArrowBg,
+                color: hoverNext ? "#fff" : colorArrowFg,
               }}
               onMouseEnter={() => setHoverNext(true)}
               onMouseLeave={() => setHoverNext(false)}
               aria-label="Next testimonial"
             >
               <span className="rtl:rotate-180 transition-transform flex items-center justify-center">
-                <FaArrowRight size={28} color={colorArrowFg} />
+                <FaArrowRight size={16} color={hoverNext ? "#fff" : colorArrowFg} />
               </span>
             </button>
           </div>
@@ -332,15 +409,24 @@ export const CircularTestimonials = ({
           padding-top: 1rem;
         }
         .arrow-button {
-          width: 2.7rem;
-          height: 2.7rem;
+          width: 3rem;
+          height: 3rem;
           border-radius: 50%;
           display: flex;
           align-items: center;
           justify-content: center;
           cursor: pointer;
-          transition: background-color 0.3s;
-          border: none;
+          transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+          border: 1px solid rgba(15, 23, 42, 0.08);
+          box-shadow: 0 4px 12px rgba(15, 23, 42, 0.05), 0 1px 2px rgba(15, 23, 42, 0.02);
+        }
+        .arrow-button:hover {
+          transform: translateY(-2px);
+          box-shadow: 0 8px 20px rgba(245, 130, 32, 0.2);
+          border-color: transparent;
+        }
+        .arrow-button:active {
+          transform: translateY(0px) scale(0.95);
         }
         .word {
           display: inline-block;

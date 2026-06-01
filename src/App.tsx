@@ -76,7 +76,17 @@ const translations = {
     whyEverestFeatures: ["Encadrement de qualité", "Pédagogie innovante", "Suivi personnalisés", "Ouverture internationale", "Infrastructure moderne"],
     brandValues: ["APPRENDRE", "PROGRESSER", "S'ÉPANOUIR", "RÉUSSIR"],
     runClubTag: "Sport • Santé • Dépassement de soi",
-    imaginariumTag: "Pôle culturel • Créativité • Expression"
+    imaginariumTag: "Pôle culturel • Créativité • Expression",
+    aboutSubtitle: "À PROPOS DE L'ACADÉMIE",
+    aboutTitle: "Votre passerelle vers l'excellence et l'épanouissement",
+    aboutDesc1: "Everest Academy est un établissement innovant de formation et de culture situé à Mostaganem. Notre mission est d'offrir un environnement éducatif d elite où chaque élève peut développer son plein potentiel intellectuel, linguistique, créatif et physique.",
+    aboutDesc2: "À travers des méthodes pédagogiques modernes, un encadrement hautement qualifié et une communauté riche en activités, nous préparons les leaders de demain à relever tous les défis scolaires et professionnels.",
+    aboutFeature1Title: "Excellence Académique",
+    aboutFeature1Desc: "Des programmes conformes aux exigences modernes et un suivi rigoureux pour garantir la réussite.",
+    aboutFeature2Title: "Langues & Ouverture",
+    aboutFeature2Desc: "Un apprentissage immersif de 6 langues clés pour élargir les horizons culturels et professionnels.",
+    aboutFeature3Title: "Développement Personnel",
+    aboutFeature3Desc: "Des clubs d'expression, de sport et de culture pour cultiver la confiance et la créativité."
   },
   en: {
     academy: "Academy",
@@ -135,7 +145,17 @@ const translations = {
     whyEverestFeatures: ["Quality supervision", "Innovative pedagogy", "Personalized follow-up", "International opening", "Modern infrastructure"],
     brandValues: ["LEARN", "PROGRESS", "FLOURISH", "SUCCEED"],
     runClubTag: "Sport • Health • Self-transcendence",
-    imaginariumTag: "Cultural Hub • Creativity • Expression"
+    imaginariumTag: "Cultural Hub • Creativity • Expression",
+    aboutSubtitle: "ABOUT THE ACADEMY",
+    aboutTitle: "Your Gateway to Excellence and Growth",
+    aboutDesc1: "Everest Academy is an innovative training and culture center located in Mostaganem. Our mission is to provide an elite educational environment where every student can develop their full intellectual, linguistic, creative, and physical potential.",
+    aboutDesc2: "Through modern pedagogical methods, highly qualified coaching, and a vibrant community rich in activities, we prepare tomorrow's leaders to overcome academic and professional goals.",
+    aboutFeature1Title: "Academic Excellence",
+    aboutFeature1Desc: "Modern curricula and rigorous follow-up ensuring educational success and peak performance.",
+    aboutFeature2Title: "Languages & Culture",
+    aboutFeature2Desc: "Immersive learning of 6 key global languages to expand cultural horizons.",
+    aboutFeature3Title: "Personal Development",
+    aboutFeature3Desc: "A wide variety of activities and clubs to cultivate creativity and leadership skills."
   },
   ar: {
     academy: "الأكاديمية",
@@ -194,7 +214,17 @@ const translations = {
     whyEverestFeatures: ["تأطير عالي الجودة", "بيداغوجيا مبتكرة", "متابعة شخصية", "انفتاح دولي", "بنية تحتية حديثة"],
     brandValues: ["تعلّم", "تقدّم", "ازدهر", "انجح"],
     runClubTag: "رياضة • صحة • تجاوز الذات",
-    imaginariumTag: "قطب ثقافي • إبداع • تعبير"
+    imaginariumTag: "قطب ثقافي • إبداع • تعبير",
+    aboutSubtitle: "عن الأكاديمية",
+    aboutTitle: "بوابتكم نحو التفوق والتميز الدراسي",
+    aboutDesc1: "أكاديمية إيفرست هي مركز تكويني وثقافي مبتكر يقع بمستغانم. تتمثل رسالتنا في توفير بيئة تعليمية راقية وشاملة تتيح لكل تلميذ تطوير كامل إمكاناته الفكرية، اللغوية، الإبداعية والرياضية.",
+    aboutDesc2: "من خلال مناهج بيداغوجية حديثة، وتأطير عالي الكفاءة، ومجتمع غني بالأنشطة والنوادي، نقوم بإعداد قادة المستقبل للتفوق ومواجهة التحديات الدراسية والمهنية بكل ثقة.",
+    aboutFeature1Title: "التميز الأكاديمي",
+    aboutFeature1Desc: "مناهج تعليمية متطورة ومتابعة يومية دقيقة تضمن تحقيق النتائج المثالية والنجاح الباهر.",
+    aboutFeature2Title: "اللغات والانفتاح",
+    aboutFeature2Desc: "تعليم تفاعلي لـ 6 لغات عالمية لتمكين التلاميذ وتوسيع آفاقهم الثقافية والمهنية.",
+    aboutFeature3Title: "تطوير المهارات",
+    aboutFeature3Desc: "نوادي رياضية، ثقافية وإبداعية متكاملة لبناء شخصية قوية، واثقة ومبدعة."
   }
 };
 
@@ -616,6 +646,8 @@ export default function App() {
         </div>
       </section>
 
+
+
       {/* Main Pillars Section (Dark Banner with small icons) */}
       <section className="bg-academy-navy py-12 px-6">
         <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -768,7 +800,6 @@ export default function App() {
                 </div>
               </motion.div>
             ))}
-            
           </div>
         </div>
       </section>
@@ -796,26 +827,89 @@ export default function App() {
         </div>
       </section>
 
-      {/* Why Everest / Video / Testimonial */}
-      <section id="life" className="py-12 lg:py-16 bg-[#fcfcfc]">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="max-w-3xl mx-auto text-center flex flex-col items-center">
-            <div className="flex flex-col gap-2 mb-10 lg:mb-12">
-              <span className="text-[10px] font-black text-academy-orange tracking-widest uppercase">{t('whyEverestSubtitle')}</span>
-              <h2 className="text-3xl lg:text-4xl font-black text-academy-navy tracking-tight">{t('whyEverestTitle')}</h2>
-            </div>
-            <ul className="grid sm:grid-cols-2 gap-x-8 gap-y-4 mb-4 text-left">
-              {(t('whyEverestFeatures') as string[]).map((f, i) => (
-                <li key={i} className="flex items-center gap-4 text-sm font-bold text-slate-700">
-                  <CheckCircle2 className="w-5 h-5 text-academy-orange shrink-0" />
-                  <span>{f}</span>
-                </li>
-              ))}
-            </ul>
+      {/* Unified About & Why Everest Section */}
+      <section id="about" className="py-20 lg:py-28 bg-[#fdfdfd] border-b border-slate-100 overflow-hidden relative">
+        <div id="life" className="absolute -top-24" />
+        {/* Decorative background elements */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-slate-50 rounded-full blur-3xl opacity-50 pointer-events-none" />
+        <div className="absolute -right-16 top-1/3 w-96 h-96 bg-academy-orange/5 rounded-full blur-3xl pointer-events-none" />
+        
+        <div className="max-w-4xl mx-auto px-6 sm:px-12 relative z-10">
+          <div className="flex flex-col items-center">
+            
+            {/* About & Advantages text content */}
+            <motion.div 
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              className="w-full flex flex-col items-center"
+            >
+              <div className="flex items-center gap-2 mb-6 justify-center">
+                <div className="w-10 h-[2px] bg-academy-orange" />
+                <span className="text-xs font-black text-academy-orange tracking-widest uppercase">{t('aboutSubtitle')}</span>
+              </div>
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-academy-navy leading-[1.2] mb-8 tracking-tight text-center">
+                {t('aboutTitle')}
+              </h2>
+              <div className="space-y-6 text-slate-500 text-sm sm:text-base leading-relaxed font-light mb-8 text-center max-w-2xl">
+                <p>{t('aboutDesc1')}</p>
+                <p>{t('aboutDesc2')}</p>
+              </div>
+
+              {/* Checklist advantages derived from the merged Why Everest elements */}
+              <div className="mb-10 border-t border-b border-slate-100/80 py-6 w-full max-w-2xl">
+                <ul className="grid sm:grid-cols-2 gap-x-6 gap-y-3">
+                  {(t('whyEverestFeatures') as string[]).map((f, i) => (
+                    <li key={i} className="flex items-center justify-center sm:justify-start gap-3 text-sm text-start">
+                      <CheckCircle2 className="w-5 h-5 text-academy-orange shrink-0" />
+                      <span className="text-slate-700 font-semibold leading-relaxed">{f}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              {/* Pillars list (micro cards) */}
+              <div className="grid sm:grid-cols-3 gap-6 w-full">
+                {[
+                  {
+                    title: t('aboutFeature1Title'),
+                    desc: t('aboutFeature1Desc'),
+                    icon: <BookOpen className="w-5 h-5 text-academy-orange" />,
+                    bg: "bg-orange-50/40 hover:bg-orange-50"
+                  },
+                  {
+                    title: t('aboutFeature2Title'),
+                    desc: t('aboutFeature2Desc'),
+                    icon: <Languages className="w-5 h-5 text-academy-navy" />,
+                    bg: "bg-slate-50 hover:bg-slate-100/80"
+                  },
+                  {
+                    title: t('aboutFeature3Title'),
+                    desc: t('aboutFeature3Desc'),
+                    icon: <Heart className="w-5 h-5 text-academy-orange" />,
+                    bg: "bg-orange-50/40 hover:bg-orange-50"
+                  }
+                ].map((item, idx) => (
+                  <motion.div
+                    key={idx}
+                    whileHover={{ y: -5 }}
+                    className={`p-5 rounded-2xl border border-slate-100/80 transition-all duration-300 flex flex-col gap-4 text-start ${item.bg}`}
+                  >
+                    <div className="w-10 h-10 rounded-xl bg-white shadow-sm flex items-center justify-center border border-slate-100/50">
+                      {item.icon}
+                    </div>
+                    <div>
+                      <h4 className="font-bold text-academy-navy text-sm mb-1 tracking-tight">{item.title}</h4>
+                      <p className="text-[11px] text-slate-400 font-medium leading-relaxed">{item.desc}</p>
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
+            </motion.div>
           </div>
         </div>
       </section>
-
 
       {/* Ready Banner */}
       <section className="bg-academy-navy py-12 px-6 lg:px-12 max-w-7xl mx-4 lg:mx-auto rounded-3xl overflow-hidden relative mb-20">
