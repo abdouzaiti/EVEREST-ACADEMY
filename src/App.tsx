@@ -956,7 +956,10 @@ export default function App() {
       </nav>
 
       {/* Hero Section */}
-      <section className="relative pt-8 md:pt-12 pb-12 overflow-hidden bg-white">
+      <section 
+        className="relative pt-8 md:pt-12 pb-12 overflow-hidden bg-cover bg-center bg-no-repeat bg-white"
+        style={{ backgroundImage: "url('/back.png')" }}
+      >
         <div className="max-w-7xl mx-auto px-6 sm:px-12 grid lg:grid-cols-2 gap-16 items-center">
           <motion.div
             initial={{ opacity: 0, x: isRtl ? 50 : -50 }}
