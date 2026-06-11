@@ -1847,7 +1847,10 @@ export default function App() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-slate-50 border-t border-slate-100 pt-20 pb-10">
+      <footer 
+        className="relative bg-cover bg-center bg-no-repeat border-t border-slate-100 pt-20 pb-10"
+        style={{ backgroundImage: "url('/back3.png')" }}
+      >
         <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 lg:grid-cols-3 gap-16 mb-20 text-center md:text-left">
           <div className="flex flex-col gap-6">
             <div className="flex items-center gap-3 justify-center md:justify-start">
