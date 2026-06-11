@@ -104,7 +104,8 @@ const translations = {
     aboutFeature3Title: "Développement Personnel",
     aboutFeature3Desc: "Des clubs d'expression, de sport et de culture pour cultiver la confiance et la créativité.",
     discoverPrograms: "Découvrir nos programmes",
-    makeAppointment: "Prendre rendez-vous"
+    makeAppointment: "Prendre rendez-vous",
+    skipIntro: "Passer l'introduction"
   },
   en: {
     academy: "Academy",
@@ -190,7 +191,8 @@ const translations = {
     aboutFeature3Title: "Personal Development",
     aboutFeature3Desc: "A wide variety of activities and clubs to cultivate creativity and leadership skills.",
     discoverPrograms: "Discover our programs",
-    makeAppointment: "Book an appointment"
+    makeAppointment: "Book an appointment",
+    skipIntro: "Skip Intro"
   },
   ar: {
     academy: "الأكاديمية",
@@ -276,7 +278,8 @@ const translations = {
     aboutFeature3Title: "تطوير المهارات",
     aboutFeature3Desc: "نوادي رياضية، ثقافية وإبداعية متكاملة لبناء شخصية قوية، واثقة ومبدعة.",
     discoverPrograms: "اكتشف برامجنا",
-    makeAppointment: "احجز موعدا"
+    makeAppointment: "احجز موعدا",
+    skipIntro: "تخطي العرض"
   }
 };
 
@@ -856,16 +859,31 @@ export default function App() {
           }
         }}
       >
+        <button
+          onClick={(e) => {
+            e.stopPropagation();
+            setShowIntro(false);
+          }}
+          className={`absolute top-6 ${isRtl ? 'left-6 md:left-10' : 'right-6 md:right-10'} z-[10000] bg-[#0c1f38]/80 hover:bg-[#0c1f38] text-white text-xs font-black px-4.5 py-2.5 rounded-full border border-white/20 transition-all duration-200 flex items-center gap-1.5 shadow-lg select-none active:scale-95`}
+        >
+          <span>{t('skipIntro')}</span>
+          <ChevronRight className={`w-3.5 h-3.5 ${isRtl ? 'rotate-180' : ''}`} />
+        </button>
+
         <video 
           ref={videoRef}
           src={INTRO_VIDEO_URL} 
           className="absolute inset-0 w-full h-full object-contain" 
           playsInline
           onEnded={() => setShowIntro(false)}
+          onError={(e) => {
+            console.warn("Video failed to load or has no supported sources. Bypassing intro:", e);
+            setShowIntro(false);
+          }}
         />
         {isMuted && (
-           <div className="absolute top-10 left-1/2 -translate-x-1/2 bg-black/50 text-white/80 px-6 py-2 rounded-full text-sm font-medium tracking-wide pointer-events-none animate-pulse">
-             Cliquez n'importe où pour activer le son
+           <div className="absolute top-10 left-1/2 -translate-x-1/2 bg-black/50 text-white/50 px-6 py-2 rounded-full text-xs font-bold tracking-wider pointer-events-none animate-pulse uppercase">
+             {lang === 'ar' ? 'انقر لتفعيل الصوت' : lang === 'en' ? 'Click anywhere to unmute' : 'Cliquez de partout pour activer le son'}
            </div>
         )}
       </div>
