@@ -766,7 +766,7 @@ const getTestimonials = (lang: Language) => {
 
 export default function App() {
   const [lang, setLang] = useState<Language>('fr');
-  const [showIntro, setShowIntro] = useState(true);
+  const [showIntro, setShowIntro] = useState(false);
   const [isMuted, setIsMuted] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
   const isRtl = lang === 'ar';
@@ -1593,7 +1593,11 @@ export default function App() {
       </section>
 
       {/* Unified About & Why Everest Section */}
-      <section id="about" className="py-20 lg:py-28 bg-[#fafafc]/45 border-b border-slate-100 overflow-hidden relative">
+      <section 
+        id="about" 
+        className="pt-20 lg:pt-28 pb-12 lg:pb-20 bg-cover bg-center bg-[#fafafc]/45 bg-no-repeat border-b border-slate-100 overflow-hidden relative"
+        style={{ backgroundImage: "url('/back4.png')" }}
+      >
         <div id="life" className="absolute -top-24" />
         
         {/* Floating decorations matching the user mockup */}
@@ -1805,47 +1809,44 @@ export default function App() {
             </div>
           </div>
         </div>
-      </section>
 
-      {/* Ready Banner */}
-      <section className="bg-academy-navy py-12 px-6 lg:px-12 max-w-7xl mx-4 lg:mx-auto rounded-3xl overflow-hidden relative mb-20">
-        <div className="flex flex-col lg:flex-row items-center justify-between gap-12 relative z-10">
-          <div className="flex flex-col md:flex-row items-center gap-8">
-            <div className="w-20 h-20 rounded-full border-2 border-white/20 flex items-center justify-center shrink-0">
-               <GraduationCap className="w-10 h-10 text-white/40" />
+        {/* Ready Banner is now merged directly inside the parent background section! */}
+        <div className="bg-academy-navy py-12 px-6 lg:px-12 max-w-7xl mx-4 lg:mx-auto rounded-3xl overflow-hidden relative mt-20 mb-10 z-20">
+          <div className="flex flex-col lg:flex-row items-center justify-between gap-12 relative z-10">
+            <div className="flex flex-col md:flex-row items-center gap-8">
+              <div className="text-center md:text-left">
+                <h2 className="text-3xl font-black text-white mb-2 leading-tight">{t('readyJoin')}</h2>
+                <p className="text-sm text-white/60 font-medium">{t('readyDesc')}</p>
+              </div>
             </div>
-            <div className="text-center md:text-left">
-              <h2 className="text-3xl font-black text-white mb-2 leading-tight">{t('readyJoin')}</h2>
-              <p className="text-sm text-white/60 font-medium">{t('readyDesc')}</p>
-            </div>
-          </div>
 
-          <div className="flex flex-wrap justify-center gap-12 items-center">
-            <a 
-              href="tel:0796665045" 
-              className="flex items-center gap-4 transition-all hover:opacity-80 active:scale-95 group cursor-pointer"
-            >
-              <div className="w-12 h-12 rounded-full border border-academy-orange flex items-center justify-center text-academy-orange shrink-0 group-hover:bg-academy-orange group-hover:text-white transition-all">
-                 <Phone className="w-5 h-5" />
-              </div>
-              <div className="text-white text-left" dir="ltr">
-                <div className="text-xl font-black tracking-tighter">05 59 39 12 11</div>
-                <div className="text-xl font-black tracking-tighter">07 96 66 50 45</div>
-              </div>
-            </a>
-            <a 
-              href="https://maps.app.goo.gl/sY5SWCL2whD4DfvY9" 
-              target="_blank" 
-              rel="noopener noreferrer" 
-              className="flex items-center gap-4 transition-all hover:opacity-80 active:scale-95 group cursor-pointer"
-            >
-              <div className="w-12 h-12 rounded-full border border-academy-orange flex items-center justify-center text-academy-orange shrink-0 group-hover:bg-academy-orange group-hover:text-white transition-all">
-                 <MapPin className="w-5 h-5" />
-              </div>
-              <div className="text-white text-left">
-                <div className="text-sm font-bold leading-tight">Mostaganem, <br/> Zeghloul</div>
-              </div>
-            </a>
+            <div className="flex flex-wrap justify-center gap-12 items-center">
+              <a 
+                href="tel:0796665045" 
+                className="flex items-center gap-4 transition-all hover:opacity-80 active:scale-95 group cursor-pointer"
+              >
+                <div className="w-12 h-12 rounded-full border border-academy-orange flex items-center justify-center text-academy-orange shrink-0 group-hover:bg-academy-orange group-hover:text-white transition-all">
+                   <Phone className="w-5 h-5" />
+                </div>
+                <div className="text-white text-left" dir="ltr">
+                  <div className="text-xl font-black tracking-tighter">05 59 39 12 11</div>
+                  <div className="text-xl font-black tracking-tighter">07 96 66 50 45</div>
+                </div>
+              </a>
+              <a 
+                href="https://maps.app.goo.gl/sY5SWCL2whD4DfvY9" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="flex items-center gap-4 transition-all hover:opacity-80 active:scale-95 group cursor-pointer"
+              >
+                <div className="w-12 h-12 rounded-full border border-academy-orange flex items-center justify-center text-[#f25c05] shrink-0 group-hover:bg-[#f25c05] group-hover:text-white transition-all">
+                   <MapPin className="w-5 h-5" />
+                </div>
+                <div className="text-white text-left">
+                  <div className="text-sm font-bold leading-tight">Mostaganem, <br/> Zeghloul</div>
+                </div>
+              </a>
+            </div>
           </div>
         </div>
       </section>
