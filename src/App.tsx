@@ -10,6 +10,7 @@ import HERO_NEW from './assets/images/regenerated_image_1779207110842.png';
 import CLUB_LOGO_NEW from './assets/images/regenerated_image_1779207245162.png';
 import CLUB_IMAGINARIUM_NEW from './assets/images/regenerated_image_1779207827411.png';
 import CLUB_RUN_NEW from './assets/images/regenerated_image_1779208385684.jpg';
+import ImaginariumAlbumModal from './components/ImaginariumAlbumModal';
 
 // Using the provided images
 const LOGO_URL = '/logo.png';
@@ -767,6 +768,7 @@ const getTestimonials = (lang: Language) => {
 export default function App() {
   const [lang, setLang] = useState<Language>('fr');
   const [showIntro, setShowIntro] = useState(false);
+  const [showImaginariumAlbum, setShowImaginariumAlbum] = useState(false);
   const [isMuted, setIsMuted] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
   const isRtl = lang === 'ar';
@@ -1497,7 +1499,12 @@ export default function App() {
             ].map((club, i) => (
               <motion.div 
                 key={i} 
-                className="relative bg-white rounded-[2rem] overflow-hidden border border-slate-100 flex flex-col h-full group transition-all duration-500"
+                onClick={() => {
+                  if (club.name === "EVEREST IMAGINARIUM") {
+                    setShowImaginariumAlbum(true);
+                  }
+                }}
+                className={`relative bg-white rounded-[2rem] overflow-hidden border border-slate-100 flex flex-col h-full group transition-all duration-500 ${club.name === "EVEREST IMAGINARIUM" ? 'cursor-pointer select-none' : ''}`}
                 initial={{ opacity: 0, y: 35 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 whileHover="hover"
@@ -1905,6 +1912,12 @@ export default function App() {
            <div className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">&copy; {new Date().getFullYear()} Everest Academy. Tous droits réservés.</div>
         </div>
       </footer>
+
+      <ImaginariumAlbumModal 
+        isOpen={showImaginariumAlbum} 
+        onClose={() => setShowImaginariumAlbum(false)} 
+        lang={lang} 
+      />
     </div>
   );
 }
