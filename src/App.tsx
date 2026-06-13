@@ -1044,7 +1044,11 @@ export default function App() {
       </section>
 
       {/* Main Pillars Detailed Cards */}
-      <section id="programs" className="pb-24 lg:pb-32 pt-16 bg-[#ffffff] relative overflow-hidden">
+      <section 
+        id="programs" 
+        className="pb-24 lg:pb-32 pt-16 bg-cover bg-center bg-no-repeat relative overflow-hidden"
+        style={{ backgroundImage: "url('/back2.png')" }}
+      >
         {/* Background Decorative SVGs */}
         <DotsGrid className="absolute top-12 left-6 md:left-12 pointer-events-none opacity-45 hidden sm:block select-none" />
         <PaperAirplaneWithTrail className="absolute top-16 right-8 md:right-20 xl:right-32 pointer-events-none opacity-60 hidden sm:block select-none" />
