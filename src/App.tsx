@@ -1505,9 +1505,11 @@ export default function App() {
                 onClick={() => {
                   if (club.name === "EVEREST IMAGINARIUM") {
                     setShowImaginariumAlbum(true);
+                  } else if (club.name === "MOSTA RUN CLUB") {
+                    window.open("https://mosta-run-club.vercel.app/", "_blank", "noopener,noreferrer");
                   }
                 }}
-                className={`relative bg-white rounded-[2rem] overflow-hidden border border-slate-100 flex flex-col h-full group transition-all duration-500 ${club.name === "EVEREST IMAGINARIUM" ? 'cursor-pointer select-none' : ''}`}
+                className="relative bg-white rounded-[2rem] overflow-hidden border border-slate-100 flex flex-col h-full group transition-all duration-500 cursor-pointer select-none"
                 initial={{ opacity: 0, y: 35 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 whileHover="hover"
