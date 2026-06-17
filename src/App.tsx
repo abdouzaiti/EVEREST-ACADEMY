@@ -767,7 +767,7 @@ const getTestimonials = (lang: Language) => {
 
 export default function App() {
   const [lang, setLang] = useState<Language>('fr');
-  const [showIntro, setShowIntro] = useState(false);
+  const [showIntro, setShowIntro] = useState(true);
   const [showImaginariumAlbum, setShowImaginariumAlbum] = useState(false);
   const [isMuted, setIsMuted] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -938,7 +938,7 @@ export default function App() {
             ))}
           </div>
 
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-3 md:gap-4">
             <button className="hidden sm:block px-6 py-2 bg-academy-orange text-white text-[12px] font-bold rounded-lg hover:bg-orange-600 transition-all shadow-md shadow-orange-200">
               {t('inscription')}
             </button>
@@ -986,7 +986,10 @@ export default function App() {
               {t('heroDesc')}
             </p>
             <div className="flex flex-wrap gap-4">
-              <button className="px-8 py-4 bg-academy-orange text-white font-black text-[12px] rounded-lg hover:bg-orange-600 transition-all shadow-xl shadow-orange-100">
+              <button 
+                onClick={() => setShowIntro(true)} 
+                className="px-8 py-4 bg-academy-orange text-white font-black text-[12px] rounded-lg hover:bg-orange-600 transition-all shadow-xl shadow-orange-100 cursor-pointer active:scale-95"
+              >
                 {t('decouvrirEcole')}
               </button>
               <button className="px-8 py-4 border-2 border-academy-navy text-academy-navy font-black text-[12px] rounded-lg hover:bg-slate-50 transition-all">

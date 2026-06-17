@@ -269,57 +269,86 @@ export const CircularTestimonials = ({
         {/* Content */}
         <div className="testimonial-content">
           <AnimatePresence mode="wait">
-            <motion.div
-              key={activeIndex}
-              variants={quoteVariants}
-              initial="initial"
-              animate="animate"
-              exit="exit"
-              transition={{ duration: 0.3, ease: "easeInOut" }}
-            >
-              <h3
-                className="name"
-                style={{ color: colorName, fontSize: fontSizeName }}
-              >
-                {activeTestimonial.name}
-              </h3>
-              <p
-                className="designation"
-                style={{ color: colorDesignation, fontSize: fontSizeDesignation }}
-              >
-                {activeTestimonial.designation}
-              </p>
-              <motion.p
-                className="quote"
-                style={{ color: colorTestimony, fontSize: fontSizeQuote }}
-              >
-                {activeTestimonial.quote.split(" ").map((word, i) => (
-                  <motion.span
-                    key={i}
-                    initial={{
-                      filter: "blur(10px)",
-                      opacity: 0,
-                      y: 5,
+            {(() => {
+              const isRtl = activeTestimonial ? /[\u0600-\u06FF]/.test(activeTestimonial.quote || "") : false;
+              return (
+                <motion.div
+                  key={activeIndex}
+                  variants={quoteVariants}
+                  initial="initial"
+                  animate="animate"
+                  exit="exit"
+                  transition={{ duration: 0.3, ease: "easeInOut" }}
+                  dir={isRtl ? "rtl" : "ltr"}
+                  style={{ textAlign: isRtl ? "right" : "left" }}
+                >
+                  <h3
+                    className="name"
+                    style={{ 
+                      color: colorName, 
+                      fontSize: fontSizeName,
+                      textAlign: isRtl ? "right" : "left"
                     }}
-                    animate={{
-                      filter: "blur(0px)",
-                      opacity: 1,
-                      y: 0,
-                    }}
-                    transition={{
-                      duration: 0.22,
-                      ease: "easeInOut",
-                      delay: 0.025 * i,
-                    }}
-                    style={{ display: "inline-block" }}
                   >
-                    {word}&nbsp;
-                  </motion.span>
-                ))}
-              </motion.p>
-            </motion.div>
+                    {activeTestimonial.name}
+                  </h3>
+                  {activeTestimonial.designation && (
+                    <p
+                      className="designation"
+                      style={{ 
+                        color: colorDesignation, 
+                        fontSize: fontSizeDesignation,
+                        textAlign: isRtl ? "right" : "left"
+                      }}
+                    >
+                      {activeTestimonial.designation}
+                    </p>
+                  )}
+                  <motion.p
+                    className="quote"
+                    style={{ 
+                      color: isRtl ? "#1e293b" : colorTestimony, 
+                      fontSize: fontSizeQuote,
+                      textAlign: isRtl ? "right" : "left",
+                      lineHeight: isRtl ? "1.9" : "1.75",
+                      fontWeight: isRtl ? "500" : "inherit"
+                    }}
+                  >
+                    {activeTestimonial.quote.split(" ").map((word, i) => (
+                      <motion.span
+                        key={i}
+                        initial={{
+                          filter: "blur(4px)",
+                          opacity: 0,
+                          y: 5,
+                        }}
+                        animate={{
+                          filter: "none",
+                          opacity: 1,
+                          y: 0,
+                        }}
+                        transition={{
+                          duration: 0.22,
+                          ease: "easeInOut",
+                          delay: 0.025 * i,
+                        }}
+                        style={{ display: "inline-block" }}
+                      >
+                        {word}&nbsp;
+                      </motion.span>
+                    ))}
+                  </motion.p>
+                </motion.div>
+              );
+            })()}
           </AnimatePresence>
-          <div className="arrow-buttons">
+          {(() => {
+            const isRtl = activeTestimonial ? /[\u0600-\u06FF]/.test(activeTestimonial.quote || "") : false;
+            return (
+              <div 
+                className="arrow-buttons"
+                style={{ justifyContent: isRtl ? "flex-end" : "flex-start" }}
+              >
             <button
               className="arrow-button prev-button"
               onClick={handlePrev}
@@ -350,7 +379,9 @@ export const CircularTestimonials = ({
                 <FaArrowRight size={16} color={hoverNext ? "#fff" : colorArrowFg} />
               </span>
             </button>
-          </div>
+              </div>
+            );
+          })()}
         </div>
       </div>
       <style>{`
