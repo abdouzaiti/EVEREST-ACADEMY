@@ -23,16 +23,7 @@ const ALBUM_TRANSLATIONS = {
       "Un véritable message d’espoir et une belle leçon de vie pour tous les présents. 🌿",
       "Merci à tous les membres de Everest Imaginarium pour leur présence et leur belle énergie durant cette rencontre exceptionnelle. 🤍"
     ],
-    captions: [
-      "Atelier d'innovation & robotique ludique",
-      "Atelier d'art plastique et créativité visuelle",
-      "Club d'échecs et stratégie d'esprit",
-      "Expériences scientifiques et curiosité",
-      "Prise de parole et théâtre expressif",
-      "Éveil mélodique et exploration musicale",
-      "Jeux coopératifs et motricité active",
-      "Partage, joie et célébration de réussite"
-    ]
+    captions: ["", "", "", "", "", "", "", ""]
   },
   en: {
     title: "Imaginarium Photo Album",
@@ -48,16 +39,7 @@ const ALBUM_TRANSLATIONS = {
       "A true message of hope and a beautiful life lesson for everyone present. 🌿",
       "Thank you to all members of Everest Imaginarium for their presence and beautiful energy during this exceptional encounter. 🤍"
     ],
-    captions: [
-      "Robotics & playful innovation workshop",
-      "Visual arts and creative drawing",
-      "Chess club and strategic thinking",
-      "Applied science & fun experiments",
-      "Public speaking & theatrical expression",
-      "Melodic awakening & musical exploration",
-      "Cooperative games & active play",
-      "Sharing joy and celebrating success"
-    ]
+    captions: ["", "", "", "", "", "", "", ""]
   },
   ar: {
     title: "ألبوم الإيماجيناريوم",
@@ -73,28 +55,19 @@ const ALBUM_TRANSLATIONS = {
       "رسالة أمل حقيقية ودرس بليغ في الحياة لكل من كان حاضراً معنا. 🌿",
       "خالص الشكر والتقدير لكل أعضاء إيفرست إيماجيناريوم على حضورهم وتفاعلهم وطاقتهم الراقية خلال هذا اللقاء الاستثنائي. 🤍"
     ],
-    captions: [
-      "ورشة الروبوتات والابتكار الهندسي",
-      "الفنون البصرية والأعمال اليدوية الإبداعية",
-      "نادي الشطرنج والتفكير الاستراتيجي",
-      "تجارب علمية ممتعة واكتشافات شيقة",
-      "الخطابة وفنون التعبير المسرحي",
-      "الاستكشاف الموسيقي وتناغم الإيقاع",
-      "الألعاب التعاونية والرياضة النشطة",
-      "لحظات الفرح وتتويج التميز الأكاديمي"
-    ]
+    captions: ["", "", "", "", "", "", "", ""]
   }
 };
 
 const PHOTOS = [
-  "/imaginarium/imagin1.jpg",
-  "/imaginarium/imagin2.jpg",
-  "/imaginarium/imagin3.jpg",
-  "/imaginarium/imagin4.jpg",
-  "/imaginarium/imagin5.jpg",
-  "/imaginarium/imagin6.jpg",
-  "/imaginarium/imagin7.jpg",
-  "/imaginarium/imagin8.jpg"
+  "/imaginarium/imagin1.png",
+  "/imaginarium/imagin2.png",
+  "/imaginarium/imagin3.png",
+  "/imaginarium/imagin4.png",
+  "/imaginarium/imagin5.png",
+  "/imaginarium/imagin6.png",
+  "/imaginarium/imagin7.png",
+  "/imaginarium/imagin8.png"
 ];
 
 // Aesthetic rotation offsets for the photo stack / polaroid grid to feel real
@@ -286,11 +259,13 @@ export default function ImaginariumAlbumModal({ isOpen, onClose, lang }: Imagina
                     </div>
 
                     {/* Handwriting style polaroid descriptor box */}
-                    <div className="pt-4 pb-2 px-1 text-center shrink-0 flex flex-col items-center justify-center min-h-[4.5rem]">
-                      <p className="text-xs font-serif italic text-slate-700/90 font-black leading-tight text-center tracking-tight group-hover:text-slate-900 transition-colors">
-                        {caption}
-                      </p>
-                      <span className="text-[9px] font-mono tracking-widest text-[#f25c05]/65 uppercase mt-1.5 select-none font-bold">
+                    <div className="pt-3 pb-3 px-1 text-center shrink-0 flex flex-col items-center justify-center min-h-[3rem]">
+                      {caption && (
+                        <p className="text-xs font-serif italic text-slate-700/90 font-black leading-tight text-center tracking-tight group-hover:text-slate-900 transition-colors mb-1">
+                          {caption}
+                        </p>
+                      )}
+                      <span className="text-[10px] font-mono tracking-widest text-[#f25c05]/85 uppercase select-none font-black">
                         {t.polaroidLabel}
                       </span>
                     </div>
@@ -357,9 +332,11 @@ export default function ImaginariumAlbumModal({ isOpen, onClose, lang }: Imagina
                   />
                   {/* Capture bottom detail paper box */}
                   <div className="pt-4 pb-1 text-center font-serif text-[#0c1f38] select-none">
-                    <p className="text-sm md:text-base italic font-black text-slate-800">
-                      {t.captions[activePhotoIndex]}
-                    </p>
+                    {t.captions[activePhotoIndex] && (
+                      <p className="text-sm md:text-base italic font-black text-slate-800">
+                        {t.captions[activePhotoIndex]}
+                      </p>
+                    )}
                     <div className="flex items-center justify-center gap-1.5 mt-2">
                       <span className="w-1.5 h-1.5 rounded-full bg-orange-500" />
                       <span className="text-[10px] font-mono font-bold text-slate-400 capitalize tracking-wider uppercase">
